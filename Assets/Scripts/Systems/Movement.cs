@@ -28,13 +28,10 @@ public class Movement : MonoBehaviour
     public void Update()
     {
         currentMovementDirectionModifier = Mathf.SmoothDamp(currentMovementDirectionModifier, targetDirection, ref smoothMovementVelocity, isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
-
     }
 
     public void FixedUpdate()
     {
-
-
         rigidbody.velocity = new Vector2(baseMovementSpeed * movementSpeedModifier * currentMovementDirectionModifier, rigidbody.velocity.y);
     }
 
