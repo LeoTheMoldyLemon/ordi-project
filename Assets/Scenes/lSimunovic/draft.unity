@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 813311482}
   - component: {fileID: 813311478}
   - component: {fileID: 813311477}
+  - component: {fileID: 813311484}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementInput: {fileID: 8261544671404633357, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
+  attackInput: {fileID: 5141050815520645460, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
+  primaryAttack: {fileID: 813311484}
 --- !u!114 &813311478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85e5979e7004404ab6628012add113e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 1
+  baseMovementSpeed: 5
   baseJumpSpeed: 10
-  baseMovementSmoothTime: 5
-  aerialMovementSmoothTime: 1
+  baseMovementSmoothTime: 0.1
+  aerialMovementSmoothTime: 0.3
   movementSpeedModifier: 1
 --- !u!61 &813311479
 BoxCollider2D:
@@ -302,7 +305,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -313,7 +316,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &813311483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +347,23 @@ MonoBehaviour:
   m_DefaultActionMap: Base
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &813311484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813311476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f448326cd4dac6648869886ca5979f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjectPrefab: {fileID: 2780696385748235934, guid: 9e8c4d8587396714fba312d85fccfa4e, type: 3}
+  windup: 0.1
+  cooldown: 0.5
+  positionOffset: {x: 0, y: 0, z: 0}
+  speed: 0
 --- !u!1 &942821974
 GameObject:
   m_ObjectHideFlags: 0

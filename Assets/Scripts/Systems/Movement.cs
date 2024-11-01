@@ -14,8 +14,8 @@ public class Movement : MonoBehaviour
     private float targetDirection = 0;
     private float currentMovementDirectionModifier = 0;
     private float smoothMovementVelocity = 0;
-    private bool isJumping;
-    private bool isGrounded;
+    public bool IsJumping { get; private set; }
+    public bool IsGrounded { get; private set; }
 
 
     private new Rigidbody2D rigidbody;
@@ -27,7 +27,11 @@ public class Movement : MonoBehaviour
 
     public void Update()
     {
-        currentMovementDirectionModifier = Mathf.SmoothDamp(currentMovementDirectionModifier, targetDirection, ref smoothMovementVelocity, isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
+        currentMovementDirectionModifier = Mathf.SmoothDamp(
+            currentMovementDirectionModifier,
+            targetDirection,
+            ref smoothMovementVelocity,
+            IsGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
     }
 
     public void FixedUpdate()
@@ -39,8 +43,8 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
-            isJumping = false;
+            IsGrounded = true;
+            IsJumping = false;
         }
     }
 
@@ -48,21 +52,21 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = false;
+            IsGrounded = false;
         }
     }
 
     public void Jump()
     {
         rigidbody.velocity = new Vector2(rigidbody.velocity.x, baseJumpSpeed);
-        isJumping = true;
+        IsJumping = true;
     }
     public void StopJump()
     {
-        if (rigidbody.velocity.y > 0 && isJumping)
+        if (rigidbody.velocity.y > 0 && IsJumping)
         {
             rigidbody.velocity = Vector2.Scale(rigidbody.velocity, new Vector2(1, 0.3f));
-            isJumping = false;
+            IsJumping = false;
         }
     }
 
@@ -74,15 +78,6 @@ public class Movement : MonoBehaviour
     public void AddMovementSpeedModifier(float modifier)
     {
         movementSpeedModifier *= modifier;
-    }
-
-    public bool IsJumping()
-    {
-        return isJumping;
-    }
-    public bool IsGrounded()
-    {
-        return isGrounded;
     }
 
     public float GetMovementDirection()

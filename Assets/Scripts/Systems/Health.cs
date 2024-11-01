@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth = 10;
+    [SerializeField] private GameObject deadBody;
 
     // Start is called before the first frame update
     void Start()
@@ -14,19 +15,15 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void takeDamage(int damageAmmount)
+    public void TakeDamage(int damageAmmount)
     {
         currentHealth -= damageAmmount;
 
         if (currentHealth <= 0)
         {
+            if (deadBody)
+                Instantiate(deadBody, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
