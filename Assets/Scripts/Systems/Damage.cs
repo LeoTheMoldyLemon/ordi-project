@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -18,6 +19,7 @@ public class Damage : MonoBehaviour
 
     [SerializeField] private OnHitAction onHitTarget;
     [SerializeField] private OnHitAction onHitStructure;
+    [SerializeField] private string targetTag;
 
     void Start()
     {
@@ -48,9 +50,9 @@ public class Damage : MonoBehaviour
     {
         var actionToTake = onHitStructure;
 
-        if (collision.gameObject.TryGetComponent(out Health enemyHealth))
+        if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
         {
-            enemyHealth.TakeDamage(damage);
+            targetHealth.TakeDamage(damage);
             actionToTake = onHitTarget;
         }
 

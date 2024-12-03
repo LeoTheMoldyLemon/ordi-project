@@ -7,21 +7,23 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Movement movement;
+    private new Rigidbody2D rigidbody;
 
     [SerializeField] private InputActionReference movementInput;
     [SerializeField] private InputActionReference attackInput;
     [SerializeField] private Attack primaryAttack;
-    [SerializeField] private Vector2 facing;
     void Start()
     {
         movement = GetComponent<Movement>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        movement.Move(movementInput.action.ReadValue<Vector2>().x);
+        Vector2 movementInputVector = movementInput.action.ReadValue<Vector2>();
+        movement.Move(movementInputVector.x);
 
-        if (movementInput.action.ReadValue<Vector2>().y > 0)
+        if (movementInputVector.y > 0)
         {
             if (movement.IsGrounded)
                 movement.Jump();
@@ -30,9 +32,7 @@ public class PlayerController : MonoBehaviour
             movement.StopJump();
 
         if (attackInput.action.ReadValue<float>() > 0)
-        {
-            primaryAttack.Perform(facing);
-        }
+            primaryAttack.Perform();
 
     }
 }
