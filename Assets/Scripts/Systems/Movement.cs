@@ -14,20 +14,25 @@ public class Movement : MonoBehaviour
     private float targetDirection = 0;
     private float currentMovementDirectionModifier = 0;
     private float smoothMovementVelocity = 0;
-    private bool isJumping;
-    private bool isGrounded;
-
-
+    public bool IsJumping { get; private set; }
+    public bool IsGrounded { get; private set; }
+    public Vector2 facing = new(-1, 0);
     private new Rigidbody2D rigidbody;
+    private new Collider2D collider;
 
     public void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     public void Update()
     {
-        currentMovementDirectionModifier = Mathf.SmoothDamp(currentMovementDirectionModifier, targetDirection, ref smoothMovementVelocity, isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
+        currentMovementDirectionModifier = Mathf.SmoothDamp(
+            currentMovementDirectionModifier,
+            targetDirection,
+            ref smoothMovementVelocity,
+            IsGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
     }
 
     public void FixedUpdate()
@@ -37,52 +42,55 @@ public class Movement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Structure") && CheckIsGrounded())
         {
-            isGrounded = true;
-            isJumping = false;
+            IsGrounded = true;
+            IsJumping = false;
         }
     }
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
+        if (collision.gameObject.CompareTag("Structure") && !CheckIsGrounded())
+            IsGrounded = false;
+    }
+
+    private bool CheckIsGrounded()
+    {
+        return rigidbody.velocity.y == 0.0 &&
+            Physics2D.BoxCast(transform.position, collider.bounds.extents, 0, -Vector3.up, collider.bounds.extents.y + 0.1f, LayerMask.GetMask("Structure"));
     }
 
     public void Jump()
     {
         rigidbody.velocity = new Vector2(rigidbody.velocity.x, baseJumpSpeed);
-        isJumping = true;
+        IsJumping = true;
     }
     public void StopJump()
     {
-        if (rigidbody.velocity.y > 0 && isJumping)
+        if (rigidbody.velocity.y > 0 && IsJumping)
         {
             rigidbody.velocity = Vector2.Scale(rigidbody.velocity, new Vector2(1, 0.3f));
-            isJumping = false;
+            IsJumping = false;
         }
     }
 
     public void Move(float direction)
     {
         targetDirection = direction;
+        if (targetDirection != 0)
+            facing = new Vector2(targetDirection, 0);
+
+        if (facing.x < 0 && transform.localScale.x > 0)
+            transform.localScale = new Vector3(-Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        else if (facing.x > 0 && transform.localScale.x < 0)
+            transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
     }
 
     public void AddMovementSpeedModifier(float modifier)
     {
         movementSpeedModifier *= modifier;
-    }
-
-    public bool IsJumping()
-    {
-        return isJumping;
-    }
-    public bool IsGrounded()
-    {
-        return isGrounded;
     }
 
     public float GetMovementDirection()
