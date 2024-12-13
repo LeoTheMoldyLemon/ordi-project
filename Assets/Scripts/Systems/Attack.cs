@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
     [SerializeField] private GameObject damageObjectPrefab;
     [SerializeField] private float windup = 0.1f;
     [SerializeField] private float cooldown = 0.5f;
     [SerializeField] private float speed = 0;
     [SerializeField] private Transform originTransform;
+    private Animator animator;
 
     public bool isAttacking = false;
     private float attackStartTimestamp = 0;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     void Update()
@@ -31,7 +36,7 @@ public class Attack : MonoBehaviour
     {
         if (attackStartTimestamp + cooldown + windup <= Time.time)
         {
-            if (animator) animator.SetTrigger("AttackTrigger");
+            if (animator) animator.SetTrigger("MakeAttack");
             isAttacking = true;
             attackStartTimestamp = Time.time;
             return true;

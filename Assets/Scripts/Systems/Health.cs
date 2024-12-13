@@ -8,16 +8,20 @@ public class Health : MonoBehaviour
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private GameObject deadBody;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damageAmmount)
     {
         currentHealth -= damageAmmount;
+
+        animator.SetTrigger("TakeDamage");
 
         if (currentHealth <= 0)
         {
