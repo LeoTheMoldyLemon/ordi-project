@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7046234332710213276}
   - component: {fileID: 5421540272879998517}
   - component: {fileID: 8713241798518365094}
+  - component: {fileID: 1211118510144510375}
   m_Layer: 2
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1550008261
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.7132075, g: 0.39159122, b: 0.3939051, a: 1}
@@ -106,6 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSpeed: 4
   baseJumpSpeed: 10
+  jumpWarmupTime: 0
+  jumpLandingTime: 0
   baseMovementSmoothTime: 0.3
   aerialMovementSmoothTime: 0.5
   movementSpeedModifier: 1
@@ -146,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f448326cd4dac6648869886ca5979f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 924257109699206577}
   damageObjectPrefab: {fileID: 2780696385748235934, guid: 9e8c4d8587396714fba312d85fccfa4e, type: 3}
   windup: 0.2
   cooldown: 1
@@ -240,6 +242,27 @@ MonoBehaviour:
   currentHealth: 3
   maxHealth: 3
   deadBody: {fileID: 0}
+--- !u!95 &1211118510144510375
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8092589569222239225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8150194075393351094
 GameObject:
   m_ObjectHideFlags: 0
