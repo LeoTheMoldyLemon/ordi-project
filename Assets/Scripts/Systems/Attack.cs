@@ -14,7 +14,7 @@ public class Attack : MonoBehaviour
     public bool isAttacking = false;
     private float attackStartTimestamp = 0;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
     }

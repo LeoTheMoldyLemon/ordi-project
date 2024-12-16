@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     private new Collider2D collider;
     private Animator animator;
 
-    public void Start()
+    public void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();

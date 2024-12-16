@@ -13,8 +13,8 @@ TagManager:
   - Structure
   - Water
   - UI
-  - 
-  - 
+  - CameraDock
+  - Player
   - 
   - 
   - 
@@ -42,13 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2887854345
-    locked: 0
-  - name: Entity
-    uniqueID: 2744959035
-    locked: 0
-  - name: Foreground
-    uniqueID: 2653602429
     locked: 0
