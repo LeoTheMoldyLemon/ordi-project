@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementInputVector.y > 0)
         {
-            if (movement.IsGrounded)
+            if (movement.isGrounded)
                 movement.Jump();
         }
         else if (movement.IsJumping)

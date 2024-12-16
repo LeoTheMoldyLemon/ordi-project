@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     private float smoothMovementVelocity = 0;
     public bool IsJumping { get; private set; }
     public bool IsWarmupJumping { get; private set; }
-    public bool IsGrounded { get; private set; }
+    public bool isGrounded;
     public Vector2 facing = new(-1, 0);
     private new Rigidbody2D rigidbody;
     private new Collider2D collider;
@@ -34,11 +34,20 @@ public class Movement : MonoBehaviour
 
     public void OnDrawGizmos()
     {
+        Collider2D collider = GetComponent<Collider2D>();
+        Vector3 boxcastBounds = new Vector3(collider.bounds.extents.x * 2, collider.bounds.extents.y, collider.bounds.extents.z);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(transform.position - new Vector3(0, 0.1f), collider.bounds.extents * 2);
-        /*
-                Gizmos.color = Color.white;
-                Gizmos.DrawCube(transform.position, collider.bounds.extents * 2);*/
+        Gizmos.DrawWireCube(transform.position - new Vector3(0, boxcastBounds.y / 2 + 0.1f, 0), boxcastBounds);
+
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(transform.position - new Vector3(0, boxcastBounds.y / 2, 0), boxcastBounds);
+    }
+    private bool CheckIsGrounded()
+    {
+        Vector3 boxcastBounds = new(collider.bounds.extents.x * 2, collider.bounds.extents.y, collider.bounds.extents.z * 2);
+
+        return rigidbody.velocity.y == 0.0 &&
+            Physics2D.BoxCast(transform.position - new Vector3(0, boxcastBounds.y / 2, 0), boxcastBounds, 0, Vector3.down, 0.1f, LayerMask.GetMask("Structure"));
     }
 
     public void FixedUpdate()
@@ -47,7 +56,7 @@ public class Movement : MonoBehaviour
             currentMovementDirectionModifier,
             targetDirection,
             ref smoothMovementVelocity,
-            IsGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
+            isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
 
         if (IsWarmupJumping && Time.time > jumpStartTime + jumpWarmupTime)
         {
@@ -65,7 +74,7 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Structure") && CheckIsGrounded())
         {
-            IsGrounded = true;
+            isGrounded = true;
             animator.SetBool("IsGrounded", true);
             IsJumping = false;
         }
@@ -75,15 +84,9 @@ public class Movement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Structure") && !CheckIsGrounded())
         {
-            IsGrounded = false;
+            isGrounded = false;
             animator.SetBool("IsGrounded", false);
         }
-    }
-
-    private bool CheckIsGrounded()
-    {
-        return rigidbody.velocity.y == 0.0 &&
-            Physics2D.BoxCast(transform.position, collider.bounds.extents * 2, 0, Vector3.down, 0.1f, LayerMask.GetMask("Structure"));
     }
 
     public void Jump()
