@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db0c91e07c8db814093c53d4d271b70f
+guid: 62ad0f3fa210d7940ad0df07908d0a5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump_spritesheet_0
+      name: jump_spritesheet_2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25b55b1454eb1bb48b9aea913f4c01c0
-      internalID: 1301534124
+      spriteID: cc3bf6cfa1b84d144b53e9234b328aae
+      internalID: -72395450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_1
+      name: jump_spritesheet_2_1
       rect:
         serializedVersion: 2
         x: 700
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b25198dccaae0943a619f0880aebf48
-      internalID: 502291638
+      spriteID: da034a84a7e56364391fa2539f1dcc00
+      internalID: 1303229773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_2
+      name: jump_spritesheet_2_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 252dfb7b8be9e484daec42903a7893c6
-      internalID: -1145553864
+      spriteID: 388de93a1ef69084a9aa011236b97302
+      internalID: -1873707545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_3
+      name: jump_spritesheet_2_3
       rect:
         serializedVersion: 2
         x: 2100
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0da7c7f8f0b2a241b29b3c4a57d19d0
-      internalID: 1240228027
+      spriteID: e3877fd691d73db4985b0f64d10c5417
+      internalID: 1049445615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_4
+      name: jump_spritesheet_2_4
       rect:
         serializedVersion: 2
         x: 2800
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0cf9b52b6788c54ca94472cd74da091
-      internalID: 1423833688
+      spriteID: 1cc2754ee05070d4fa33f2a6a918b5d5
+      internalID: -1669326798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_5
+      name: jump_spritesheet_2_5
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 236172a249280b447911fc08dfe3521f
-      internalID: -1088505184
+      spriteID: 2554c5589bdd9ff4caee1b4702ef3182
+      internalID: -75093697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_6
+      name: jump_spritesheet_2_6
       rect:
         serializedVersion: 2
         x: 700
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfff4fc752f530b4f995797580bcd3c9
-      internalID: -1552385217
+      spriteID: 543bd68237d166247824a0d733d140c6
+      internalID: -1801479846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_7
+      name: jump_spritesheet_2_7
       rect:
         serializedVersion: 2
         x: 1400
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 692900d77e15fc742946038b8dee39e6
-      internalID: -1747628653
+      spriteID: 442c0ecdea5b8214bbd8dce01eb4be0b
+      internalID: -1978632972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_8
+      name: jump_spritesheet_2_8
       rect:
         serializedVersion: 2
         x: 2100
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5a8920400d7744681aaef608e0a951
-      internalID: 1391283475
+      spriteID: 7fcb7a602b0dfdd4486b0e9d20c2cb7b
+      internalID: 2100332911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_spritesheet_9
+      name: jump_spritesheet_2_9
       rect:
         serializedVersion: 2
         x: 2800
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d9974b244b87944843b46d361ef0c5
-      internalID: 682637587
+      spriteID: f39e0ef519a3e4c4b94bf17e81bccdbb
+      internalID: -775156683
       vertices: []
       indices: 
       edges: []
@@ -317,16 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump_spritesheet_0: 1301534124
-      jump_spritesheet_1: 502291638
-      jump_spritesheet_2: -1145553864
-      jump_spritesheet_3: 1240228027
-      jump_spritesheet_4: 1423833688
-      jump_spritesheet_5: -1088505184
-      jump_spritesheet_6: -1552385217
-      jump_spritesheet_7: -1747628653
-      jump_spritesheet_8: 1391283475
-      jump_spritesheet_9: 682637587
+      jump_spritesheet_2_0: -72395450
+      jump_spritesheet_2_1: 1303229773
+      jump_spritesheet_2_2: -1873707545
+      jump_spritesheet_2_3: 1049445615
+      jump_spritesheet_2_4: -1669326798
+      jump_spritesheet_2_5: -75093697
+      jump_spritesheet_2_6: -1801479846
+      jump_spritesheet_2_7: -1978632972
+      jump_spritesheet_2_8: 2100332911
+      jump_spritesheet_2_9: -775156683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
