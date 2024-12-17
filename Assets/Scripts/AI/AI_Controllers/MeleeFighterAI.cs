@@ -14,7 +14,7 @@ public class MeleeFighterAI : MonoBehaviour
     [SerializeField] private bool isTargetDetected = false;
     [SerializeField] private bool isTargetLost = false;
     private float timeAtTargetLost;
-    void Start()
+    void Awake()
     {
         idleAction.movement = movement;
         attackAction.movement = movement;

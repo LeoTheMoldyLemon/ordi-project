@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
