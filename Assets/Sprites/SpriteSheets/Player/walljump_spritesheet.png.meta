@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37cc65290c015c94ab5940c89c1d6d1c
+guid: 35bd2ee6481874a48b6b34a36b5c5b16
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: attack_mc_spritesheet_0
+      name: walljump_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b44640c7eccd099478fa5ce5a8b55ecf
-      internalID: -1500395896
+      spriteID: 395868e8fb346fa4dbb1a1009abc3142
+      internalID: -1521560008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_1
+      name: walljump_spritesheet_1
       rect:
         serializedVersion: 2
         x: 700
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2004bbf16d12fec4699d4db075f36700
-      internalID: 2036851477
+      spriteID: b6c2a9e7a743a37459ab860d2eefa574
+      internalID: -1590192042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_2
+      name: walljump_spritesheet_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92416e5fe6ce38242a35e0dfcaf742f5
-      internalID: 1521389013
+      spriteID: 00893f30786f9ac419c1822305a798ac
+      internalID: -31612398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_3
+      name: walljump_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 2102
-        y: 698
+        x: 2100
+        y: 700
         width: 700
         height: 700
       alignment: 0
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 319c1498108b15746a4796e322a7f5f0
-      internalID: 702840410
+      spriteID: b191d1b60b0a97d478a31620c490e7ee
+      internalID: 1988411160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_4
+      name: walljump_spritesheet_4
       rect:
         serializedVersion: 2
         x: 2800
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30db430a9cec20c469082ba92e8d7b39
-      internalID: 308131298
+      spriteID: 88657e7ac6a116846903aa3044bbeb2c
+      internalID: -1332100610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_5
+      name: walljump_spritesheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -216,17 +216,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa560a3a9d32ca74cb429ca1ff563947
-      internalID: -386024360
+      spriteID: 35a77895d00a7c54f86c2b40aa46be8b
+      internalID: -1166245645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack_mc_spritesheet_6
+      name: walljump_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 706
+        x: 700
         y: 0
         width: 700
         height: 700
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66db67244c61adc4e9e45f3e78b23d96
-      internalID: -2063012149
+      spriteID: 6641206b0999490408eb1aec8314e157
+      internalID: -2076157738
       vertices: []
       indices: 
       edges: []
@@ -254,13 +254,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      attack_mc_spritesheet_0: -1500395896
-      attack_mc_spritesheet_1: 2036851477
-      attack_mc_spritesheet_2: 1521389013
-      attack_mc_spritesheet_3: 702840410
-      attack_mc_spritesheet_4: 308131298
-      attack_mc_spritesheet_5: -386024360
-      attack_mc_spritesheet_6: -2063012149
+      walljump_spritesheet_0: -1521560008
+      walljump_spritesheet_1: -1590192042
+      walljump_spritesheet_2: -31612398
+      walljump_spritesheet_3: 1988411160
+      walljump_spritesheet_4: -1332100610
+      walljump_spritesheet_5: -1166245645
+      walljump_spritesheet_6: -2076157738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

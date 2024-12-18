@@ -22,17 +22,25 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 movementInputVector = movementInput.action.ReadValue<Vector2>();
-        movement.Move(movementInputVector.x);
+        float movementModifier = 1;
+        if (primaryAttack.isAttacking) movementModifier = 0.1f;
+
+        movement.Move(movementInputVector.x * movementModifier);
 
         if (movementInputVector.y > 0)
         {
-            if (movement.isGrounded)
-                movement.Jump();
+            movement.Jump();
         }
-        else if (movement.IsJumping)
+        else if (movement.isJumping)
             movement.StopJump();
 
-        if (attackInput.action.ReadValue<float>() > 0)
+        if (movementInputVector.y < 0 && !movement.isDropping)
+            movement.Drop();
+        else if (movementInputVector.y >= 0 && movement.isDropping)
+            movement.StopDrop();
+
+
+        if (attackInput.action.ReadValue<float>() > 0 && movement.isGrounded)
             primaryAttack.Perform();
 
     }

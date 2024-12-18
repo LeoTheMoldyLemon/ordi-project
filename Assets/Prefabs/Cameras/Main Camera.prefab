@@ -108,8 +108,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   target: {fileID: 0}
   defaultTarget: {fileID: 0}
-  targetSize: 6
-  defaultSize: 6
+  targetSize: 10
+  defaultSize: 10
   smoothTime: 0.2
   smoothTimeSize: 0.2
   velocityScaling: 0.4

@@ -22,7 +22,7 @@ public class VisualDetector : Detector
         if (ignoreTerrain || isCurrentlyDetected && ignoreTerrainAfterDetection)
             return true;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, range);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, target.position - transform.position, range, LayerMask.GetMask("Player", "Structure"));
         return !hit || hit.transform == target;
     }
 }

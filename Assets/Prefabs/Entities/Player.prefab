@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1550008261
-  m_SortingLayer: 0
+  m_SortingLayerID: 496342033
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1083009328, guid: 2b273cd28b21d5746a476db349046a11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,14 +128,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.00171, y: 7.0000005}
+    oldSize: {x: 7, y: 7}
     newSize: {x: 7, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 4.1}
+  m_Size: {x: 1.6, y: 3.9}
   m_EdgeRadius: 0
 --- !u!114 &3597602659400336222
 MonoBehaviour:
@@ -206,14 +206,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85e5979e7004404ab6628012add113e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 5
-  baseJumpSpeed: 15
-  jumpWarmupTime: 0.08333334
-  jumpLandingTime: 0.25
-  baseMovementSmoothTime: 0.1
-  aerialMovementSmoothTime: 0.3
+  baseMovementSpeed: 10
+  aerialMovementSmoothTime: 0.35
   movementSpeedModifier: 1
+  baseMovementSmoothTime: 0.1
+  jumpSpeed: 20
+  jumpWarmupTime: 0.08333334
+  coyoteTime: 0.1
+  canWallJump: 1
+  wallJumpSpeed: 15
+  wallJumpPushoffSpeed: 20
+  wallJumpWarmupTime: 0
+  wallSlideMaxSpeed: 2
+  isJumping: 0
+  isHoldingWall: 0
+  isWarmupJumping: 0
+  isWarmupWallJumping: 0
   isGrounded: 0
+  isDropping: 0
+  isInGroundCoyoteTime: 0
+  isInWallCoyoteTime: 0
+  currentMovementDirectionModifier: 0
   facing: {x: 1, y: 0}
 --- !u!114 &2668496540629612201
 MonoBehaviour:
@@ -246,7 +259,7 @@ MonoBehaviour:
   windup: 0.1
   cooldown: 0.5
   speed: 0
-  originTransform: {fileID: 0}
+  originTransform: {fileID: 1397793785898294113}
   isAttacking: 0
 --- !u!114 &950418188615994431
 MonoBehaviour:

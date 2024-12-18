@@ -20,7 +20,7 @@ public class Attack : MonoBehaviour
     }
 
 
-    void Update()
+    public void Update()
     {
         if (isAttacking && attackStartTimestamp + windup <= Time.time)
         {
