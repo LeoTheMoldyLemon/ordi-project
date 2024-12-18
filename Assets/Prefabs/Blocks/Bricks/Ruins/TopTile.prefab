@@ -13,9 +13,25 @@ PrefabInstance:
       value: TopTile
       objectReference: {fileID: 0}
     - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 917f9cf5fca0b184a9c24b020a45dca4, type: 3}
+    - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8733374
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8283019
+      objectReference: {fileID: 0}
     - target: {fileID: 6002083285830727106, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -63,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 8324499693160839789, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324499693160839789, guid: 7e31cb33d26999c4ca613d03c90c9d36, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
