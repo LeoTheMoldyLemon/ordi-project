@@ -27,14 +27,12 @@ public abstract class Detector : MonoBehaviour
                 if (!isCurrentlyDetected)
                 {
                     isCurrentlyDetected = true;
-                    Debug.Log("Detector: target detected");
                     targetDetected.Invoke();
                 }
             }
             else if (isCurrentlyDetected)
             {
                 isCurrentlyDetected = false;
-                Debug.Log("Detector: target lost");
                 targetLost.Invoke();
             }
         }

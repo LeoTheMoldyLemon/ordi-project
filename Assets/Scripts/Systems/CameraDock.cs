@@ -35,12 +35,10 @@ public class CameraDock : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         cameraController.AddDock(this);
-        Debug.Log("Entered camera dock.");
     }
     public void OnTriggerExit2D(Collider2D other)
     {
         cameraController.RemoveDock(this);
-        Debug.Log("Exited camera dock.");
     }
 
 }

@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1550008261
-  m_SortingLayer: 0
+  m_SortingLayerID: 496342033
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1083009328, guid: 2b273cd28b21d5746a476db349046a11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -206,14 +206,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85e5979e7004404ab6628012add113e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 5
-  baseJumpSpeed: 15
-  jumpWarmupTime: 0.08333334
-  jumpLandingTime: 0.25
-  baseMovementSmoothTime: 0.1
+  baseMovementSpeed: 10
   aerialMovementSmoothTime: 0.3
   movementSpeedModifier: 1
+  baseMovementSmoothTime: 0.1
+  jumpSpeed: 20
+  jumpWarmupTime: 0.08333334
+  jumpLandingTime: 0.25
+  coyoteTime: 0.1
+  canWallJump: 0
+  wallJumpSpeed: 10
+  wallJumpPushoffSpeed: 5
+  wallJumpWarmupTime: 0
+  wallGrapWarmupTime: 0
+  wallSlideMaxSpeed: 2
+  isJumping: 0
+  isHoldingWall: 0
+  isWarmupJumping: 0
+  isWarmupWallJumping: 0
   isGrounded: 0
+  isDropping: 0
+  isInGroundCoyoteTime: 0
+  isInWallCoyoteTime: 0
+  groundCoyoteTimestamp: 0
+  wallCoyoteTimestamp: 0
   facing: {x: 1, y: 0}
 --- !u!114 &2668496540629612201
 MonoBehaviour:
@@ -246,7 +262,7 @@ MonoBehaviour:
   windup: 0.1
   cooldown: 0.5
   speed: 0
-  originTransform: {fileID: 0}
+  originTransform: {fileID: 1397793785898294113}
   isAttacking: 0
 --- !u!114 &950418188615994431
 MonoBehaviour:
