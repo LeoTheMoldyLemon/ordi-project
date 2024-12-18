@@ -128,14 +128,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.00171, y: 7.0000005}
+    oldSize: {x: 7, y: 7}
     newSize: {x: 7, y: 7}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 4.1}
+  m_Size: {x: 1.6, y: 3.9}
   m_EdgeRadius: 0
 --- !u!114 &3597602659400336222
 MonoBehaviour:
@@ -207,18 +207,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSpeed: 10
-  aerialMovementSmoothTime: 0.3
+  aerialMovementSmoothTime: 0.35
   movementSpeedModifier: 1
   baseMovementSmoothTime: 0.1
   jumpSpeed: 20
   jumpWarmupTime: 0.08333334
-  jumpLandingTime: 0.25
   coyoteTime: 0.1
-  canWallJump: 0
-  wallJumpSpeed: 10
-  wallJumpPushoffSpeed: 5
+  canWallJump: 1
+  wallJumpSpeed: 15
+  wallJumpPushoffSpeed: 20
   wallJumpWarmupTime: 0
-  wallGrapWarmupTime: 0
   wallSlideMaxSpeed: 2
   isJumping: 0
   isHoldingWall: 0
@@ -228,8 +226,7 @@ MonoBehaviour:
   isDropping: 0
   isInGroundCoyoteTime: 0
   isInWallCoyoteTime: 0
-  groundCoyoteTimestamp: 0
-  wallCoyoteTimestamp: 0
+  currentMovementDirectionModifier: 0
   facing: {x: 1, y: 0}
 --- !u!114 &2668496540629612201
 MonoBehaviour:

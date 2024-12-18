@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     [Header("Jumping")]
     [SerializeField] private float jumpSpeed = 10;
     [SerializeField] private float jumpWarmupTime = 2 / 12;
-    [SerializeField] private float jumpLandingTime = 2 / 12;
     [SerializeField] private float coyoteTime = 2 / 12;
 
 
@@ -26,7 +25,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private float wallJumpSpeed = 10;
     [SerializeField] private float wallJumpPushoffSpeed = 5;
     [SerializeField] private float wallJumpWarmupTime = 1 / 12;
-    [SerializeField] private float wallGrapWarmupTime = 2 / 12;
     [SerializeField] private float wallSlideMaxSpeed = 0.5f;
 
     private float jumpStartTime = 0;
@@ -104,7 +102,7 @@ public class Movement : MonoBehaviour
 
     private bool CheckIsHoldingWall()
     {
-        if (rigidbody.velocity.y > 0 || isGrounded) return false;
+        if (rigidbody.velocity.y > 10 || isGrounded || !canWallJump) return false;
 
         Vector3 boxcastBounds = new(collider.bounds.extents.x, collider.bounds.extents.y * 1.8f, collider.bounds.extents.z * 2);
 
@@ -130,7 +128,7 @@ public class Movement : MonoBehaviour
             ref smoothMovementVelocity,
             isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
 
-        if (Math.Abs(currentMovementDirectionModifier) < 0.05f) currentMovementDirectionModifier = 0;
+        if (Math.Abs(currentMovementDirectionModifier) < 0.005f && targetDirection == 0) currentMovementDirectionModifier = 0;
 
         float newVelocityY = rigidbody.velocity.y;
         float newVelocityX = baseMovementSpeed * movementSpeedModifier * currentMovementDirectionModifier;
@@ -143,8 +141,8 @@ public class Movement : MonoBehaviour
         }
         if (isWarmupWallJumping && Time.time > jumpStartTime + wallJumpWarmupTime)
         {
-            newVelocityY = jumpSpeed;
-            newVelocityX += wallJumpSpeed * Math.Sign(facing.x);
+            newVelocityY = wallJumpSpeed;
+            newVelocityX += wallJumpPushoffSpeed * Math.Sign(facing.x);
             currentMovementDirectionModifier = newVelocityX / (baseMovementSpeed * movementSpeedModifier);
             isJumping = true;
             isWarmupWallJumping = false;

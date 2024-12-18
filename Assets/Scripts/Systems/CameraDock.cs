@@ -34,11 +34,13 @@ public class CameraDock : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        cameraController.AddDock(this);
+        if (other.gameObject.tag == "Player")
+            cameraController.AddDock(this);
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        cameraController.RemoveDock(this);
+        if (other.gameObject.tag == "Player")
+            cameraController.RemoveDock(this);
     }
 
 }

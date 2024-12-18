@@ -13,8 +13,21 @@ public class PatrolAction : AIAction
     [SerializeField] private float turnAroundDelay;
     [SerializeField] private float patrolPointReachedDistance;
 
-    private int currentPatrolPointIndex = 0;
-    private float turnAroundTime = 0;
+    [Header("Debug")]
+    [SerializeField] private int currentPatrolPointIndex = 0;
+    [SerializeField] private float turnAroundTime = 0;
+
+    public void Awake() { }
+    public void Start() { }
+
+    public void OnDrawGizmos()
+    {
+        //Display patrol points
+        Gizmos.color = Color.green;
+        List<Vector3> patrolPointSpan = new();
+        foreach (var point in patrolPoints) patrolPointSpan.Add(point);
+        Gizmos.DrawLineStrip(patrolPointSpan.ToArray(), true);
+    }
     public override void Do()
     {
         if (Time.time < turnAroundTime)
@@ -26,8 +39,12 @@ public class PatrolAction : AIAction
             turnAroundTime = Time.time + turnAroundDelay;
         }
         else if (patrolPoints[currentPatrolPointIndex].x > transform.position.x)
+        {
             movement.Move(walkSpeedPercent);
+        }
         else
+        {
             movement.Move(-walkSpeedPercent);
+        }
     }
 }
