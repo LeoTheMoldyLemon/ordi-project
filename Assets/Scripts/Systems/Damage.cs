@@ -48,14 +48,20 @@ public class Damage : MonoBehaviour
 
     private void Hit(Collider2D collision)
     {
-        var actionToTake = onHitStructure;
+        if (collision.gameObject.CompareTag("Structure"))
+            TakeAction(onHitStructure, collision);
 
-        if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
+        else if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
         {
             targetHealth.TakeDamage(damage);
-            actionToTake = onHitTarget;
+            TakeAction(onHitTarget, collision);
         }
 
+
+    }
+
+    private void TakeAction(OnHitAction actionToTake, Collider2D collision)
+    {
         switch (actionToTake)
         {
             case OnHitAction.DISAPEAR:

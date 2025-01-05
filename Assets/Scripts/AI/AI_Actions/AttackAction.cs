@@ -10,11 +10,11 @@ public class AttackAction : AIAction
 
     public override void Do()
     {
-        if (attack.isAttacking)
+        if (attack.isAttacking || attack.isOnCooldown)
         {
             movement.Move(0);
         }
-        if (Vector2.Distance(transform.position, target.position) < targetAttackDistance)
+        else if (Vector2.Distance(transform.position, target.position) < targetAttackDistance)
         {
             if (movement.facing.x < 0 && target.position.x - transform.position.x > 0)
                 movement.Move(1);

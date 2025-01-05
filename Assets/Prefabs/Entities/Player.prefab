@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7514331934427013530}
   - component: {fileID: 950418188615994431}
   - component: {fileID: 3660400508602225836}
+  - component: {fileID: 5931388790370080988}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -256,11 +257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageObjectPrefab: {fileID: 2780696385748235934, guid: e98ccb8b28ca96b409494413b1b9fe75, type: 3}
-  windup: 0.1
-  cooldown: 0.5
+  windup: 0.3
+  cooldown: 0.2
   speed: 0
   originTransform: {fileID: 1397793785898294113}
   isAttacking: 0
+  isOnCooldown: 0
 --- !u!114 &950418188615994431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +278,8 @@ MonoBehaviour:
   currentHealth: 10
   maxHealth: 10
   deadBody: {fileID: 0}
+  particleEffect: {fileID: 8090121338592848775, guid: d798dc5c35b00cd469b494ab13842583, type: 3}
+  particleEffectRoot: {fileID: 0}
 --- !u!95 &3660400508602225836
 Animator:
   serializedVersion: 5
@@ -297,3 +301,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5931388790370080988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317096009827242569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000055297bbb1194951defca2ff2
+  m_ShapePath:
+  - {x: -0.8154831, y: -1.957828, z: 0}
+  - {x: -0.78692245, y: 1.9863868, z: 0}
+  - {x: 0.81547546, y: 1.9863868, z: 0}
+  - {x: 0.8440399, y: -1.9292698, z: 0}
+  m_ShapePathHash: -682949691
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -118522
+  m_LocalBounds:
+    m_Center: {x: 0.014278412, y: 0.014279366, z: 0}
+    m_Extent: {x: 0.8297615, y: 1.9721074, z: 0}

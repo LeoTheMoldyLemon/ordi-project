@@ -70,7 +70,7 @@ MonoBehaviour:
   movement: {fileID: 0}
   attack: {fileID: 0}
   chaseSpeedPercent: 1
-  targetAttackDistance: 2
+  targetAttackDistance: 4
   target: {fileID: 0}
 --- !u!114 &-5810572564670714410
 MonoBehaviour:

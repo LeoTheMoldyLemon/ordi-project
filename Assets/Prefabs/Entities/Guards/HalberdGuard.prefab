@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -3252759996219332315}
   - component: {fileID: 761936496099359418}
   m_Layer: 9
-  m_Name: SwordGuard
+  m_Name: HalberdGuard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 496342033
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c91cefa1b79b8fb4685e4c08bf1fb1ef, type: 3}
+  m_Sprite: {fileID: 1792734780, guid: 9b59fb0e4faf4f94da8baa739d4a68a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -105,11 +105,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageObjectPrefab: {fileID: 2780696385748235934, guid: 9e8c4d8587396714fba312d85fccfa4e, type: 3}
-  windup: 0.1
-  cooldown: 0.5
+  windup: 1
+  cooldown: 1
   speed: 0
   originTransform: {fileID: 92794711723368075}
   isAttacking: 0
+  isOnCooldown: 0
 --- !u!114 &877598935362872000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,14 +181,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 9.001759, y: 9}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3.9}
+  m_Size: {x: 2, y: 3.7}
   m_EdgeRadius: 0
 --- !u!114 &3275773016587258904
 MonoBehaviour:
@@ -275,8 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   maxHealth: 3
-  deadBody: {fileID: 0}
-  particleEffect: {fileID: 0}
+  deadBody: {fileID: 5593770327145122230, guid: f201474d60e1a2346a92b5a8e561c400, type: 3}
+  particleEffect: {fileID: 2190127993119582081, guid: 10b018a102df66747bdefd4b1c8e47d0, type: 3}
   particleEffectRoot: {fileID: 0}
 --- !u!1001 &109763385751740449
 PrefabInstance:

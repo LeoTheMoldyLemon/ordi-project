@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     [SerializeField] private GameObject deadBody;
     private Animator animator;
 
+    [SerializeField] private GameObject particleEffect;
+    [SerializeField] private Transform particleEffectRoot;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,10 +26,21 @@ public class Health : MonoBehaviour
 
         animator.SetTrigger("TakeDamage");
 
+        if (particleEffect)
+        {
+            if (particleEffectRoot)
+                Instantiate(particleEffect, this.transform.position, particleEffect.transform.rotation, particleEffectRoot);
+            else
+                Instantiate(particleEffect, this.transform.position, particleEffect.transform.rotation);
+        }
+
         if (currentHealth <= 0)
         {
             if (deadBody)
-                Instantiate(deadBody, transform.position, Quaternion.identity);
+            {
+                var body = Instantiate(deadBody, transform.position, Quaternion.identity);
+                body.transform.localScale = transform.localScale;
+            }
             Destroy(gameObject);
         }
     }
