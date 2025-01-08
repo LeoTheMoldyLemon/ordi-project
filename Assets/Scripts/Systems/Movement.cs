@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -162,7 +163,6 @@ public class Movement : MonoBehaviour
         {
             if (isHoldingWall)
             {
-                Debug.Log("What");
                 isInWallCoyoteTime = true;
                 wallCoyoteTimestamp = Time.time;
                 isHoldingWall = false;
@@ -284,7 +284,10 @@ public class Movement : MonoBehaviour
 
     public void Move(float direction)
     {
-        targetDirection = direction;
+        if (targetDirection != direction)
+        {
+            targetDirection = direction;
+        }
         if (targetDirection != 0 && !isHoldingWall && !isInWallCoyoteTime && facing.x != Math.Sign(targetDirection))
             facing = new Vector2(Math.Sign(targetDirection), 0);
 

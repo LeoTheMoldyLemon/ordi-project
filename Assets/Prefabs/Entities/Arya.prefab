@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8031692477117032959}
   - component: {fileID: 6835442726178753745}
+  - component: {fileID: 5965889548589726017}
   m_Layer: 0
   m_Name: Arya
   m_TagString: Untagged
@@ -70,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 496342033
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1582cc8633bc42c4fb7a80da25ce448a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,3 +85,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5965889548589726017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547183080923556871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000055297bbb1194951defca2ff2
+  m_ShapePath:
+  - {x: -0.87703705, y: -2.262753, z: 0}
+  - {x: -0.80280304, y: 2.015304, z: 0}
+  - {x: 0.852293, y: 2.040049, z: 0}
+  - {x: 0.901783, y: -2.188519, z: 0}
+  m_ShapePathHash: -1875387867
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -126506
+  m_LocalBounds:
+    m_Center: {x: 0.012372971, y: -0.11135197, z: 0}
+    m_Extent: {x: 0.88941, y: 2.151401, z: 0}

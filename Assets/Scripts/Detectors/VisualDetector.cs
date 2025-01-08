@@ -13,6 +13,9 @@ public class VisualDetector : Detector
 
     public override bool Detect()
     {
+        if (!target)
+            return false;
+
         if (isCurrentlyDetected && lockOnAfterDetection)
             return true;
 

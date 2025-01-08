@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Attack : MonoBehaviour
 {
@@ -9,38 +10,87 @@ public class Attack : MonoBehaviour
     [SerializeField] private float cooldown = 0.5f;
     [SerializeField] private float speed = 0;
     [SerializeField] private Transform originTransform;
-    private Animator animator;
+    [SerializeField] private bool waitUntilAttackHits, stickWithParent;
+    [SerializeField] private Animator animator;
 
+    public bool isOnWindup = false;
     public bool isAttacking = false;
-    private float attackStartTimestamp = 0;
-
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public bool isOnCooldown = false;
+    public string attackName = "";
+    private float attackCooldownTimestamp = 0;
 
 
     public void Update()
     {
-        if (isAttacking && attackStartTimestamp + windup <= Time.time)
+
+        if (isOnCooldown && Time.time > attackCooldownTimestamp + cooldown)
         {
-            var attackObject = Instantiate(damageObjectPrefab, originTransform.position, originTransform.rotation);
-            var attackRigidbody = attackObject.GetComponent<Rigidbody>();
-            if (attackRigidbody)
-                attackRigidbody.velocity = originTransform.forward * speed;
-            isAttacking = false;
+            isOnCooldown = false;
+            animator.SetBool(attackName + "AttackCooldown", false);
         }
     }
 
-    public bool Perform()
+    public bool Perform(params UnityAction<Damage, Collider2D>[] onHitActions)
     {
-        if (attackStartTimestamp + cooldown + windup <= Time.time)
+        if (!isOnWindup && !isOnCooldown && !isAttacking)
         {
-            if (animator) animator.SetTrigger("MakeAttack");
-            isAttacking = true;
-            attackStartTimestamp = Time.time;
+            if (animator)
+            {
+                animator.SetBool(attackName + "AttackWindup", true);
+                animator.SetTrigger(attackName + "MakeAttack");
+            }
+            isOnWindup = true;
+            StartCoroutine(Process(onHitActions));
             return true;
         }
         return false;
+    }
+
+    private IEnumerator Process(UnityAction<Damage, Collider2D>[] onHitActions)
+    {
+        yield return new WaitForSeconds(windup);
+
+        GameObject damageObject;
+        if (stickWithParent)
+            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation, originTransform);
+        else
+            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation);
+
+        var damageRigidbody = damageObject.GetComponent<Rigidbody>();
+        if (damageRigidbody)
+            damageRigidbody.velocity = originTransform.forward * speed;
+        var damage = damageObject.GetComponent<Damage>();
+        if (damage)
+        {
+            foreach (var onHitAction in onHitActions)
+                damage.hitEvent.AddListener(onHitAction);
+            if (waitUntilAttackHits)
+                damage.hitEvent.AddListener(OnHit);
+        }
+
+        if (waitUntilAttackHits)
+        {
+            isAttacking = true;
+            animator.SetBool(attackName + "Attacking", true);
+        }
+        else
+        {
+            isOnCooldown = true;
+            attackCooldownTimestamp = Time.time;
+            animator.SetBool(attackName + "AttackCooldown", true);
+        }
+
+        isOnWindup = false;
+        animator.SetBool(attackName + "AttackWindup", false);
+    }
+
+    private void OnHit(Damage damage, Collider2D collider)
+    {
+        isOnCooldown = true;
+        attackCooldownTimestamp = Time.time;
+        animator.SetBool(attackName + "AttackCooldown", true);
+
+        isAttacking = false;
+        animator.SetBool(attackName + "Attacking", false);
     }
 }

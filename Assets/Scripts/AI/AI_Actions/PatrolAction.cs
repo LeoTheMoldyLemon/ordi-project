@@ -47,4 +47,9 @@ public class PatrolAction : AIAction
             movement.Move(-walkSpeedPercent);
         }
     }
+
+    public override bool Stuck()
+    {
+        return false;
+    }
 }

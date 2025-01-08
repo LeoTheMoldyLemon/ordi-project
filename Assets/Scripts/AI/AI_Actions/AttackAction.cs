@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class AttackAction : AIAction
 {
-    [SerializeField] private float chaseSpeedPercent, targetAttackDistance;
+    [SerializeField] private float chaseSpeedModifier, targetAttackDistance;
+    public Attack attack;
     [SerializeField] private Transform target;
 
     public override void Do()
     {
-        if (attack.isAttacking)
+        if (attack.isOnWindup || attack.isOnCooldown || !target)
         {
             movement.Move(0);
         }
-        if (Vector2.Distance(transform.position, target.position) < targetAttackDistance)
+        else if (Vector2.Distance(transform.position, target.position) < targetAttackDistance)
         {
             if (movement.facing.x < 0 && target.position.x - transform.position.x > 0)
                 movement.Move(1);
@@ -27,8 +28,13 @@ public class AttackAction : AIAction
             }
         }
         else if (target.position.x > transform.position.x)
-            movement.Move(chaseSpeedPercent);
+            movement.Move(chaseSpeedModifier);
         else
-            movement.Move(-chaseSpeedPercent);
+            movement.Move(-chaseSpeedModifier);
+    }
+
+    public override bool Stuck()
+    {
+        return attack.isOnWindup || attack.isOnCooldown;
     }
 }

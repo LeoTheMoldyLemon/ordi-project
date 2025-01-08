@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public abstract class Detector : MonoBehaviour
 {
 
-    [SerializeField] protected Transform target;
+    [SerializeField] public Transform target;
     [SerializeField] private double period;
     public UnityEvent targetDetected = new(), targetLost = new();
 

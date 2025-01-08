@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 7514331934427013530}
   - component: {fileID: 950418188615994431}
   - component: {fileID: 3660400508602225836}
+  - component: {fileID: 651224300382933396}
+  - component: {fileID: 7900323282001816574}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -256,11 +258,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageObjectPrefab: {fileID: 2780696385748235934, guid: e98ccb8b28ca96b409494413b1b9fe75, type: 3}
-  windup: 0.1
-  cooldown: 0.5
+  windup: 0.3
+  cooldown: 0.2
   speed: 0
   originTransform: {fileID: 1397793785898294113}
+  waitUntilAttackHits: 0
+  stickWithParent: 0
+  animator: {fileID: 3660400508602225836}
+  isOnWindup: 0
   isAttacking: 0
+  isOnCooldown: 0
+  attackName: 
 --- !u!114 &950418188615994431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,9 +281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95026b758d1580949bf99818d769ade9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
+  currentHealth: 1
   maxHealth: 10
   deadBody: {fileID: 0}
+  particleEffect: {fileID: 8090121338592848775, guid: d798dc5c35b00cd469b494ab13842583, type: 3}
+  particleEffectRoot: {fileID: 0}
+  reloadCheckpointOnDeath: 1
+  checkpointManager: {fileID: 0}
 --- !u!95 &3660400508602225836
 Animator:
   serializedVersion: 5
@@ -297,3 +309,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &651224300382933396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317096009827242569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000efca2ff21194951d55297bbb
+  m_ShapePath:
+  - {x: -0.96983814, y: -1.8592548, z: 0}
+  - {x: -0.44655466, y: 0.0005378723, z: 0}
+  - {x: -0.7954016, y: 1.8141823, z: 0}
+  - {x: 0.88161564, y: 1.8377266, z: 0}
+  - {x: 0.2372222, y: -0.0038986206, z: 0}
+  - {x: 0.8306756, y: -1.920002, z: 0}
+  - {x: -0.066337585, y: -0.14196396, z: 0}
+  m_ShapePathHash: 796822863
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 29326
+  m_LocalBounds:
+    m_Center: {x: -0.04411125, y: -0.041137695, z: 0}
+    m_Extent: {x: 0.9257269, y: 1.8788643, z: 0}
+--- !u!114 &7900323282001816574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317096009827242569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf880ddad032ae8439418d5f34eb6ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
