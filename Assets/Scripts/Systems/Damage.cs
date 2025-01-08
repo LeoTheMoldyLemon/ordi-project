@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Damage : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Damage : MonoBehaviour
     [SerializeField] private OnHitAction onHitTarget;
     [SerializeField] private OnHitAction onHitStructure;
     [SerializeField] private string targetTag;
+
+    public UnityEvent<Damage, Collider2D> hitEvent = new();
 
     void Start()
     {
@@ -49,11 +52,14 @@ public class Damage : MonoBehaviour
     private void Hit(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Structure"))
+        {
+            hitEvent.Invoke(this, collision);
             TakeAction(onHitStructure, collision);
-
+        }
         else if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
         {
             targetHealth.TakeDamage(damage);
+            hitEvent.Invoke(this, collision);
             TakeAction(onHitTarget, collision);
         }
 

@@ -5,6 +5,6 @@ using UnityEngine;
 public abstract class AIAction : MonoBehaviour
 {
     public Movement movement;
-    public Attack attack;
     public abstract void Do();
+    public abstract bool Stuck();
 }

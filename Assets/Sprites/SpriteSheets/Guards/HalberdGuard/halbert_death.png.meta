@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d4a34f9c6c678d469221e33e934bc5c
+guid: 1253adc435835e244939ecddb7f6de55
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_0
+      name: halbert_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37fe491a4028320489df2e3c2bff7099
-      internalID: 1274976593
+      spriteID: 370b4dd52feade44486e6a0ec768d14d
+      internalID: -130616355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_1
+      name: halbert_death_1
       rect:
         serializedVersion: 2
         x: 900
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65a0b4e94d879784d83b3d0857430bc8
-      internalID: 439237558
+      spriteID: cf1f2a598225a3349b466f29450ef661
+      internalID: -191776867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_2
+      name: halbert_death_2
       rect:
         serializedVersion: 2
         x: 1800
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae823428789a51944be8ecde64004c40
-      internalID: -834809385
+      spriteID: 669a414b40949f14484a2a49fc7a01d8
+      internalID: 1762610081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_3
+      name: halbert_death_3
       rect:
         serializedVersion: 2
         x: 2700
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b2740cf035fb7c4299788e1efd389ac
-      internalID: -690862739
+      spriteID: 2c9e68df4c8b7764eb836a6a309b8179
+      internalID: 1174027483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_4
+      name: halbert_death_4
       rect:
         serializedVersion: 2
         x: 3600
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea0703668e345e444a2124c955049ab9
-      internalID: 1689996751
+      spriteID: b33600293b92e0e4b9b908e31612d628
+      internalID: -159996422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_5
+      name: halbert_death_5
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70bc1e822c7080940b37760b71bd9221
-      internalID: 368382822
+      spriteID: a2f1b25bf31e9ea4fbfd5675e303f71c
+      internalID: 1793439408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_6
+      name: halbert_death_6
       rect:
         serializedVersion: 2
         x: 900
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbdf962a5fc29634892d947a401e75c7
-      internalID: 524050330
+      spriteID: cc8b0c083b22e3446be5db6e3dfb4a06
+      internalID: -656701118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_7
+      name: halbert_death_7
       rect:
         serializedVersion: 2
         x: 1800
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25147926174f0e743b0e1115df064951
-      internalID: 1017162561
+      spriteID: 9413a5fc770860340a2d7f29d52a0328
+      internalID: -1490682897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_8
+      name: halbert_death_8
       rect:
         serializedVersion: 2
         x: 2700
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9ff016b43414fb4980abde5e92bab57
-      internalID: -336209095
+      spriteID: c4efe4773a83e7148baf8aeba62a0ff1
+      internalID: 1625969445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_9
+      name: halbert_death_9
       rect:
         serializedVersion: 2
         x: 3600
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb05d39ce712fd04a92317c78c9e8675
-      internalID: -1893724072
+      spriteID: 745ba0535bb835f4cace6f4f036b63b1
+      internalID: 1567367170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: halbert_death-ezgif.com-gif-to-sprite-converter_10
+      name: halbert_death_10
       rect:
         serializedVersion: 2
         x: 0
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a5543c3325ae6645b0db482ca8bbd25
-      internalID: -1678097757
+      spriteID: 36c5ecda9a4d5d44fbe4a3bd5a3b2d5c
+      internalID: -1171883792
       vertices: []
       indices: 
       edges: []
@@ -338,17 +338,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      halbert_death-ezgif.com-gif-to-sprite-converter_0: 1274976593
-      halbert_death-ezgif.com-gif-to-sprite-converter_1: 439237558
-      halbert_death-ezgif.com-gif-to-sprite-converter_10: -1678097757
-      halbert_death-ezgif.com-gif-to-sprite-converter_2: -834809385
-      halbert_death-ezgif.com-gif-to-sprite-converter_3: -690862739
-      halbert_death-ezgif.com-gif-to-sprite-converter_4: 1689996751
-      halbert_death-ezgif.com-gif-to-sprite-converter_5: 368382822
-      halbert_death-ezgif.com-gif-to-sprite-converter_6: 524050330
-      halbert_death-ezgif.com-gif-to-sprite-converter_7: 1017162561
-      halbert_death-ezgif.com-gif-to-sprite-converter_8: -336209095
-      halbert_death-ezgif.com-gif-to-sprite-converter_9: -1893724072
+      halbert_death_0: -130616355
+      halbert_death_1: -191776867
+      halbert_death_10: -1171883792
+      halbert_death_2: 1762610081
+      halbert_death_3: 1174027483
+      halbert_death_4: -159996422
+      halbert_death_5: 1793439408
+      halbert_death_6: -656701118
+      halbert_death_7: -1490682897
+      halbert_death_8: 1625969445
+      halbert_death_9: 1567367170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

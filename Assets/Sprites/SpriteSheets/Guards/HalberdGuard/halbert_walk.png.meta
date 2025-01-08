@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 269cc3a9f24091a49a17a836cd45e157
-      internalID: -1861356732
+      spriteID: d4af598a46e0ca143a9832a20714aec3
+      internalID: -2142345870
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fd84679d10c7814c83062a7cb98e9df
-      internalID: 498122454
+      spriteID: 214400822b888fe4185f2878d7db2065
+      internalID: -1404134056
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6314b4a71ff513341aca8a3d864829e6
-      internalID: 949159378
+      spriteID: b0b639b0cb7e6e140a26e977551ea038
+      internalID: -1246806498
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 778b8d4ddd7cc7e40a24cd85454a0170
-      internalID: -780388430
+      spriteID: 1d576dc84d4197a48a43288969440b4f
+      internalID: -125831057
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27692c6412c9e31429ae22d9a3162635
-      internalID: 1782592867
+      spriteID: 76600fa5e2d587d448c45f977a36c0e5
+      internalID: 1923884470
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecdb9943154f69346aba14a34a0bc4a4
-      internalID: 1802550557
+      spriteID: b48bd2d8f00aa3b4096dae01eb8065d4
+      internalID: 1881292590
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e1f7b92a357fdb438ea6893844e589d
-      internalID: 2048509568
+      spriteID: cd8c4dca5b6de5344b1dc952d0cb4589
+      internalID: 1889460912
       vertices: []
       indices: 
       edges: []
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 429c329dbf89ee348ba58689a62683ce
-      internalID: -1693718155
+      spriteID: 093dfac443f92224b877f0e572868836
+      internalID: 1059707316
       vertices: []
       indices: 
       edges: []
@@ -279,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41ed90334bc265045832d989c299c9e8
-      internalID: 1919318621
+      spriteID: a1980f447357c3249aebfee844e0897c
+      internalID: -1037234132
       vertices: []
       indices: 
       edges: []
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da9fe352e3cfaf4dba1e8a48acb6e2f
-      internalID: 186710307
+      spriteID: 53366353aaf64df4d844869ee43d8f32
+      internalID: 1597994212
       vertices: []
       indices: 
       edges: []
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78cf370c6062dbc45ab40b2c2cbb4c9e
-      internalID: 53567022
+      spriteID: 4efe6bd93b90bac4bac3243ee820842f
+      internalID: -1146993378
       vertices: []
       indices: 
       edges: []
@@ -342,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ad6168f46c1bcb4ea731f029b0978f4
-      internalID: 2007846655
+      spriteID: 6a6e2dd2fd224d74ca353dfcba9b87a8
+      internalID: -1123633738
       vertices: []
       indices: 
       edges: []
@@ -359,18 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      halbert_walk_0: -1861356732
-      halbert_walk_1: 498122454
-      halbert_walk_10: 53567022
-      halbert_walk_11: 2007846655
-      halbert_walk_2: 949159378
-      halbert_walk_3: -780388430
-      halbert_walk_4: 1782592867
-      halbert_walk_5: 1802550557
-      halbert_walk_6: 2048509568
-      halbert_walk_7: -1693718155
-      halbert_walk_8: 1919318621
-      halbert_walk_9: 186710307
+      halbert_walk_0: -2142345870
+      halbert_walk_1: -1404134056
+      halbert_walk_10: -1146993378
+      halbert_walk_11: -1123633738
+      halbert_walk_2: -1246806498
+      halbert_walk_3: -125831057
+      halbert_walk_4: 1923884470
+      halbert_walk_5: 1881292590
+      halbert_walk_6: 1889460912
+      halbert_walk_7: 1059707316
+      halbert_walk_8: -1037234132
+      halbert_walk_9: 1597994212
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

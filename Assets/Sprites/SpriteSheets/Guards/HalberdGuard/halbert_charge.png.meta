@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b59fb0e4faf4f94da8baa739d4a68a2
+guid: 148467a44b0579547864e3a2e0cca8b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guard_idle_0
+      name: halbert_charge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5400
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19eaaeb995649c142a539b6de538cb68
+      internalID: 984306752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_charge_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 5400
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf31e8bb5f285a47af8bd3420432d15
+      internalID: -283509835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_charge_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5400
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4051be4f266720044afee2f2136ee732
+      internalID: -964552061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_charge_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 5400
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d07e452921773841ab3cbbe814e9741
+      internalID: 1683463393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_charge_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 5400
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15bbccebeb0ec24c902c31e0b0dcf17
+      internalID: 1677963396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_charge_5
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d2c52a77394c9244a4fb12ff68f7420
-      internalID: 1792734780
+      spriteID: 91845cb1bd717a949b6bdbf5e48f83a4
+      internalID: 871291645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_1
+      name: halbert_charge_6
       rect:
         serializedVersion: 2
         x: 900
@@ -132,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dffa66fd7d9c71648bc4be33e9b1a3a0
-      internalID: -834275928
+      spriteID: df242cbf5583a3c4f984ba653050976f
+      internalID: 694191524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_2
+      name: halbert_charge_7
       rect:
         serializedVersion: 2
         x: 1800
@@ -153,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10ddab59f4085c14c83596800d84a0b9
-      internalID: 1812637326
+      spriteID: 9bf825a7443773a48a2ceb409b409928
+      internalID: -1483165576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_3
+      name: halbert_charge_8
       rect:
         serializedVersion: 2
         x: 2700
@@ -174,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebf233334e06ac442a6b4185861829c3
-      internalID: -1367824144
+      spriteID: d754cc402a02258468fb96d362b983fa
+      internalID: 799942723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_4
+      name: halbert_charge_9
       rect:
         serializedVersion: 2
         x: 3600
@@ -195,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b928c36fdd670f549b454c5f21c1aceb
-      internalID: 1617076053
+      spriteID: ea56fb3a737c89e4cb5e86885ffa7652
+      internalID: 1870327400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_5
+      name: halbert_charge_10
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b53e32ffcc476ea4ba4945ad0b57d0bc
-      internalID: -450593444
+      spriteID: 36aee439734e2aa4b877fb50198f81c4
+      internalID: -1053918674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_6
+      name: halbert_charge_11
       rect:
         serializedVersion: 2
         x: 900
@@ -237,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d486c7bd039055743862831a2c6083d6
-      internalID: 302768908
+      spriteID: 53972cbe695a4c745b5e9a966472b02e
+      internalID: 509020848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_7
+      name: halbert_charge_12
       rect:
         serializedVersion: 2
         x: 1800
@@ -258,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ac969b1f9e487043afe85499d1eef28
-      internalID: 1172087177
+      spriteID: a036601d5362e3a4d9ad4cbdb808173e
+      internalID: 2089427669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_8
+      name: halbert_charge_13
       rect:
         serializedVersion: 2
         x: 2700
@@ -279,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d236f1db3c30d2f4aa616b34b0da23a8
-      internalID: 1319952131
+      spriteID: c63f191932ec8db41a9f98b5feaee966
+      internalID: -190168155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_9
+      name: halbert_charge_14
       rect:
         serializedVersion: 2
         x: 3600
@@ -300,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc71855dacc83f149b918da7aedb34b4
-      internalID: 1878261004
+      spriteID: c0d0edc4aacee924aac13956b858e540
+      internalID: 217832591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_10
+      name: halbert_charge_15
       rect:
         serializedVersion: 2
         x: 0
@@ -321,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32bb5d4d648b6a1449a16280a7fb0efe
-      internalID: -1512396353
+      spriteID: 1a6a7f26d3c7ce2419862f1bc58c31b5
+      internalID: 1132314897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_11
+      name: halbert_charge_16
       rect:
         serializedVersion: 2
         x: 900
@@ -342,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93d6aa381c94b842bcf28aae464f594
-      internalID: 1159866269
+      spriteID: cae85aeb000251c4a8d5ada2a32fc066
+      internalID: 464010612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_12
+      name: halbert_charge_17
       rect:
         serializedVersion: 2
         x: 1800
@@ -363,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b6dc1a5adc75524590ded8b0290bd74
-      internalID: 1024655735
+      spriteID: 7c6d9caaa75e12a47b11bbeefe3b35dd
+      internalID: -1370473859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_13
+      name: halbert_charge_18
       rect:
         serializedVersion: 2
         x: 2700
@@ -384,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 932af6732679ccb4ca069d2a05825b12
-      internalID: 702861275
+      spriteID: 655478ab53bbafd4ea115c7fd128dfc8
+      internalID: 786613712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_14
+      name: halbert_charge_19
       rect:
         serializedVersion: 2
         x: 3600
@@ -405,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd18511b8c45b2e489889b03d1896ea9
-      internalID: 478127489
+      spriteID: 213c7e13819cbbf498c8c3b4e7d1148e
+      internalID: 888925465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_15
+      name: halbert_charge_20
       rect:
         serializedVersion: 2
         x: 0
@@ -426,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69da4d68eeef216459775d02520b22ee
-      internalID: 1362060356
+      spriteID: e035c09e86f6d5a47a0cec7c2281857b
+      internalID: -1237043249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_16
+      name: halbert_charge_21
       rect:
         serializedVersion: 2
         x: 900
@@ -447,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d75e58fb070003740b71dd2cc1c8cb47
-      internalID: -1230133507
+      spriteID: 13a5832384d4bd44480032bd470961ba
+      internalID: 1435896389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_17
+      name: halbert_charge_22
       rect:
         serializedVersion: 2
         x: 1800
@@ -468,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ed16d0a8a926544925384a393a47b6
-      internalID: -868916493
+      spriteID: 21eced8f5f84e584f8c4efa10488c93b
+      internalID: -780362068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_18
+      name: halbert_charge_23
       rect:
         serializedVersion: 2
         x: 2700
@@ -489,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84489fac463d37b44bd1dc8ff5d8dede
-      internalID: -1294063209
+      spriteID: 1ef9cf7a40e2e6a4ea21ced6e1d01a13
+      internalID: 1474679841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_19
+      name: halbert_charge_24
       rect:
         serializedVersion: 2
         x: 3600
@@ -510,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e917d0d6ff3208740ab5933c06c35681
-      internalID: -487080415
+      spriteID: 636e933148ae09149b1a8768f7f409cf
+      internalID: -1881078224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_20
+      name: halbert_charge_25
       rect:
         serializedVersion: 2
         x: 0
@@ -531,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1f315a016ae3ff428074f034bae7c79
-      internalID: 1925985617
+      spriteID: 1b89c7c6376542442a675ca38ace30cf
+      internalID: -1676392788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_21
+      name: halbert_charge_26
       rect:
         serializedVersion: 2
         x: 900
@@ -552,14 +657,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce3cd77bd5bdeef44990dbb99dd9157b
-      internalID: 1447040188
+      spriteID: 08479fb3f747af5489bdfbe6295af461
+      internalID: -1486074883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_22
+      name: halbert_charge_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -573,14 +678,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a167c6f4e07cf4b823fec10628405f
-      internalID: -264024244
+      spriteID: e382decf536c77f45bfb88c50058dbde
+      internalID: 659918298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_23
+      name: halbert_charge_28
       rect:
         serializedVersion: 2
         x: 2700
@@ -594,14 +699,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7fde8687e4f38c4b879553ffed244d4
-      internalID: 1612143270
+      spriteID: 2a837882d6b78e34783d4b17114cecea
+      internalID: -1269783443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_24
+      name: halbert_charge_29
       rect:
         serializedVersion: 2
         x: 3600
@@ -615,14 +720,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2261def964296004887a3f1361c91f95
-      internalID: 1766443618
+      spriteID: 77163d1da62ab4b4188fe86d283a07b1
+      internalID: 478448126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_idle_25
+      name: halbert_charge_30
       rect:
         serializedVersion: 2
         x: 0
@@ -636,29 +741,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8f20a17afbbae249907478ce9aa2144
-      internalID: 881346504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard_idle_26
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 0
-        width: 900
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22be953b26ef88241946be31ede91933
-      internalID: -49793269
+      spriteID: a4af9375ab97c9f4c95b1b319266d836
+      internalID: -1932510051
       vertices: []
       indices: 
       edges: []
@@ -674,33 +758,37 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Guard_idle_0: 1792734780
-      Guard_idle_1: -834275928
-      Guard_idle_10: -1512396353
-      Guard_idle_11: 1159866269
-      Guard_idle_12: 1024655735
-      Guard_idle_13: 702861275
-      Guard_idle_14: 478127489
-      Guard_idle_15: 1362060356
-      Guard_idle_16: -1230133507
-      Guard_idle_17: -868916493
-      Guard_idle_18: -1294063209
-      Guard_idle_19: -487080415
-      Guard_idle_2: 1812637326
-      Guard_idle_20: 1925985617
-      Guard_idle_21: 1447040188
-      Guard_idle_22: -264024244
-      Guard_idle_23: 1612143270
-      Guard_idle_24: 1766443618
-      Guard_idle_25: 881346504
-      Guard_idle_26: -49793269
-      Guard_idle_3: -1367824144
-      Guard_idle_4: 1617076053
-      Guard_idle_5: -450593444
-      Guard_idle_6: 302768908
-      Guard_idle_7: 1172087177
-      Guard_idle_8: 1319952131
-      Guard_idle_9: 1878261004
+      halbert_charge_0: 984306752
+      halbert_charge_1: -283509835
+      halbert_charge_10: -1053918674
+      halbert_charge_11: 509020848
+      halbert_charge_12: 2089427669
+      halbert_charge_13: -190168155
+      halbert_charge_14: 217832591
+      halbert_charge_15: 1132314897
+      halbert_charge_16: 464010612
+      halbert_charge_17: -1370473859
+      halbert_charge_18: 786613712
+      halbert_charge_19: 888925465
+      halbert_charge_2: -964552061
+      halbert_charge_20: -1237043249
+      halbert_charge_21: 1435896389
+      halbert_charge_22: -780362068
+      halbert_charge_23: 1474679841
+      halbert_charge_24: -1881078224
+      halbert_charge_25: -1676392788
+      halbert_charge_26: -1486074883
+      halbert_charge_27: 659918298
+      halbert_charge_28: -1269783443
+      halbert_charge_29: 478448126
+      halbert_charge_3: 1683463393
+      halbert_charge_30: -1932510051
+      halbert_charge_4: 1677963396
+      halbert_charge_5: 871291645
+      halbert_charge_6: 694191524
+      halbert_charge_7: -1483165576
+      halbert_charge_8: 799942723
+      halbert_charge_9: 1870327400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

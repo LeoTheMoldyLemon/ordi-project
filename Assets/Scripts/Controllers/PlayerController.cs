@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementInputVector = movementInput.action.ReadValue<Vector2>();
         float movementModifier = 1;
-        if (primaryAttack.isAttacking) movementModifier = 0.1f;
+        if (primaryAttack.isOnWindup) movementModifier = 0.1f;
 
         movement.Move(movementInputVector.x * movementModifier);
 

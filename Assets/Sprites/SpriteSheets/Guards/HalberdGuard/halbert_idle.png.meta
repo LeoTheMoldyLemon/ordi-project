@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: add4326df687aaa409d04f9e25f5c6be
+guid: 0b4fa46597cb09845891b8afa5b14d1c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guard_halbert_attack_0
+      name: halbert_idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4500
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb1cd96465cc58468f21e74c5da765a
+      internalID: -1408823400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_idle_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 4500
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b74ee7e110d5884992c8755e2f65dbd
+      internalID: 826114844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_idle_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4500
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f41f0ddf000494a879969e1c20d9c7
+      internalID: 711452823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_idle_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 4500
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed37eff52297b34f8cdb35c3a546624
+      internalID: 1802118236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_idle_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 4500
+        width: 900
+        height: 900
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cb9ebcfd59a7241904e74fdcaefd26
+      internalID: -1507375072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: halbert_idle_5
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5dc3f981a3960b4192c9e2846f82a14
-      internalID: 8654321
+      spriteID: 8170270d58595544e83bdc20f4f12e62
+      internalID: 55719012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_1
+      name: halbert_idle_6
       rect:
         serializedVersion: 2
         x: 900
@@ -132,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61e35c346dc0e914d9e3fe5cb93d4528
-      internalID: -710652118
+      spriteID: 8fe8deb8b8b8f134ebd602399071935d
+      internalID: 60998076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_2
+      name: halbert_idle_7
       rect:
         serializedVersion: 2
         x: 1800
@@ -153,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b7a23929012af94980f6ba3516e2729
-      internalID: -615593720
+      spriteID: 9708d203d4902f544a619bfc89d5e059
+      internalID: 36552676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_3
+      name: halbert_idle_8
       rect:
         serializedVersion: 2
         x: 2700
@@ -174,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee4207010c56b04fb3dc06042803187
-      internalID: 811202852
+      spriteID: 8c4d3bf24317f6843abdf454ffb30f16
+      internalID: -1323788804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_4
+      name: halbert_idle_9
       rect:
         serializedVersion: 2
         x: 3600
@@ -195,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e3b6da2d3eff94abf35dc2bd5e70b8
-      internalID: -1671186957
+      spriteID: 6927389487d2a4f418471497f449a627
+      internalID: 922876844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_5
+      name: halbert_idle_10
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c1b831f1d10dc4180c22fd69918c23
-      internalID: -2039359228
+      spriteID: 231b6b9f5c22f124d810ceae5e7955b1
+      internalID: -451450029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_6
+      name: halbert_idle_11
       rect:
         serializedVersion: 2
         x: 900
@@ -237,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 996ca5a999dfa1b4fa5d15d6429443ef
-      internalID: -890798077
+      spriteID: c9ea8b9b60e9cd142b393db067dca79e
+      internalID: 1822917990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_7
+      name: halbert_idle_12
       rect:
         serializedVersion: 2
         x: 1800
@@ -258,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52819312e197c204187539f581b2f4d4
-      internalID: 1825064146
+      spriteID: 46a313fce1cf7be418c9d9481165c54d
+      internalID: 955302582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_8
+      name: halbert_idle_13
       rect:
         serializedVersion: 2
         x: 2700
@@ -279,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dae579f2ee893c4988242b169cc04e5
-      internalID: -1690055132
+      spriteID: 4a27bf61410aa924e99bdc9de31f6c28
+      internalID: 206943096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_9
+      name: halbert_idle_14
       rect:
         serializedVersion: 2
         x: 3600
@@ -300,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fa94438ebeb663419c4a372a5b58e63
-      internalID: 1303007152
+      spriteID: 58568313952cb15499762658bf699e5c
+      internalID: 388462678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_10
+      name: halbert_idle_15
       rect:
         serializedVersion: 2
         x: 0
@@ -321,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d7a39bcbd34a4409cf8d6d29ac5a60
-      internalID: 1645884949
+      spriteID: e6e5ebcef809bad4486ae02d4fff46f7
+      internalID: -591725767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_11
+      name: halbert_idle_16
       rect:
         serializedVersion: 2
         x: 900
@@ -342,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50e2d0a9f4dc7464882a6441e3fcfa37
-      internalID: -800484456
+      spriteID: 940bfd6eadb3d3546b97e7dbab431eed
+      internalID: 1574751531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_12
+      name: halbert_idle_17
       rect:
         serializedVersion: 2
         x: 1800
@@ -363,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 864b4a8ce79a810419016dc619af1d21
-      internalID: -558636686
+      spriteID: de892578a50ca264bbe0dda2b0d861d9
+      internalID: -1283164137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_13
+      name: halbert_idle_18
       rect:
         serializedVersion: 2
         x: 2700
@@ -384,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96dccb63e78c0684983e16fe2ad49fce
-      internalID: 1274295756
+      spriteID: 21566f0ef33005f4ab047efc9131f400
+      internalID: -1514989962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_14
+      name: halbert_idle_19
       rect:
         serializedVersion: 2
         x: 3600
@@ -405,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd7e14398e71e2498b6f400ff8d1d96
-      internalID: -1947773572
+      spriteID: 8295a3089ab1fc94490d354a6bb1df28
+      internalID: 1252794067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_15
+      name: halbert_idle_20
       rect:
         serializedVersion: 2
         x: 0
@@ -426,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4059adac4f8cca640b5078bd780d950f
-      internalID: -2140732873
+      spriteID: f35143ef0de8350478fcee60dc435720
+      internalID: 477566669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_16
+      name: halbert_idle_21
       rect:
         serializedVersion: 2
         x: 900
@@ -447,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe6ccca38a3c214d9206315b18ed848
-      internalID: -348152604
+      spriteID: 585bd946d874edb478905fefd9da19b6
+      internalID: -1712660222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_17
+      name: halbert_idle_22
       rect:
         serializedVersion: 2
         x: 1800
@@ -468,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 265b493dc24c18242af4eca4e9220a13
-      internalID: 898034386
+      spriteID: 3550abf63a8f06d429caee9e851654d4
+      internalID: -119729722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_18
+      name: halbert_idle_23
       rect:
         serializedVersion: 2
         x: 2700
@@ -489,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a914bc52bf297f44905a42fa4035661
-      internalID: -490551892
+      spriteID: 6a851e9e73eade04ba4efbc0c4dd27be
+      internalID: -2082424934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_19
+      name: halbert_idle_24
       rect:
         serializedVersion: 2
         x: 3600
@@ -510,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d775b6ef44301d141b86c914600b1ee6
-      internalID: -932320210
+      spriteID: 62ddc2daf77350e498384d90f0078300
+      internalID: 410131787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_20
+      name: halbert_idle_25
       rect:
         serializedVersion: 2
         x: 0
@@ -531,14 +636,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 700a7ea0c990e714084578ef82be5ea9
-      internalID: 695219831
+      spriteID: 77806633ceba23244b25c49e45fa7953
+      internalID: -849687529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guard_halbert_attack_21
+      name: halbert_idle_26
       rect:
         serializedVersion: 2
         x: 900
@@ -552,50 +657,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62b2cea065894b442b773814f79d0bcb
-      internalID: -134944099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard_halbert_attack_22
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 900
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 494ce53ed83c4ec47af73d7060eeea72
-      internalID: -1429081812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guard_halbert_attack_23
-      rect:
-        serializedVersion: 2
-        x: 2700
-        y: 0
-        width: 900
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8ce9a54c90d981489c415456226854a
-      internalID: -2138991074
+      spriteID: f4b369aaf80197f4f84e05012e4a61f1
+      internalID: -2002329451
       vertices: []
       indices: 
       edges: []
@@ -611,30 +674,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Guard_halbert_attack_0: 8654321
-      Guard_halbert_attack_1: -710652118
-      Guard_halbert_attack_10: 1645884949
-      Guard_halbert_attack_11: -800484456
-      Guard_halbert_attack_12: -558636686
-      Guard_halbert_attack_13: 1274295756
-      Guard_halbert_attack_14: -1947773572
-      Guard_halbert_attack_15: -2140732873
-      Guard_halbert_attack_16: -348152604
-      Guard_halbert_attack_17: 898034386
-      Guard_halbert_attack_18: -490551892
-      Guard_halbert_attack_19: -932320210
-      Guard_halbert_attack_2: -615593720
-      Guard_halbert_attack_20: 695219831
-      Guard_halbert_attack_21: -134944099
-      Guard_halbert_attack_22: -1429081812
-      Guard_halbert_attack_23: -2138991074
-      Guard_halbert_attack_3: 811202852
-      Guard_halbert_attack_4: -1671186957
-      Guard_halbert_attack_5: -2039359228
-      Guard_halbert_attack_6: -890798077
-      Guard_halbert_attack_7: 1825064146
-      Guard_halbert_attack_8: -1690055132
-      Guard_halbert_attack_9: 1303007152
+      halbert_idle_0: -1408823400
+      halbert_idle_1: 826114844
+      halbert_idle_10: -451450029
+      halbert_idle_11: 1822917990
+      halbert_idle_12: 955302582
+      halbert_idle_13: 206943096
+      halbert_idle_14: 388462678
+      halbert_idle_15: -591725767
+      halbert_idle_16: 1574751531
+      halbert_idle_17: -1283164137
+      halbert_idle_18: -1514989962
+      halbert_idle_19: 1252794067
+      halbert_idle_2: 711452823
+      halbert_idle_20: 477566669
+      halbert_idle_21: -1712660222
+      halbert_idle_22: -119729722
+      halbert_idle_23: -2082424934
+      halbert_idle_24: 410131787
+      halbert_idle_25: -849687529
+      halbert_idle_26: -2002329451
+      halbert_idle_3: 1802118236
+      halbert_idle_4: -1507375072
+      halbert_idle_5: 55719012
+      halbert_idle_6: 60998076
+      halbert_idle_7: 36552676
+      halbert_idle_8: -1323788804
+      halbert_idle_9: 922876844
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
