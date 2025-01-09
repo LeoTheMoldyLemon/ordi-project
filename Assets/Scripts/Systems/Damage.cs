@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Damage : MonoBehaviour
 {
 
-    [SerializeField] private int damage;
+    [SerializeField] private int damage, backstabDamage;
     [SerializeField] private bool isSingleFrame;
 
     enum OnHitAction
@@ -57,7 +57,10 @@ public class Damage : MonoBehaviour
         }
         else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
-            targetHealth.TakeDamage(damage);
+            if (Math.Sign(collision.transform.localScale.x) == Math.Sign(collision.transform.position.x - transform.position.x))
+                targetHealth.TakeDamage(backstabDamage);
+            else
+                targetHealth.TakeDamage(damage);
             hitEvent.Invoke(this, collision);
             TakeAction(onHitTarget, collision);
         }

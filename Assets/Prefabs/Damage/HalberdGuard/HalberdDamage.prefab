@@ -144,10 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  backstabDamage: 1
   isSingleFrame: 1
   onHitTarget: 2
   onHitStructure: 2
-  targetTag: Player
   hitEvent:
     m_PersistentCalls:
       m_Calls: []
