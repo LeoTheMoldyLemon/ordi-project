@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7719881491573045673
+--- !u!1001 &2283132548856349788
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4922143109941459257, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_Size.x
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4922143109941459257, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_Size.y
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -4922143109941459257, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ec3b2c05ab4de5743a948810e902769a, type: 3}
+      objectReference: {fileID: 21300000, guid: e6802b6769ce36445afb9b85cc4e0e43, type: 3}
     - target: {fileID: -4922143109941459257, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1773036115881188938, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_Name
-      value: Lantern
+      value: BlazerBase
       objectReference: {fileID: 0}
     - target: {fileID: 8253188651677840163, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,63 +71,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1773036115881188938, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8242354960576706460}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
---- !u!1 &8338856320901556195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1773036115881188938, guid: 8e0711efc5dbb1140b4e69b30942612f, type: 3}
-  m_PrefabInstance: {fileID: 7719881491573045673}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8242354960576706460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8338856320901556195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.79
-  m_Color: {r: 0.57427806, g: 0.36789685, b: 0.667, a: 1}
-  m_Intensity: 2
-  m_LightVolumeIntensity: 0.01
-  m_LightVolumeIntensityEnabled: 1
-  m_ApplyToSortingLayers: 0000000055297bbb1194951defca2ff2
-  m_LightCookieSprite: {fileID: 0}
-  m_DeprecatedPointLightCookieSprite: {fileID: 0}
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
-  m_NormalMapDistance: 3
-  m_NormalMapQuality: 2
-  m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 1
-  m_ShadowIntensity: 0.65
-  m_ShadowVolumeIntensityEnabled: 1
-  m_ShadowVolumeIntensity: 0.75
-  m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 40
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
