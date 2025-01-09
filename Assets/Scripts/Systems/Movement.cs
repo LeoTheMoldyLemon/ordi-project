@@ -68,12 +68,15 @@ public class Movement : MonoBehaviour
         collider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
-        health.AddCheckInvincibilityFunctions(CheckIsInvincible);
     }
 
     public void Start()
     {
         isGrounded = CheckIsGrounded();
+        if (health != null)
+            health.AddCheckInvincibilityFunctions(CheckIsInvincible);
+        else
+            Debug.LogWarning("Health module not found on " + name);
     }
 
     public void OnDrawGizmos()

@@ -82,7 +82,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 496342033
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1083009328, guid: 2b273cd28b21d5746a476db349046a11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -296,8 +296,12 @@ MonoBehaviour:
   particleEffect: {fileID: 8090121338592848775, guid: d798dc5c35b00cd469b494ab13842583, type: 3}
   particleEffectRoot: {fileID: 0}
   reloadCheckpointOnDeath: 1
+  destroyOnDeath: 0
+  resetHealthOnDeath: 0
   checkpointManager: {fileID: 0}
-  isInvicible: 0
+  death:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &3660400508602225836
 Animator:
   serializedVersion: 5
@@ -337,7 +341,7 @@ MonoBehaviour:
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000efca2ff21194951d55297bbb
+  m_ApplyToSortingLayers: 000000001194951d55297bbb
   m_ShapePath:
   - {x: -0.96983814, y: -1.8592548, z: 0}
   - {x: -0.44655466, y: 0.0005378723, z: 0}
@@ -348,7 +352,7 @@ MonoBehaviour:
   - {x: -0.066337585, y: -0.14196396, z: 0}
   m_ShapePathHash: 796822863
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29326
+  m_InstanceId: -1302
   m_LocalBounds:
     m_Center: {x: -0.04411125, y: -0.041137695, z: 0}
     m_Extent: {x: 0.9257269, y: 1.8788643, z: 0}

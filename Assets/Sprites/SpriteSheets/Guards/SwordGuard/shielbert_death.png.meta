@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3dab7bc80443924bb7da0f49a916e90
+guid: 2e5d1a3dec831b84ea9b2617fbf68084
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roll_spritesheet_0
+      name: shielbert_death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf1d51d501cf82c4ba6523e72a90d521
-      internalID: 1567604473
+      spriteID: 8e04bbf199f95d64f9a52118df17bdfa
+      internalID: -1364641817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_1
+      name: shielbert_death_1
       rect:
         serializedVersion: 2
         x: 700
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 114282ab8389df449bfc41aa4da345d4
-      internalID: 9489644
+      spriteID: 28762d75a03acd442b657368aff2c265
+      internalID: 388224384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_2
+      name: shielbert_death_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c63a999012c751e41b3d389c59c69010
-      internalID: -1816949891
+      spriteID: 8327b8c06586ecb43be58aeaaf143943
+      internalID: 1889247675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_3
+      name: shielbert_death_3
       rect:
         serializedVersion: 2
         x: 2100
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 060ce58aa03bbaa4c897fff591120da5
-      internalID: 1395324815
+      spriteID: 05ad73bb30c0b9645a611085c4e2c797
+      internalID: -781919002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_4
+      name: shielbert_death_4
       rect:
         serializedVersion: 2
         x: 2800
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d638c54021c99e249a0a089faeeb58e5
-      internalID: -1740035820
+      spriteID: 9797cca7bd69a054aaefd4b360f24b78
+      internalID: -381796262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_5
+      name: shielbert_death_5
       rect:
         serializedVersion: 2
         x: 0
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693ff35cd60b53e4bb7a26100ada9d08
-      internalID: 1569111772
+      spriteID: bb374afe9c260084dbe609981da4e83f
+      internalID: 180328822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_6
+      name: shielbert_death_6
       rect:
         serializedVersion: 2
         x: 700
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 610c7a736dc078f45b467f57c670450d
-      internalID: 518061077
+      spriteID: b90c2c12f05289b419529d0d8a921e45
+      internalID: -1369015899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roll_spritesheet_7
+      name: shielbert_death_7
       rect:
         serializedVersion: 2
         x: 1400
@@ -258,50 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6d0de63150e2464297a26f7b97b718e
-      internalID: 1796784260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: roll_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 0
-        width: 700
-        height: 700
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36e0cd4f1e48b1448a45553e79f1f388
-      internalID: 1943350105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: roll_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 2800
-        y: 0
-        width: 700
-        height: 700
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 639a305811306804baf36e126296bb43
-      internalID: 846785038
+      spriteID: c57df028cc8527847a1ad42cd746f452
+      internalID: -1248875930
       vertices: []
       indices: 
       edges: []
@@ -317,16 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      roll_spritesheet_0: 1567604473
-      roll_spritesheet_1: 9489644
-      roll_spritesheet_2: -1816949891
-      roll_spritesheet_3: 1395324815
-      roll_spritesheet_4: -1740035820
-      roll_spritesheet_5: 1569111772
-      roll_spritesheet_6: 518061077
-      roll_spritesheet_7: 1796784260
-      roll_spritesheet_8: 1943350105
-      roll_spritesheet_9: 846785038
+      shielbert_death_0: -1364641817
+      shielbert_death_1: 388224384
+      shielbert_death_2: 1889247675
+      shielbert_death_3: -781919002
+      shielbert_death_4: -381796262
+      shielbert_death_5: 180328822
+      shielbert_death_6: -1369015899
+      shielbert_death_7: -1248875930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

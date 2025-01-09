@@ -14,7 +14,7 @@ public class SwordFighterAI : AIBehaviour
     {
         if (isTargetDetected)
         {
-            if (Vector2.Distance(transform.position, detector.target.position) < minShieldUpDistance)
+            if (Vector2.Distance(transform.position, detector.target.position) > minShieldUpDistance)
                 return attackAction;
             else
             {

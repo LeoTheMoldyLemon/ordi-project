@@ -9772,7 +9772,7 @@ MonoBehaviour:
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_OverlapOperation: 0
+  m_OverlapOperation: 1
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
@@ -9913,7 +9913,7 @@ MonoBehaviour:
   - {x: 1.3890687, y: 0.40652466, z: 0}
   m_ShapePathHash: -1230820964
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29114
+  m_InstanceId: -3624
   m_LocalBounds:
     m_Center: {x: 0.011980534, y: 0.27325344, z: 0}
     m_Extent: {x: 1.3770881, y: 0.13327122, z: 0}

@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     [SerializeField] private bool destroyOnDeath = false;
     [SerializeField] private bool resetHealthOnDeath = false;
 
-    [SerializeField] private List<Func<Damage, bool>> checkInvincibilityFunctions;
+    [SerializeField] private List<Func<Damage, bool>> checkInvincibilityFunctions = new();
 
     [SerializeField] private CheckpointManager checkpointManager;
     public UnityEvent death = new();
@@ -39,12 +39,19 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(Damage damage)
     {
+        Debug.Log("Taking damage " + damage.name, this);
         foreach (var checkInvincibilityFunction in checkInvincibilityFunctions)
             if (checkInvincibilityFunction.Invoke(damage))
+            {
+                Debug.Log("Nope. " + damage.name, this);
                 return;
+            }
 
         if (Math.Sign(transform.localScale.x) == Math.Sign(transform.position.x - damage.transform.position.x) && damage.isBackstab)
+        {
+            Debug.Log("Backstab", this);
             currentHealth -= damage.amount * 2;
+        }
         else
             currentHealth -= damage.amount;
 

@@ -29,12 +29,14 @@ public class Damage : MonoBehaviour
         {
             var collider = GetComponent<Collider2D>();
             List<Collider2D> collisions = new();
-            Physics2D.OverlapCollider(collider, new ContactFilter2D(), collisions);
+            var contactFilter = new ContactFilter2D();
+            contactFilter.SetLayerMask(collider.includeLayers);
+            contactFilter.useLayerMask = true;
+            Physics2D.OverlapCollider(collider, contactFilter, collisions);
 
             foreach (Collider2D collision in collisions)
-            {
                 Hit(collision);
-            }
+
             Destroy(gameObject);
         }
     }
@@ -50,6 +52,7 @@ public class Damage : MonoBehaviour
 
     private void Hit(Collider2D collision)
     {
+        Debug.Log("hit " + collision.name, this);
         if (collision.gameObject.CompareTag("Structure"))
         {
             hitEvent.Invoke(this, collision);
@@ -57,10 +60,6 @@ public class Damage : MonoBehaviour
         }
         else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
-            /* if (Math.Sign(collision.transform.localScale.x) == Math.Sign(collision.transform.position.x - transform.position.x))
-                 targetHealth.TakeDamage(backstabDamage);
-             else
-                 targetHealth.TakeDamage(damage);*/
             targetHealth.TakeDamage(this);
             hitEvent.Invoke(this, collision);
             TakeAction(onHitTarget, collision);

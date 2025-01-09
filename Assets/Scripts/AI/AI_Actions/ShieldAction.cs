@@ -6,12 +6,19 @@ using Random = UnityEngine.Random;
 
 public class ShieldAction : AIAction
 {
-    [SerializeField] private float chaseSpeedModifier, windupTime, cooldownTime, cancelShieldDistance, maxRaisedTime, minRaisedTime, minChaseDistance, turnaroundTime;
+    [SerializeField] private float windupTime, cooldownTime, cancelShieldDistance, maxRaisedTime, minRaisedTime, turnaroundTime;
     public Health health;
     [SerializeField] private Animator animator;
-    private bool isShieldRaised = false, isOnWindup = false, isOnCooldown = false, attemptingTurnaround = false;
-    private float startTimestamp, cooldownTimestamp, raisedTime, turnaroundTimestamp;
     [SerializeField] private Transform target;
+    [Header("Debug values")]
+    [SerializeField] private bool isShieldRaised = false;
+    [SerializeField] private bool isOnWindup = false, isOnCooldown = false, attemptingTurnaround = false;
+    private float startTimestamp, cooldownTimestamp, raisedTime, turnaroundTimestamp;
+
+    public void Start()
+    {
+        health.AddCheckInvincibilityFunctions(CheckIsInvincible);
+    }
 
     public override void Do()
     {
@@ -29,6 +36,7 @@ public class ShieldAction : AIAction
             if (cooldownTimestamp + cooldownTime < Time.time)
             {
                 isOnCooldown = false;
+                animator.SetBool("ShieldRaised", false);
             }
         }
         else if (isShieldRaised)
@@ -38,26 +46,24 @@ public class ShieldAction : AIAction
                 movement.Move(0);
                 isShieldRaised = false;
                 isOnCooldown = true;
+                animator.SetTrigger("LowerShield");
             }
             else
             {
-                float moveDirection = Math.Sign(target.position.x - transform.position.x) * chaseSpeedModifier;
+                float moveDirection = Math.Sign(target.position.x - transform.position.x);
                 if (Math.Sign(moveDirection) != Math.Sign(movement.facing.x))
                 {
                     if (!attemptingTurnaround)
                     {
                         attemptingTurnaround = true;
-                        turnaroundTime = Time.time + turnaroundTimestamp;
+                        turnaroundTimestamp = Time.time + turnaroundTime;
                     }
-                    else if (turnaroundTime < Time.time)
+                    else if (turnaroundTimestamp < Time.time)
                     {
                         attemptingTurnaround = false;
                         movement.Move(moveDirection);
+                        movement.Move(0);
                     }
-                }
-                else if (Vector2.Distance(transform.position, target.position) > minChaseDistance)
-                {
-                    movement.Move(moveDirection);
                 }
 
             }
@@ -65,8 +71,16 @@ public class ShieldAction : AIAction
         else
         {
             movement.Move(0);
+            startTimestamp = Time.time;
             isOnWindup = true;
+            animator.SetBool("ShieldRaised", true);
+            animator.SetTrigger("RaiseShield");
         }
+    }
+
+    public bool CheckIsInvincible(Damage damage)
+    {
+        return isShieldRaised && Math.Sign(damage.transform.position.x - transform.position.x) == Math.Sign(movement.facing.x);
     }
 
     public override bool Stuck()
