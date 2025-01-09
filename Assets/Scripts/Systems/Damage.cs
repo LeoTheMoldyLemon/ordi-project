@@ -20,7 +20,6 @@ public class Damage : MonoBehaviour
 
     [SerializeField] private OnHitAction onHitTarget;
     [SerializeField] private OnHitAction onHitStructure;
-    [SerializeField] private string targetTag;
 
     public UnityEvent<Damage, Collider2D> hitEvent = new();
 
@@ -56,7 +55,7 @@ public class Damage : MonoBehaviour
             hitEvent.Invoke(this, collision);
             TakeAction(onHitStructure, collision);
         }
-        else if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
+        else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
             targetHealth.TakeDamage(damage);
             hitEvent.Invoke(this, collision);

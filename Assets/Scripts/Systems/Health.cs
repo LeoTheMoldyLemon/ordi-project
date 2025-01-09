@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
@@ -16,8 +17,12 @@ public class Health : MonoBehaviour
 
 
     [SerializeField] private bool reloadCheckpointOnDeath = false;
+    [SerializeField] private bool destroyOnDeath = false;
+    [SerializeField] private bool resetHealthOnDeath = false;
 
     [SerializeField] private CheckpointManager checkpointManager;
+    public bool isInvicible = false;
+    public UnityEvent death = new();
 
     void Awake()
     {
@@ -27,6 +32,8 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageAmmount)
     {
+        if (isInvicible && damageAmmount > 0) return;
+
         currentHealth -= damageAmmount;
         if (damageAmmount > 0)
         {
@@ -42,16 +49,20 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            death.Invoke();
             if (deadBody)
             {
                 var body = Instantiate(deadBody, transform.position, Quaternion.identity);
                 body.transform.localScale = transform.localScale;
             }
             if (reloadCheckpointOnDeath)
-            {
                 checkpointManager.Reload();
-            }
-            Destroy(gameObject);
+
+            if (destroyOnDeath)
+                Destroy(gameObject);
+
+            if (resetHealthOnDeath)
+                currentHealth = maxHealth;
         }
         else if (currentHealth > maxHealth) currentHealth = maxHealth;
     }

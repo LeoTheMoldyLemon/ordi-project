@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
 {
     private Movement movement;
     private new Rigidbody2D rigidbody;
-    [SerializeField] private InputActionReference movementInput;
-    [SerializeField] private InputActionReference attackInput;
+    [SerializeField] private InputActionReference movementInput, attackInput, rollInput;
     [SerializeField] private Attack primaryAttack;
     void Awake()
     {
@@ -27,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
         movement.Move(movementInputVector.x * movementModifier);
 
-        if (movementInputVector.y > 0)
+        if (movementInputVector.y > 0 && !primaryAttack.isOnWindup && !primaryAttack.isAttacking)
         {
             movement.Jump();
         }
@@ -42,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
         if (attackInput.action.ReadValue<float>() > 0 && movement.isGrounded)
             primaryAttack.Perform();
+
+        if (rollInput.action.ReadValue<float>() > 0)
+            movement.Roll();
 
     }
 

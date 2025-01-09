@@ -220,14 +220,22 @@ MonoBehaviour:
   wallJumpPushoffSpeed: 20
   wallJumpWarmupTime: 0
   wallSlideMaxSpeed: 2
+  canRoll: 1
+  rollSpeed: 17
+  rollDuration: 0.5833333
+  rollCooldownTime: 0.5
+  rollWarmupTime: 0.08333334
   isJumping: 0
   isHoldingWall: 0
-  isWarmupJumping: 0
-  isWarmupWallJumping: 0
   isGrounded: 0
   isDropping: 0
   isInGroundCoyoteTime: 0
+  isWarmupJumping: 0
   isInWallCoyoteTime: 0
+  isWarmupWallJumping: 0
+  isRolling: 0
+  isWarmupRolling: 0
+  isCooldownRolling: 0
   currentMovementDirectionModifier: 0
   facing: {x: 1, y: 0}
 --- !u!114 &2668496540629612201
@@ -244,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInput: {fileID: 8261544671404633357, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
   attackInput: {fileID: 5141050815520645460, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
+  rollInput: {fileID: 2849782230173227322, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
   primaryAttack: {fileID: 7514331934427013530}
 --- !u!114 &7514331934427013530
 MonoBehaviour:
@@ -288,6 +297,7 @@ MonoBehaviour:
   particleEffectRoot: {fileID: 0}
   reloadCheckpointOnDeath: 1
   checkpointManager: {fileID: 0}
+  isInvicible: 0
 --- !u!95 &3660400508602225836
 Animator:
   serializedVersion: 5
