@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +21,9 @@ public class Health : MonoBehaviour
     [SerializeField] private bool destroyOnDeath = false;
     [SerializeField] private bool resetHealthOnDeath = false;
 
+    [SerializeField] private List<Func<Damage, bool>> checkInvincibilityFunctions;
+
     [SerializeField] private CheckpointManager checkpointManager;
-    public bool isInvicible = false;
     public UnityEvent death = new();
 
     void Awake()
@@ -30,12 +32,23 @@ public class Health : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int damageAmmount)
+    public void AddCheckInvincibilityFunctions(Func<Damage, bool> function)
     {
-        if (isInvicible && damageAmmount > 0) return;
+        checkInvincibilityFunctions.Add(function);
+    }
 
-        currentHealth -= damageAmmount;
-        if (damageAmmount > 0)
+    public void TakeDamage(Damage damage)
+    {
+        foreach (var checkInvincibilityFunction in checkInvincibilityFunctions)
+            if (checkInvincibilityFunction.Invoke(damage))
+                return;
+
+        if (Math.Sign(transform.localScale.x) == Math.Sign(transform.position.x - damage.transform.position.x) && damage.isBackstab)
+            currentHealth -= damage.amount * 2;
+        else
+            currentHealth -= damage.amount;
+
+        if (damage.amount > 0)
         {
             animator.SetTrigger("TakeDamage");
             if (particleEffect)

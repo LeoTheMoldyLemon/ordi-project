@@ -68,6 +68,7 @@ public class Movement : MonoBehaviour
         collider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
+        health.AddCheckInvincibilityFunctions(CheckIsInvincible);
     }
 
     public void Start()
@@ -111,6 +112,11 @@ public class Movement : MonoBehaviour
                 Vector3.down,
                 0.1f,
                 LayerMask.GetMask("Structure", "Platform"));
+    }
+
+    private bool CheckIsInvincible(Damage damage)
+    {
+        return isRolling;
     }
 
     private bool CheckIsHoldingWall()
@@ -167,11 +173,9 @@ public class Movement : MonoBehaviour
             currentMovementDirectionModifier = newVelocityX / (baseMovementSpeed * movementSpeedModifier);
             isRolling = true;
             isWarmupRolling = false;
-            if (health) health.isInvicible = true;
         }
         else if (isRolling && Time.time > rollStartTime + rollWarmupTime + rollDuration)
         {
-            if (health) health.isInvicible = false;
             animator.SetBool("Rolling", false);
             isRolling = false;
             isCooldownRolling = true;

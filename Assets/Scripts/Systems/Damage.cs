@@ -7,8 +7,8 @@ using UnityEngine.Events;
 
 public class Damage : MonoBehaviour
 {
-
-    [SerializeField] private int damage, backstabDamage;
+    public int amount;
+    public bool isBackstab;
     [SerializeField] private bool isSingleFrame;
 
     enum OnHitAction
@@ -57,10 +57,11 @@ public class Damage : MonoBehaviour
         }
         else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
-            if (Math.Sign(collision.transform.localScale.x) == Math.Sign(collision.transform.position.x - transform.position.x))
-                targetHealth.TakeDamage(backstabDamage);
-            else
-                targetHealth.TakeDamage(damage);
+            /* if (Math.Sign(collision.transform.localScale.x) == Math.Sign(collision.transform.position.x - transform.position.x))
+                 targetHealth.TakeDamage(backstabDamage);
+             else
+                 targetHealth.TakeDamage(damage);*/
+            targetHealth.TakeDamage(this);
             hitEvent.Invoke(this, collision);
             TakeAction(onHitTarget, collision);
         }
