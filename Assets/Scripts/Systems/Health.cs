@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
@@ -16,8 +18,13 @@ public class Health : MonoBehaviour
 
 
     [SerializeField] private bool reloadCheckpointOnDeath = false;
+    [SerializeField] private bool destroyOnDeath = false;
+    [SerializeField] private bool resetHealthOnDeath = false;
+
+    [SerializeField] private List<Func<Damage, bool>> checkInvincibilityFunctions = new();
 
     [SerializeField] private CheckpointManager checkpointManager;
+    public UnityEvent death = new();
 
     void Awake()
     {
@@ -25,10 +32,30 @@ public class Health : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int damageAmmount)
+    public void AddCheckInvincibilityFunctions(Func<Damage, bool> function)
     {
-        currentHealth -= damageAmmount;
-        if (damageAmmount > 0)
+        checkInvincibilityFunctions.Add(function);
+    }
+
+    public void TakeDamage(Damage damage)
+    {
+        Debug.Log("Taking damage " + damage.name, this);
+        foreach (var checkInvincibilityFunction in checkInvincibilityFunctions)
+            if (checkInvincibilityFunction.Invoke(damage))
+            {
+                Debug.Log("Nope. " + damage.name, this);
+                return;
+            }
+
+        if (Math.Sign(transform.localScale.x) == Math.Sign(transform.position.x - damage.transform.position.x) && damage.isBackstab)
+        {
+            Debug.Log("Backstab", this);
+            currentHealth -= damage.amount * 2;
+        }
+        else
+            currentHealth -= damage.amount;
+
+        if (damage.amount > 0)
         {
             animator.SetTrigger("TakeDamage");
             if (particleEffect)
@@ -42,16 +69,20 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            death.Invoke();
             if (deadBody)
             {
                 var body = Instantiate(deadBody, transform.position, Quaternion.identity);
                 body.transform.localScale = transform.localScale;
             }
             if (reloadCheckpointOnDeath)
-            {
                 checkpointManager.Reload();
-            }
-            Destroy(gameObject);
+
+            if (destroyOnDeath)
+                Destroy(gameObject);
+
+            if (resetHealthOnDeath)
+                currentHealth = maxHealth;
         }
         else if (currentHealth > maxHealth) currentHealth = maxHealth;
     }

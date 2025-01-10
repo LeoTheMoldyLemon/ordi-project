@@ -9,12 +9,18 @@ using System.Collections;
 
 public class CheckpointManager : MonoBehaviour
 {
+    public static CheckpointManager Instance { get; private set; }
     private Dictionary<string, SaveableBehaviour> saveableObjects = new();
     [SerializeField] private string saveFileName;
 
     [SerializeField] private Checkpoint currentCheckpoint;
     [SerializeField] private CameraFader cameraFader;
     [SerializeField] private bool debugMode = false;
+
+    void Awake()
+    {
+        if (!Instance) Instance = this;
+    }
 
     public void Start()
     {

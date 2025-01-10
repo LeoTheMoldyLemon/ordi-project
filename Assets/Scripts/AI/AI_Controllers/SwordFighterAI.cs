@@ -2,52 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordFighterAI : MonoBehaviour
+public class SwordFighterAI : AIBehaviour
 {
-    [SerializeField] private Detector detector;
-    [SerializeField] private Attack attack;
-    [SerializeField] private Movement movement;
 
+    [SerializeField] private AIAction idleAction, attackAction, shieldAction, lostTargetAction;
+    [SerializeField] private float minShieldDownTime, maxShieldDownTime;
+    [SerializeField] private float minShieldUpDistance;
+    private float raiseShieldTimestamp;
 
-    [SerializeField] private AIAction idleAction, attackAction, lostTargetAction;
-    [SerializeField] private float forgetTargetDelay;
-    [SerializeField] private bool isTargetDetected = false;
-    [SerializeField] private bool isTargetLost = false;
-    private float timeAtTargetLost;
-    void Awake()
-    {
-        detector.targetDetected.AddListener(TargetDetectedHandler);
-        detector.targetLost.AddListener(TargetLostHandler);
-    }
-
-    void Update()
+    protected override AIAction SelectAction()
     {
         if (isTargetDetected)
         {
-            attackAction.Do();
+            if (Vector2.Distance(transform.position, detector.target.position) > minShieldUpDistance)
+                return attackAction;
+            else
+            {
+                if (raiseShieldTimestamp < Time.time)
+                {
+                    raiseShieldTimestamp = Time.time + Random.Range(minShieldDownTime, maxShieldDownTime);
+                    return shieldAction;
+                }
+                else
+                {
+                    return attackAction;
+                }
+            }
         }
         else if (isTargetLost)
         {
-            lostTargetAction.Do();
             if (Time.time > timeAtTargetLost + forgetTargetDelay) isTargetLost = false;
+            return lostTargetAction;
         }
         else
         {
-            idleAction.Do();
+            return idleAction;
         }
 
     }
 
-
-    public void TargetDetectedHandler()
-    {
-        isTargetDetected = true;
-        isTargetLost = false;
-    }
-    public void TargetLostHandler()
-    {
-        isTargetDetected = false;
-        isTargetLost = true;
-        timeAtTargetLost = Time.time;
-    }
 }

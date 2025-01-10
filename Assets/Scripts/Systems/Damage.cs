@@ -1,14 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Damage : MonoBehaviour
 {
-
-    [SerializeField] private int damage;
+    public int amount;
+    public bool isBackstab;
     [SerializeField] private bool isSingleFrame;
 
     enum OnHitAction
@@ -20,7 +20,6 @@ public class Damage : MonoBehaviour
 
     [SerializeField] private OnHitAction onHitTarget;
     [SerializeField] private OnHitAction onHitStructure;
-    [SerializeField] private string targetTag;
 
     public UnityEvent<Damage, Collider2D> hitEvent = new();
 
@@ -30,12 +29,14 @@ public class Damage : MonoBehaviour
         {
             var collider = GetComponent<Collider2D>();
             List<Collider2D> collisions = new();
-            Physics2D.OverlapCollider(collider, new ContactFilter2D(), collisions);
+            var contactFilter = new ContactFilter2D();
+            contactFilter.SetLayerMask(collider.includeLayers);
+            contactFilter.useLayerMask = true;
+            Physics2D.OverlapCollider(collider, contactFilter, collisions);
 
             foreach (Collider2D collision in collisions)
-            {
                 Hit(collision);
-            }
+
             Destroy(gameObject);
         }
     }
@@ -51,14 +52,15 @@ public class Damage : MonoBehaviour
 
     private void Hit(Collider2D collision)
     {
+        Debug.Log("hit " + collision.name, this);
         if (collision.gameObject.CompareTag("Structure"))
         {
             hitEvent.Invoke(this, collision);
             TakeAction(onHitStructure, collision);
         }
-        else if (collision.gameObject.TryGetComponent(out Health targetHealth) && collision.gameObject.CompareTag(targetTag))
+        else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
-            targetHealth.TakeDamage(damage);
+            targetHealth.TakeDamage(this);
             hitEvent.Invoke(this, collision);
             TakeAction(onHitTarget, collision);
         }

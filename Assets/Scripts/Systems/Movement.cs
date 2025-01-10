@@ -28,23 +28,28 @@ public class Movement : MonoBehaviour
     [SerializeField] private float wallJumpWarmupTime = 1 / 12;
     [SerializeField] private float wallSlideMaxSpeed = 0.5f;
 
-    private float jumpStartTime = 0;
+    [Header("Rolling")]
+    [SerializeField] private bool canRoll = false;
+    [SerializeField] private float rollSpeed = 5f;
+    [SerializeField] private float rollDuration = 0.3f;
+    [SerializeField] private float rollCooldownTime = 0.5f;
+    [SerializeField] private float rollWarmupTime = 0.1f;
+
+
+    private float jumpStartTime = 0, rollStartTime = 0;
     private float targetDirection = 0;
     private float smoothMovementVelocity = 0;
 
     [Header("Debug Info")]
     public bool isJumping = false;
     public bool isHoldingWall = false;
-    public bool isWarmupJumping = false;
-    public bool isWarmupWallJumping = false;
-    public bool isGrounded = false;
-    public bool isDropping = false;
-    public bool isInGroundCoyoteTime = false;
-    public bool isInWallCoyoteTime = false;
+    public bool isGrounded = false, isDropping = false;
+    public bool isInGroundCoyoteTime = false, isWarmupJumping = false;
+    public bool isInWallCoyoteTime = false, isWarmupWallJumping = false;
+    public bool isRolling = false, isWarmupRolling = false, isCooldownRolling = false;
     public float currentMovementDirectionModifier = 0;
 
-    private float groundCoyoteTimestamp = 0f;
-    private float wallCoyoteTimestamp = 0f;
+    private float groundCoyoteTimestamp = 0f, wallCoyoteTimestamp = 0f;
 
 
     public Vector2 facing = new(-1, 0);
@@ -52,6 +57,7 @@ public class Movement : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private new Collider2D collider;
     private Animator animator;
+    private Health health;
 
     public readonly HashSet<GameObject> ignoredPlatforms = new();
     private readonly HashSet<Collider2D> collidedPlatforms = new();
@@ -61,6 +67,16 @@ public class Movement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
+    }
+
+    public void Start()
+    {
+        isGrounded = CheckIsGrounded();
+        if (health != null)
+            health.AddCheckInvincibilityFunctions(CheckIsInvincible);
+        else
+            Debug.LogWarning("Health module not found on " + name);
     }
 
     public void OnDrawGizmos()
@@ -101,6 +117,11 @@ public class Movement : MonoBehaviour
                 LayerMask.GetMask("Structure", "Platform"));
     }
 
+    private bool CheckIsInvincible(Damage damage)
+    {
+        return isRolling;
+    }
+
     private bool CheckIsHoldingWall()
     {
         if (rigidbody.velocity.y > 10 || isGrounded || !canWallJump) return false;
@@ -123,11 +144,12 @@ public class Movement : MonoBehaviour
         if (isInWallCoyoteTime && wallCoyoteTimestamp + coyoteTime < Time.time)
             isInWallCoyoteTime = false;
 
-        currentMovementDirectionModifier = Mathf.SmoothDamp(
-            rigidbody.velocity.x / (baseMovementSpeed * movementSpeedModifier),
-            targetDirection,
-            ref smoothMovementVelocity,
-            isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
+        if (!isRolling)
+            currentMovementDirectionModifier = Mathf.SmoothDamp(
+                rigidbody.velocity.x / (baseMovementSpeed * movementSpeedModifier),
+                targetDirection,
+                ref smoothMovementVelocity,
+                isGrounded ? baseMovementSmoothTime : aerialMovementSmoothTime);
 
         if (Math.Abs(currentMovementDirectionModifier) < 0.005f && targetDirection == 0) currentMovementDirectionModifier = 0;
 
@@ -143,10 +165,27 @@ public class Movement : MonoBehaviour
         if (isWarmupWallJumping && Time.time > jumpStartTime + wallJumpWarmupTime)
         {
             newVelocityY = wallJumpSpeed;
-            newVelocityX += wallJumpPushoffSpeed * Math.Sign(facing.x);
+            newVelocityX = wallJumpPushoffSpeed * Math.Sign(facing.x);
             currentMovementDirectionModifier = newVelocityX / (baseMovementSpeed * movementSpeedModifier);
             isJumping = true;
             isWarmupWallJumping = false;
+        }
+        if (isWarmupRolling && Time.time > rollStartTime + rollWarmupTime)
+        {
+            newVelocityX = rollSpeed * Math.Sign(facing.x);
+            currentMovementDirectionModifier = newVelocityX / (baseMovementSpeed * movementSpeedModifier);
+            isRolling = true;
+            isWarmupRolling = false;
+        }
+        else if (isRolling && Time.time > rollStartTime + rollWarmupTime + rollDuration)
+        {
+            animator.SetBool("Rolling", false);
+            isRolling = false;
+            isCooldownRolling = true;
+        }
+        else if (isCooldownRolling && Time.time > rollStartTime + rollWarmupTime + rollDuration + rollCooldownTime)
+        {
+            isCooldownRolling = false;
         }
 
 
@@ -185,9 +224,6 @@ public class Movement : MonoBehaviour
         if (Math.Abs(newVelocityX) < 0.05f) newVelocityX = 0;
 
         rigidbody.velocity = new Vector2(newVelocityX, newVelocityY);
-
-
-
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -222,6 +258,7 @@ public class Movement : MonoBehaviour
             {
                 if (!isJumping && !isWarmupJumping)
                 {
+                    Debug.Log("CoyoteTimeActive");
                     isInGroundCoyoteTime = true;
                     groundCoyoteTimestamp = Time.time;
                 }
@@ -237,10 +274,13 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
-        if (!isWarmupJumping && !isJumping && !isWarmupWallJumping)
+        if (!isWarmupJumping && !isJumping && !isWarmupWallJumping && !isRolling && !isWarmupRolling)
         {
             if (isGrounded || isInGroundCoyoteTime)
             {
+                Debug.Log("Jump");
+                Debug.Log(isGrounded);
+                Debug.Log(isInGroundCoyoteTime);
                 isWarmupJumping = true;
                 isInGroundCoyoteTime = false;
                 jumpStartTime = Time.time;
@@ -248,6 +288,9 @@ public class Movement : MonoBehaviour
             }
             if (isHoldingWall || isInWallCoyoteTime)
             {
+                Debug.Log("Walljump");
+                Debug.Log(isHoldingWall);
+                Debug.Log(isInWallCoyoteTime);
                 isWarmupWallJumping = true;
                 isInWallCoyoteTime = false;
                 jumpStartTime = Time.time;
@@ -263,6 +306,17 @@ public class Movement : MonoBehaviour
         {
             rigidbody.velocity = Vector2.Scale(rigidbody.velocity, new Vector2(1, 0.3f));
             isJumping = false;
+        }
+    }
+
+    public void Roll()
+    {
+        if (isGrounded && !isJumping && !isWarmupJumping && !isWarmupRolling && !isRolling && !isCooldownRolling && canRoll)
+        {
+            isWarmupRolling = true;
+            rollStartTime = Time.time;
+            animator.SetTrigger("Roll");
+            animator.SetBool("Rolling", true);
         }
     }
 

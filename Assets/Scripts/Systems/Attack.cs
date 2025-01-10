@@ -52,7 +52,7 @@ public class Attack : MonoBehaviour
 
         GameObject damageObject;
         if (stickWithParent)
-            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation, originTransform);
+            damageObject = Instantiate(damageObjectPrefab, originTransform);
         else
             damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation);
 
