@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioPlayer : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public static AudioPlayer Instance { get; private set; }
+    public static AudioManager Instance { get; private set; }
     public AudioSource SFXSource, musicSource;
 
     void Awake()
