@@ -5,7 +5,6 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField]
-    private CheckpointManager checkpointManager;
     private Animator animator;
     public bool Active { get; private set; } = false;
 
@@ -18,7 +17,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.tag == "Player" && !Active)
         {
-            checkpointManager.Save(this);
+            CheckpointManager.Instance.Save(this);
         }
     }
 
