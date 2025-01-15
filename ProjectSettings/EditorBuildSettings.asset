@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Silvija/Main Menu.unity
+    guid: c16c4e33fe6a72245a1647e1d9379b95
+  - enabled: 1
+    path: Assets/Scenes/Silvija/MainSceneJNEWEST.unity
+    guid: 42f3285c6d1026842a1c8ea8754c3152
   m_configObjects: {}
