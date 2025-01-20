@@ -216,8 +216,8 @@ MonoBehaviour:
   jumpWarmupTime: 0.08333334
   coyoteTime: 0.1
   canWallJump: 1
-  wallJumpSpeed: 15
-  wallJumpPushoffSpeed: 20
+  wallJumpSpeed: 13
+  wallJumpPushoffSpeed: 15
   wallJumpWarmupTime: 0
   wallSlideMaxSpeed: 2
   canRoll: 1
@@ -352,7 +352,7 @@ MonoBehaviour:
   - {x: -0.066337585, y: -0.14196396, z: 0}
   m_ShapePathHash: 796822863
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1302
+  m_InstanceId: 108878
   m_LocalBounds:
     m_Center: {x: -0.04411125, y: -0.041137695, z: 0}
     m_Extent: {x: 0.9257269, y: 1.8788643, z: 0}
