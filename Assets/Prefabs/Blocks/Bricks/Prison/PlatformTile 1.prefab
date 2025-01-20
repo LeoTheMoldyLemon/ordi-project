@@ -10,12 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 386534312923044507, guid: 8f95b0e2a11a02c48acfde2c60b8430a, type: 3}
       propertyPath: m_Name
-      value: PlatformTile
+      value: PlatformTile 1
       objectReference: {fileID: 0}
     - target: {fileID: 6002083285830727106, guid: 8f95b0e2a11a02c48acfde2c60b8430a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c12bf7d26abeae6479e7821aa2ba9d12, type: 3}
+      objectReference: {fileID: 21300000, guid: 738b0cf3f14e9eb47b4a8bc54edfb227, type: 3}
     - target: {fileID: 6002083285830727106, guid: 8f95b0e2a11a02c48acfde2c60b8430a, type: 3}
       propertyPath: m_Color.b
       value: 1
