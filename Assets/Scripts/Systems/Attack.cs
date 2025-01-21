@@ -32,6 +32,10 @@ public class Attack : MonoBehaviour
 
     public bool Perform(params UnityAction<Damage, Collider2D>[] onHitActions)
     {
+        return Perform(transform.forward, onHitActions);
+    }
+    public bool Perform(Vector3 target, params UnityAction<Damage, Collider2D>[] onHitActions)
+    {
         if (!isOnWindup && !isOnCooldown && !isAttacking)
         {
             if (animator)
@@ -40,13 +44,15 @@ public class Attack : MonoBehaviour
                 animator.SetTrigger(attackName + "MakeAttack");
             }
             isOnWindup = true;
-            StartCoroutine(Process(onHitActions));
+            Quaternion direction = Quaternion.LookRotation(target - transform.position);
+
+            StartCoroutine(Process(direction, onHitActions));
             return true;
         }
         return false;
     }
 
-    private IEnumerator Process(UnityAction<Damage, Collider2D>[] onHitActions)
+    private IEnumerator Process(Quaternion direction, UnityAction<Damage, Collider2D>[] onHitActions)
     {
         yield return new WaitForSeconds(windup);
 
@@ -54,7 +60,7 @@ public class Attack : MonoBehaviour
         if (stickWithParent)
             damageObject = Instantiate(damageObjectPrefab, originTransform);
         else
-            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation);
+            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation * direction);
 
         var damageRigidbody = damageObject.GetComponent<Rigidbody>();
         if (damageRigidbody)

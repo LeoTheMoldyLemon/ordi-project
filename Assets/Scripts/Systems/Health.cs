@@ -57,7 +57,8 @@ public class Health : MonoBehaviour
 
         if (damage.amount > 0)
         {
-            animator.SetTrigger("TakeDamage");
+            if (animator)
+                animator.SetTrigger("TakeDamage");
             if (particleEffect)
             {
                 if (particleEffectRoot)
