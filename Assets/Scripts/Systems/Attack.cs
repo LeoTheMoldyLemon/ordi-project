@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
 
     public bool Perform(params UnityAction<Damage, Collider2D>[] onHitActions)
     {
-        return Perform(transform.forward, onHitActions);
+        return Perform(transform.right + transform.position, onHitActions);
     }
     public bool Perform(Vector3 target, params UnityAction<Damage, Collider2D>[] onHitActions)
     {
@@ -44,7 +44,7 @@ public class Attack : MonoBehaviour
                 animator.SetTrigger(attackName + "MakeAttack");
             }
             isOnWindup = true;
-            Quaternion direction = Quaternion.LookRotation(target - transform.position);
+            Quaternion direction = Quaternion.LookRotation(target - transform.position) * Quaternion.Euler(transform.up * 90);
 
             StartCoroutine(Process(direction, onHitActions));
             return true;
@@ -62,9 +62,9 @@ public class Attack : MonoBehaviour
         else
             damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation * direction);
 
-        var damageRigidbody = damageObject.GetComponent<Rigidbody>();
+        var damageRigidbody = damageObject.GetComponent<Rigidbody2D>();
         if (damageRigidbody)
-            damageRigidbody.velocity = originTransform.forward * speed;
+            damageRigidbody.velocity = -damageRigidbody.transform.right * speed;
         var damage = damageObject.GetComponent<Damage>();
         if (damage)
         {

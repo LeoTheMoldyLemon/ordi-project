@@ -76,12 +76,13 @@ public class Damage : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case OnHitAction.STICK:
-                transform.parent = collision.transform;
-                var attackRigidbody = GetComponent<Rigidbody>();
-                if (attackRigidbody)
+                //transform.parent = collision.transform;
+                var rigidbody = GetComponent<Rigidbody2D>();
+                if (rigidbody)
                 {
-                    attackRigidbody.velocity = Vector2.zero;
-                    attackRigidbody.freezeRotation = true;
+                    rigidbody.gravityScale = 0;
+                    rigidbody.velocity = Vector2.zero;
+                    rigidbody.freezeRotation = true;
                     Destroy(this);
                 }
                 break;

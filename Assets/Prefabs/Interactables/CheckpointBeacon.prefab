@@ -9812,6 +9812,7 @@ GameObject:
   - component: {fileID: 2364734395452609209}
   - component: {fileID: 3122891474993251971}
   - component: {fileID: 442082871771729504}
+  - component: {fileID: 6108722949800587417}
   m_Layer: 0
   m_Name: CheckpointBeacon
   m_TagString: Untagged
@@ -9913,7 +9914,7 @@ MonoBehaviour:
   - {x: 1.3890687, y: 0.40652466, z: 0}
   m_ShapePathHash: -1230820964
   m_Mesh: {fileID: 0}
-  m_InstanceId: 76948
+  m_InstanceId: -1524
   m_LocalBounds:
     m_Center: {x: 0.011980534, y: 0.27325344, z: 0}
     m_Extent: {x: 1.3770881, y: 0.13327122, z: 0}
@@ -9950,7 +9951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f4b79a338424d41bd4fe8af9fae61f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointManager: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!61 &3122891474993251971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10008,3 +10009,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e253b57458fe17479ee39a90142e0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6108722949800587417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491110439452422952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f916a113d1308cc4199dfcc0e9e3b220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: -5
+  isBackstab: 0
+  isSingleFrame: 0
+  onHitTarget: 2
+  onHitStructure: 2
+  hitEvent:
+    m_PersistentCalls:
+      m_Calls: []
