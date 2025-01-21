@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] private int currentHealth;
-    [SerializeField] private int maxHealth = 10;
+    public int currentHealth;
+    public int maxHealth = 10;
     [SerializeField] private GameObject deadBody;
     private Animator animator;
 
@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
 
     [SerializeField] private CheckpointManager checkpointManager;
     public UnityEvent death = new();
+    public UnityEvent<Damage> takeDamage = new();
 
     void Awake()
     {
@@ -54,6 +55,7 @@ public class Health : MonoBehaviour
         }
         else
             currentHealth -= damage.amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
 
         if (damage.amount > 0)
         {
@@ -68,6 +70,7 @@ public class Health : MonoBehaviour
             }
         }
 
+        takeDamage.Invoke(damage);
         if (currentHealth <= 0)
         {
             death.Invoke();
@@ -85,7 +88,6 @@ public class Health : MonoBehaviour
             if (resetHealthOnDeath)
                 currentHealth = maxHealth;
         }
-        else if (currentHealth > maxHealth) currentHealth = maxHealth;
     }
 
 }

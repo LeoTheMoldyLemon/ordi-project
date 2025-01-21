@@ -6,7 +6,7 @@ public class Break : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
 
     [SerializeField] private Vector3 speed;
     void Start()

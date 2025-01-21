@@ -72,7 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 877598935362872000}
-  patrolPoints: []
+  patrolPoints:
+  - {x: 0, y: 0}
   walkSpeedPercent: 0.3
   turnAroundDelay: 3
   patrolPointReachedDistance: 1
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85e5979e7004404ab6628012add113e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 6
+  baseMovementSpeed: 4
   aerialMovementSmoothTime: 1
   movementSpeedModifier: 1
   baseMovementSmoothTime: 0.2

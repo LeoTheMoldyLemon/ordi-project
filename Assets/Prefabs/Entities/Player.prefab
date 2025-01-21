@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95026b758d1580949bf99818d769ade9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1
-  maxHealth: 10
+  currentHealth: 5
+  maxHealth: 5
   deadBody: {fileID: 0}
   particleEffect: {fileID: 8090121338592848775, guid: d798dc5c35b00cd469b494ab13842583, type: 3}
   particleEffectRoot: {fileID: 0}
@@ -300,6 +300,9 @@ MonoBehaviour:
   resetHealthOnDeath: 0
   checkpointManager: {fileID: 0}
   death:
+    m_PersistentCalls:
+      m_Calls: []
+  takeDamage:
     m_PersistentCalls:
       m_Calls: []
 --- !u!95 &3660400508602225836
