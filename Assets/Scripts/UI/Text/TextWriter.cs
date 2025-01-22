@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TextWriter : MonoBehaviour
 {
-    [SerializeField] private float baseWritingSpeed = 5;
-    [SerializeField] private float baseTextDuration = 5;
+    [SerializeField] public float baseWritingSpeed = 5;
+    [SerializeField] public float baseTextDuration = 5;
+
+    public UnityEvent textWritten, textRemoved;
     private TMP_Text textMesh;
     private Vector3 scale;
-    void Start()
+
+    private Coroutine currentWrittingCoroutine;
+
+    void Awake()
     {
         textMesh = GetComponent<TMP_Text>();
+    }
+    void Start()
+    {
         scale = transform.localScale;
     }
     void Update()
@@ -22,7 +31,9 @@ public class TextWriter : MonoBehaviour
 
     public void Write(string text, float speed)
     {
-        StartCoroutine(Typewriter(text, speed));
+        textMesh.text = "";
+        if (currentWrittingCoroutine != null) StopCoroutine(currentWrittingCoroutine);
+        currentWrittingCoroutine = StartCoroutine(Typewriter(text, speed));
     }
 
     public void Write(string text)
@@ -30,16 +41,23 @@ public class TextWriter : MonoBehaviour
         Write(text, 1);
     }
 
+    public void Clear()
+    {
+        if (currentWrittingCoroutine != null) StopCoroutine(currentWrittingCoroutine);
+        textMesh.text = "";
+    }
+
     private IEnumerator Typewriter(string text, float speed)
     {
-        textMesh.text = "";
         foreach (string word in text.Split(" "))
         {
             textMesh.text += word + " ";
             yield return new WaitForSeconds(1 / (baseWritingSpeed * speed));
         }
+        textWritten.Invoke();
         yield return new WaitForSeconds(baseTextDuration / speed);
         textMesh.text = "";
+        textRemoved.Invoke();
     }
 
 

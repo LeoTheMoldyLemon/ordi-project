@@ -403,6 +403,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7090259700552341918}
     m_Modifications:
+    - target: {fileID: 1248057293632276002, guid: d125acf46245f444fb912456001c0ca3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2432d446e54a83f4ea23df2c05031c79, type: 2}
+    - target: {fileID: 1248057293632276002, guid: d125acf46245f444fb912456001c0ca3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6615274503486036470, guid: 2432d446e54a83f4ea23df2c05031c79, type: 2}
     - target: {fileID: 3593439359374737170, guid: d125acf46245f444fb912456001c0ca3, type: 3}
       propertyPath: m_Name
       value: Text
@@ -487,6 +495,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8646948009579068902, guid: d125acf46245f444fb912456001c0ca3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6615274503486036470, guid: 2432d446e54a83f4ea23df2c05031c79, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

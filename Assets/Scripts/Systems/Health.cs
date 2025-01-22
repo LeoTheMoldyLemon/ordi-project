@@ -72,22 +72,26 @@ public class Health : MonoBehaviour
 
         takeDamage.Invoke(damage);
         if (currentHealth <= 0)
+            Die();
+    }
+
+    public void Die()
+    {
+        currentHealth = 0;
+        death.Invoke();
+        if (deadBody)
         {
-            death.Invoke();
-            if (deadBody)
-            {
-                var body = Instantiate(deadBody, transform.position, Quaternion.identity);
-                body.transform.localScale = transform.localScale;
-            }
-            if (reloadCheckpointOnDeath)
-                checkpointManager.Reload();
-
-            if (destroyOnDeath)
-                Destroy(gameObject);
-
-            if (resetHealthOnDeath)
-                currentHealth = maxHealth;
+            var body = Instantiate(deadBody, transform.position, Quaternion.identity);
+            body.transform.localScale = transform.localScale;
         }
+        if (reloadCheckpointOnDeath)
+            checkpointManager.Reload();
+
+        if (destroyOnDeath)
+            Destroy(gameObject);
+
+        if (resetHealthOnDeath)
+            currentHealth = maxHealth;
     }
 
 }
