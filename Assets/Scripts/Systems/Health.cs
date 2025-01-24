@@ -75,13 +75,16 @@ public class Health : MonoBehaviour
             Die();
     }
 
-    public void Die()
+    public void Die(bool skipParticles = false)
     {
         currentHealth = 0;
         death.Invoke();
         if (deadBody)
         {
             var body = Instantiate(deadBody, transform.position, Quaternion.identity);
+            if (skipParticles)
+                foreach (var particleSystem in body.GetComponentsInChildren<ParticleSystem>())
+                    particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             body.transform.localScale = transform.localScale;
         }
         if (reloadCheckpointOnDeath)
