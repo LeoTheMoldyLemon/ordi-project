@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
 
     enum OnHitAction
     {
-        DISAPEAR,
+        DISAPPEAR,
         STICK,
         PIERCE
     }
@@ -72,7 +72,7 @@ public class Damage : MonoBehaviour
     {
         switch (actionToTake)
         {
-            case OnHitAction.DISAPEAR:
+            case OnHitAction.DISAPPEAR:
                 Destroy(gameObject);
                 break;
             case OnHitAction.STICK:
