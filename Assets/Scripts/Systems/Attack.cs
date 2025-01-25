@@ -16,6 +16,7 @@ public class Attack : MonoBehaviour
     public bool isOnWindup = false;
     public bool isAttacking = false;
     public bool isOnCooldown = false;
+    private Coroutine attackProcess;
     public string attackName = "";
     private float attackCooldownTimestamp = 0;
 
@@ -28,6 +29,12 @@ public class Attack : MonoBehaviour
             isOnCooldown = false;
             animator.SetBool(attackName + "AttackCooldown", false);
         }
+    }
+
+    public void Cancel()
+    {
+        if (attackProcess != null)
+            StopCoroutine(attackProcess);
     }
 
     public bool Perform(params UnityAction<Damage, Collider2D>[] onHitActions)
@@ -46,7 +53,7 @@ public class Attack : MonoBehaviour
             isOnWindup = true;
             Quaternion direction = Quaternion.LookRotation(target - transform.position) * Quaternion.Euler(transform.up * 90);
 
-            StartCoroutine(Process(direction, onHitActions));
+            attackProcess = StartCoroutine(Process(direction, onHitActions));
             return true;
         }
         return false;

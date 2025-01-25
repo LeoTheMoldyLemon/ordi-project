@@ -48,8 +48,16 @@ public class CheckpointManager : MonoBehaviour
         {
             SaveableBehaviour saveableObject = keyValuePair.Value;
             string guid = keyValuePair.Key;
-            Debug.Log("Saving " + saveableObject.name + "(" + guid + ")");
-            saveData.Add(guid, saveableObject.Save());
+            try
+            {
+                Debug.Log("Saving " + saveableObject.name + "(" + guid + ")");
+                saveData.Add(guid, saveableObject.Save());
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Failed to save object with GUID " + guid);
+                Debug.LogError(e);
+            }
         }
 
         string serializedData = JsonConvert.SerializeObject(saveData);
@@ -59,7 +67,15 @@ public class CheckpointManager : MonoBehaviour
     public void Load()
     {
         Debug.Log("Loading checkpoint...");
-        string serializedData = File.ReadAllText(Path.Combine(Application.persistentDataPath, saveFileName));
+        string serializedData;
+        try
+        {
+            serializedData = File.ReadAllText(Path.Combine(Application.persistentDataPath, saveFileName));
+        }
+        catch (FileNotFoundException)
+        {
+            return;
+        }
         Dictionary<string, string> saveData = JsonConvert.DeserializeObject<Dictionary<string, string>>(serializedData);
 
         foreach (KeyValuePair<string, string> keyValuePair in saveData)

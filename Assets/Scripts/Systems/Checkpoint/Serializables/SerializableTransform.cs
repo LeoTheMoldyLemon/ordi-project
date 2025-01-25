@@ -18,8 +18,7 @@ public class SerializableTransform
 
     public void Update(Transform transform)
     {
-        transform.position = position;
-        transform.rotation = rotation;
+        transform.SetPositionAndRotation(position, rotation);
         transform.localScale = scale;
     }
 }

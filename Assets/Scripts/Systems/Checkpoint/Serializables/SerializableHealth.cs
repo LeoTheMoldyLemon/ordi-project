@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class SerializableHealth
 {
-    public readonly int currentHealth;
+    public int currentHealth;
 
     public SerializableHealth(Health health)
     {
@@ -16,7 +16,7 @@ public class SerializableHealth
     {
         health.currentHealth = currentHealth;
         if (health.currentHealth <= 0)
-            health.Die(true);
+            health.LoadDead();
 
     }
 }

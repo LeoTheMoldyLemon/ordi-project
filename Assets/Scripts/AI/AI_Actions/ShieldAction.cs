@@ -80,11 +80,20 @@ public class ShieldAction : AIAction
 
     public bool CheckIsInvincible(Damage damage)
     {
-        return isShieldRaised && Math.Sign(damage.transform.position.x - transform.position.x) == Math.Sign(movement.facing.x);
+        return isShieldRaised && Math.Sign(damage.transform.position.x - transform.position.x) == Math.Sign(movement.facing.x) && damage.type != Damage.DamageType.ENVIRONMENTAL;
     }
 
     public override bool Stuck()
     {
         return isOnWindup || isOnCooldown || isShieldRaised;
+    }
+
+    public override void Interrupt()
+    {
+        movement.Move(0);
+        isOnWindup = false;
+        isShieldRaised = false;
+        isOnCooldown = false;
+        attemptingTurnaround = false;
     }
 }

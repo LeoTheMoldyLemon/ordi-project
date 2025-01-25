@@ -26,7 +26,7 @@ public class EntityLoader : SaveableBehaviour
     {
         Dictionary<string, string> loadData = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);
         loadData.TryGetValue("Health", out string healthData);
-        loadData.TryGetValue("Health", out string transformData);
+        loadData.TryGetValue("Transform", out string transformData);
         JsonUtility.FromJson<SerializableTransform>(transformData).Update(transform);
         JsonUtility.FromJson<SerializableHealth>(healthData).Update(health);
     }

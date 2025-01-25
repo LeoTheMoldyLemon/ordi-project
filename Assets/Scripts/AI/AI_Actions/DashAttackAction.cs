@@ -76,4 +76,9 @@ public class DashAttackAction : AIAction
         return windingUp || dashing || attack.isAttacking || attack.isOnCooldown || attack.isOnWindup;
     }
 
+    public override void Interrupt()
+    {
+        movement.Move(0);
+        attack.Cancel();
+    }
 }

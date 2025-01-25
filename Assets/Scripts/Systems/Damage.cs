@@ -9,6 +9,7 @@ public class Damage : MonoBehaviour
 {
     public int amount;
     public bool isBackstab;
+    public DamageType type;
     [SerializeField] private bool isSingleFrame;
 
     enum OnHitAction
@@ -17,6 +18,13 @@ public class Damage : MonoBehaviour
         STICK,
         PIERCE
     }
+    public enum DamageType
+    {
+        RANGED,
+        MELEE,
+        ENVIRONMENTAL
+    }
+
 
     [SerializeField] private OnHitAction onHitTarget;
     [SerializeField] private OnHitAction onHitStructure;
@@ -61,11 +69,13 @@ public class Damage : MonoBehaviour
         else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
             targetHealth.TakeDamage(this);
-            hitEvent.Invoke(this, collision);
-            TakeAction(onHitTarget, collision);
         }
+    }
 
-
+    public void DamageTaken(Collider2D collision)
+    {
+        hitEvent.Invoke(this, collision);
+        TakeAction(onHitTarget, collision);
     }
 
     private void TakeAction(OnHitAction actionToTake, Collider2D collision)
