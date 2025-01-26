@@ -96,7 +96,7 @@ public class Health : MonoBehaviour
     private IEnumerator ReviveCoroutine()
     {
         yield return new WaitForSeconds(reviveTime);
-        revival.Invoke();
         currentHealth = maxHealth;
+        revival.Invoke();
     }
 }
