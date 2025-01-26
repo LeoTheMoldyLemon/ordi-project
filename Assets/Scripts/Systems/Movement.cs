@@ -119,7 +119,7 @@ public class Movement : MonoBehaviour
 
     private bool CheckIsInvincible(Damage damage)
     {
-        return isRolling;
+        return isRolling && damage.type != Damage.DamageType.ENVIRONMENTAL;
     }
 
     private bool CheckIsHoldingWall()

@@ -11,7 +11,7 @@ public class BowFighter : AIBehaviour
     void Start()
     {
         if (writer)
-            detector.targetDetected.AddListener(() => { writer.Write("Hey! Stop right there!"); });
+            detector.targetDetected.AddListener(() => { if (enabled) writer.Write("Hey! Stop right there!"); });
     }
     protected override AIAction SelectAction()
     {

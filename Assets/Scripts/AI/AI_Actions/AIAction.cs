@@ -7,4 +7,5 @@ public abstract class AIAction : MonoBehaviour
     public Movement movement;
     public abstract void Do();
     public abstract bool Stuck();
+    public abstract void Interrupt();
 }

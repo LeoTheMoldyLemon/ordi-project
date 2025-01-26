@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AIBehaviour : MonoBehaviour
 {
     [SerializeField] protected Detector detector;
+    [SerializeField] protected Health health;
     [SerializeField] protected float forgetTargetDelay;
     [SerializeField] protected bool isTargetDetected = false;
     [SerializeField] protected bool isTargetLost = false;
@@ -15,6 +16,25 @@ public abstract class AIBehaviour : MonoBehaviour
     {
         detector.targetDetected.AddListener(TargetDetectedHandler);
         detector.targetLost.AddListener(TargetLostHandler);
+        health.death.AddListener(() =>
+        {
+            Debug.Log("Stopping cause dead.");
+            if (currentAction != null)
+                currentAction.Interrupt();
+            currentAction = null;
+            enabled = false;
+        });
+        health.revival.AddListener(() =>
+        {
+            enabled = true;
+        });
+        Debug.Log("Registered actions");
+    }
+
+    void Start()
+    {
+
+
     }
 
     void Update()
@@ -27,12 +47,12 @@ public abstract class AIBehaviour : MonoBehaviour
     protected abstract AIAction SelectAction();
 
 
-    public void TargetDetectedHandler()
+    private void TargetDetectedHandler()
     {
         isTargetDetected = true;
         isTargetLost = false;
     }
-    public void TargetLostHandler()
+    private void TargetLostHandler()
     {
         isTargetDetected = false;
         isTargetLost = true;

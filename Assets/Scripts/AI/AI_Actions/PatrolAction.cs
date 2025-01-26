@@ -52,4 +52,9 @@ public class PatrolAction : AIAction
     {
         return false;
     }
+
+    public override void Interrupt()
+    {
+        movement.Move(0);
+    }
 }

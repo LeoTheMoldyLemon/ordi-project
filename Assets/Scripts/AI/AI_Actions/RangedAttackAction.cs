@@ -37,4 +37,10 @@ public class RangedAttackAction : AIAction
     {
         return attack.isOnWindup || attack.isOnCooldown;
     }
+
+    public override void Interrupt()
+    {
+        movement.Move(0);
+        attack.Cancel();
+    }
 }
