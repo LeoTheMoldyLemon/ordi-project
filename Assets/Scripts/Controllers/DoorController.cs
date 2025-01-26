@@ -6,8 +6,8 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] private Health health;
-    [SerializeField] private bool autoClose = false;
-    [SerializeField] private float openDuration = 0;
+    [SerializeField] public bool autoClose = false, isOpen = false;
+    [SerializeField] private float autoCloseTime = 0;
 
 
     private Animator animator;
@@ -19,12 +19,17 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
+        Debug.Log("openning door");
+        if (isOpen) return;
+        isOpen = true;
         animator.SetTrigger("OpenDoor");
         if (autoClose)
-            Invoke(nameof(CloseDoor), openDuration);
+            Invoke(nameof(CloseDoor), autoCloseTime);
     }
     public void CloseDoor()
     {
+        if (!isOpen) return;
+        isOpen = false;
         animator.SetTrigger("CloseDoor");
     }
 }

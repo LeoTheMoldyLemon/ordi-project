@@ -57,7 +57,7 @@ public class Health : MonoBehaviour
             currentHealth -= damage.amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
 
-        if (animator) animator.SetTrigger("TakeDamage");
+        if (animator && damage.amount > 0) animator.SetTrigger("TakeDamage");
 
 
         takeDamage.Invoke(damage);
