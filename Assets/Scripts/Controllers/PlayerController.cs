@@ -11,11 +11,28 @@ public class PlayerController : MonoBehaviour
     private Movement movement;
     private new Rigidbody2D rigidbody;
     [SerializeField] private InputActionReference movementInput, attackInput, rollInput;
+    public PlayerInput playerInput;
+
+    public static PlayerController Instance;
     [SerializeField] private Attack primaryAttack;
     void Awake()
     {
+        Instance = this;
         movement = GetComponent<Movement>();
         rigidbody = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
+    }
+
+    void Start()
+    {
+        LoadUserRebinds();
+    }
+
+
+    void LoadUserRebinds()
+    {
+        var rebinds = PlayerPrefs.GetString("rebinds");
+        playerInput.actions.LoadBindingOverridesFromJson(rebinds);
     }
 
     void Update()
