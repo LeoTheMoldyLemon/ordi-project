@@ -1,87 +1,51 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class MusicPlayer : MonoBehaviour
+public class MusicPlayer : MonoBehaviour, IComparable<MusicPlayer>
 {
-    [SerializeField] private AudioSource audioSource;
-    public Dictionary<string, MusicTrack> tracks = new();
+    public AudioClip startClip, loopClip, endClip;
+    public float fadeTime = 1;
+    public int priority = 0;
+    public static SortedSet<MusicPlayer> queue = new();
+    private bool active = false;
+    public static UnityEvent changedPlayer = new();
 
-    private MusicTrack currentTrack = null;
-    public MusicTrack nextTrack = null;
 
-    enum TrackProgress
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        NONE, START, MAIN, END
+        Activate();
     }
 
-    private TrackProgress trackProgress = TrackProgress.NONE;
-
-    void Awake()
+    void OnTriggerExit2D(Collider2D collision)
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-    void Start()
-    {
-        foreach (MusicTrack track in GetComponentsInChildren<MusicTrack>())
-            tracks.Add(track.gameObject.name, track);
-
+        Deactivate();
     }
 
-    private void NextClip()
+    public void Activate()
     {
-        if (trackProgress == TrackProgress.START)
+        if (!active)
         {
-            trackProgress = TrackProgress.MAIN;
-            PlayClip(currentTrack.main);
+            active = true;
+            queue.Add(this);
+            changedPlayer.Invoke();
         }
-        else if (currentTrack == nextTrack)
+    }
+    public void Deactivate()
+    {
+        if (active)
         {
-            if (currentTrack == null)
-            {
-                trackProgress = TrackProgress.NONE;
-            }
-            else if (trackProgress == TrackProgress.MAIN)
-            {
-                PlayClip(currentTrack.main);
-            }
-        }
-        else
-        {
-            if (trackProgress == TrackProgress.MAIN)
-            {
-                trackProgress = TrackProgress.END;
-                PlayClip(currentTrack.end);
-            }
-            else if (nextTrack == null)
-            {
-                trackProgress = TrackProgress.NONE;
-                currentTrack = nextTrack;
-            }
-            else
-            {
-                currentTrack = nextTrack;
-                trackProgress = TrackProgress.START;
-                PlayClip(currentTrack.start);
-            }
+            active = false;
+            queue.Remove(this);
+            changedPlayer.Invoke();
         }
     }
 
-    private void PlayClip(AudioClip clip)
+    public int CompareTo(MusicPlayer other)
     {
-        if (clip == null)
-        {
-            NextClip();
-        }
-        audioSource.clip = clip;
-        audioSource.Play();
-        Invoke(nameof(NextClip), clip.length);
-    }
-
-    public void Play(string nameOfTrack)
-    {
-        nextTrack = tracks[nameOfTrack];
-        if (currentTrack == null) NextClip();
+        return priority - other.priority;
     }
 }

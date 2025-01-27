@@ -43,6 +43,7 @@ public class Health : MonoBehaviour
         foreach (var checkInvincibilityFunction in checkInvincibilityFunctions)
             if (checkInvincibilityFunction.Invoke(damage))
             {
+                if (animator) animator.SetTrigger("DeflectHit");
                 return;
             }
 

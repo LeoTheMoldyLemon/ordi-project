@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 1
   isBackstab: 0
+  type: 1
   isSingleFrame: 1
   onHitTarget: 2
   onHitStructure: 2
