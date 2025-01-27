@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BowFighter : AIBehaviour
+public class BowFighterAI : AIBehaviour
 {
 
     [SerializeField] private AIAction idleAction, attackAction, lostTargetAction;

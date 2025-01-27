@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class ShieldAction : AIAction
 {
     [SerializeField] private float windupTime, cooldownTime, cancelShieldDistance, maxRaisedTime, minRaisedTime, turnaroundTime;
+    [SerializeField] private bool isShieldTwoSided = false;
     public Health health;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform target;
@@ -80,7 +81,8 @@ public class ShieldAction : AIAction
 
     public bool CheckIsInvincible(Damage damage)
     {
-        return isShieldRaised && Math.Sign(damage.transform.position.x - transform.position.x) == Math.Sign(movement.facing.x) && damage.type != Damage.DamageType.ENVIRONMENTAL;
+        return isShieldRaised &&
+            (isShieldTwoSided || Math.Sign(damage.transform.position.x - transform.position.x) == Math.Sign(movement.facing.x)) && damage.type != Damage.DamageType.ENVIRONMENTAL;
     }
 
     public override bool Stuck()
@@ -91,6 +93,7 @@ public class ShieldAction : AIAction
     public override void Interrupt()
     {
         movement.Move(0);
+        animator.SetBool("ShieldRaised", false);
         isOnWindup = false;
         isShieldRaised = false;
         isOnCooldown = false;
