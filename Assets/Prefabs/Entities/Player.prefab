@@ -210,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85e5979e7004404ab6628012add113e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 10
-  aerialMovementSmoothTime: 0.35
+  baseMovementSpeed: 12
+  aerialMovementSmoothTime: 0.4
   movementSpeedModifier: 1
   baseMovementSmoothTime: 0.1
   jumpSpeed: 20
@@ -219,11 +219,11 @@ MonoBehaviour:
   coyoteTime: 0.1
   canWallJump: 1
   wallJumpSpeed: 13
-  wallJumpPushoffSpeed: 15
+  wallJumpPushoffSpeed: 17
   wallJumpWarmupTime: 0
   wallSlideMaxSpeed: 2
   canRoll: 1
-  rollSpeed: 17
+  rollSpeed: 18
   rollDuration: 0.5833333
   rollCooldownTime: 0.5
   rollWarmupTime: 0.08333334
@@ -255,6 +255,7 @@ MonoBehaviour:
   movementInput: {fileID: 8261544671404633357, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
   attackInput: {fileID: 5141050815520645460, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
   rollInput: {fileID: 2849782230173227322, guid: 11c79f24d6b9c6f4d823ed91bf9179c7, type: 3}
+  playerInput: {fileID: 0}
   primaryAttack: {fileID: 7514331934427013530}
 --- !u!114 &7514331934427013530
 MonoBehaviour:
@@ -357,7 +358,7 @@ MonoBehaviour:
   - {x: -0.066337585, y: -0.14196396, z: 0}
   m_ShapePathHash: 796822863
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1426
+  m_InstanceId: 114162
   m_LocalBounds:
     m_Center: {x: -0.04411125, y: -0.041137695, z: 0}
     m_Extent: {x: 0.9257269, y: 1.8788643, z: 0}
