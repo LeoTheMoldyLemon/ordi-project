@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 396040210797213034}
   - component: {fileID: 3493009576229823796}
   - component: {fileID: 3677412235497644215}
+  - component: {fileID: 4597043282130618663}
   m_Layer: 9
   m_Name: BowGuard
   m_TagString: Enemy
@@ -334,6 +335,19 @@ MonoBehaviour:
   particleSystems:
   - {fileID: 390236106368154363}
   - {fileID: 8642621212530255823}
+--- !u!114 &4597043282130618663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742156679197544513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0283f0433aa12cf4792bf0f400bc0fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
 --- !u!1 &5312653269529255764
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,11 +399,14 @@ MonoBehaviour:
   forgetTargetDelay: 0
   isTargetDetected: 0
   isTargetLost: 0
+  firstDetectionPassed: 0
+  onDetectText: []
+  onDeathText: []
+  writer: {fileID: 1979280543755441360}
   currentAction: {fileID: 0}
   idleAction: {fileID: 5964681004384868959}
   attackAction: {fileID: 4835785609826464483}
   lostTargetAction: {fileID: 5964681004384868959}
-  writer: {fileID: 1979280543755441360}
 --- !u!114 &5964681004384868959
 MonoBehaviour:
   m_ObjectHideFlags: 0
