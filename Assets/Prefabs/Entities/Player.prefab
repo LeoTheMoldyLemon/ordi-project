@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 651224300382933396}
   - component: {fileID: 7900323282001816574}
   - component: {fileID: 7590317371570154381}
+  - component: {fileID: 1788615584278529065}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -358,7 +359,7 @@ MonoBehaviour:
   - {x: -0.066337585, y: -0.14196396, z: 0}
   m_ShapePathHash: 796822863
   m_Mesh: {fileID: 0}
-  m_InstanceId: 114162
+  m_InstanceId: 38006
   m_LocalBounds:
     m_Center: {x: -0.04411125, y: -0.041137695, z: 0}
     m_Extent: {x: 0.9257269, y: 1.8788643, z: 0}
@@ -388,6 +389,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystems:
   - {fileID: 8816501414438349154}
+--- !u!114 &1788615584278529065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317096009827242569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0283f0433aa12cf4792bf0f400bc0fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
 --- !u!1001 &2613858308244821102
 PrefabInstance:
   m_ObjectHideFlags: 0
