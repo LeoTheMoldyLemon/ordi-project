@@ -7,7 +7,6 @@ public class NecromancerAI : AIBehaviour
 {
 
     [SerializeField] private AIAction idleAction, reviveAction, shieldAction;
-    [SerializeField] private TextWriter writer;
     [SerializeField] private Health[] targets;
 
     void Start()
@@ -18,7 +17,8 @@ public class NecromancerAI : AIBehaviour
     {
         if (Array.Find(targets, (target) => target.currentHealth != 0) == null)
         {
-            shieldAction.Interrupt();
+            if (currentAction == shieldAction)
+                shieldAction.Interrupt();
             return reviveAction;
         }
         if (isTargetDetected)

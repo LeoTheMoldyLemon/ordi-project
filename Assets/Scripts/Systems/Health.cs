@@ -89,7 +89,10 @@ public class Health : MonoBehaviour
 
     public void Revive()
     {
+        Debug.Log("Attempting revive of " + name);
         if (currentHealth != 0) return;
+
+        Debug.Log("Reviving " + name);
         if (animator) animator.SetTrigger("Revive");
         StartCoroutine(ReviveCoroutine());
     }

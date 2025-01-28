@@ -6,19 +6,20 @@ using UnityEngine;
 public class ReviveAction : AIAction
 {
     [SerializeField] private float windupTime, cooldownTime;
-    private bool isOnWindup = false, isOnCooldown = false;
+    [SerializeField] private bool isOnWindup = false, isOnCooldown = false;
     [SerializeField] public Health[] targets;
     [SerializeField] public Animator animator;
     private Coroutine reviveCoroutine;
 
     public override void Do()
     {
-        if (!isOnWindup && isOnCooldown)
+        if (!isOnWindup && !isOnCooldown)
             reviveCoroutine = StartCoroutine(Revive());
     }
 
     private IEnumerator Revive()
     {
+        Debug.Log("Starting revive");
         animator.SetTrigger("ReviveAction");
         isOnWindup = true;
 
