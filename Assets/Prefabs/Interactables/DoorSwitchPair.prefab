@@ -531,7 +531,7 @@ MonoBehaviour:
   - {x: -0.247804, y: -0.15345563, z: 0}
   m_ShapePathHash: 59081871
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3094
+  m_InstanceId: 38566
   m_LocalBounds:
     m_Center: {x: 0.016740799, y: 0.019810677, z: 0}
     m_Extent: {x: 2.018259, y: 2.1722765, z: 0}
@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 7141651854003640303}
   - component: {fileID: 426732633719197617}
   - component: {fileID: 6374515359138603399}
+  - component: {fileID: 3431124453467532615}
   m_Layer: 0
   m_Name: DoorSwitchPair
   m_TagString: Untagged
@@ -726,3 +727,16 @@ MonoBehaviour:
   autoClose: 0
   isOpen: 0
   autoCloseTime: 0
+--- !u!114 &3431124453467532615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446205372286656969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0283f0433aa12cf4792bf0f400bc0fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
