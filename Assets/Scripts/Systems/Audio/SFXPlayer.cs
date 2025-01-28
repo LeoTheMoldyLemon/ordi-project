@@ -9,7 +9,7 @@ public class SFXPlayer : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX(clip, volume, transform.position);
     }
-    public void PlayRandom(AudioClip[] clips)
+    public void PlayRandomClip(AudioClip[] clips)
     {
         AudioManager.Instance.PlaySFX(clips[Random.Range(0, clips.Length)], volume, transform.position);
     }

@@ -11,7 +11,7 @@ public abstract class AIBehaviour : MonoBehaviour
     [SerializeField] protected bool isTargetLost = false;
     [SerializeField] protected bool firstDetectionPassed = false;
     [SerializeField] private string[] onDetectText, onDeathText;
-    [SerializeField] private TextWriter writer;
+    [SerializeField] protected TextWriter writer;
 
     [SerializeField] protected AIAction currentAction;
     protected float timeAtTargetLost;
@@ -21,7 +21,7 @@ public abstract class AIBehaviour : MonoBehaviour
         detector.targetLost.AddListener(TargetLostHandler);
         health.death.AddListener(() =>
         {
-            Debug.Log("Stopping cause dead.");
+            Debug.Log("Stopping cause dead");
             if (onDeathText.Length != 0)
                 writer.Write(onDeathText[Random.Range(0, onDetectText.Length)]);
             if (currentAction != null)
@@ -31,6 +31,7 @@ public abstract class AIBehaviour : MonoBehaviour
         });
         health.revival.AddListener(() =>
         {
+            Debug.Log("Starting again because revived");
             enabled = true;
         });
         Debug.Log("Registered actions");

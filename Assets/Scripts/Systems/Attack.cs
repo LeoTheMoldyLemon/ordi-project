@@ -34,7 +34,16 @@ public class Attack : MonoBehaviour
     public void Cancel()
     {
         if (attackProcess != null)
+        {
+            isAttacking = false;
+            isOnWindup = false;
+            isOnCooldown = false;
+            animator.SetBool(attackName + "AttackWindup", false);
+            animator.SetBool(attackName + "Attacking", false);
+            animator.SetBool(attackName + "AttackCooldown", false);
             StopCoroutine(attackProcess);
+        }
+
     }
 
     public bool Perform(params UnityAction<Damage, Collider2D>[] onHitActions)
@@ -67,7 +76,12 @@ public class Attack : MonoBehaviour
         if (stickWithParent)
             damageObject = Instantiate(damageObjectPrefab, originTransform);
         else
-            damageObject = Instantiate(damageObjectPrefab, originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale), damageObjectPrefab.transform.rotation * direction);
+        {
+            damageObject = Instantiate(damageObjectPrefab,
+                originTransform.position + Vector3.Scale(damageObjectPrefab.transform.position, originTransform.localScale),
+                damageObjectPrefab.transform.rotation * direction);
+            damageObject.transform.localScale = Vector3.Scale(originTransform.localScale, damageObject.transform.localScale);
+        }
 
         var damageRigidbody = damageObject.GetComponent<Rigidbody2D>();
         if (damageRigidbody)
