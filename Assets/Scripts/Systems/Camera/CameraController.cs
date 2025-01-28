@@ -42,11 +42,9 @@ public class CameraController : MonoBehaviour
         else
         {
             targetPosition = new Vector3(0, 0, 0);
-            Debug.Log("ads");
             foreach (var dockTarget in dock.targets)
             {
                 targetPosition += new Vector3(dockTarget.transform.position.x, dockTarget.transform.position.y, -dock.distance);
-                Debug.Log(new Vector3(dockTarget.transform.position.x, dockTarget.transform.position.y, -dock.distance));
             }
             if (dock.lerp)
             {

@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class ShieldAttackAction : AIAction
 {
-    [SerializeField] private float windupTime, cooldownTime, cancelShieldDistance, maxRaisedTime, minRaisedTime;
+    [SerializeField] private float windupTime, cooldownTime;
     [SerializeField] private bool isShieldTwoSided = false;
     [SerializeField] private AIAction action;
     public Health health;
