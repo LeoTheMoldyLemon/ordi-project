@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5703665993600184965}
   - component: {fileID: 4276456568063083136}
   - component: {fileID: 7102031513009400028}
-  - component: {fileID: 3036970586949227863}
   m_Layer: 0
   m_Name: GuardSFX
   m_TagString: Untagged
@@ -68,16 +67,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5309aec570e35a244b50281697b16465, type: 3}
   - {fileID: 8300000, guid: 4671bac00e47ef84d95e1f5980fd17d1, type: 3}
   - {fileID: 8300000, guid: 298e464cf6bce964c9af507fe4644112, type: 3}
---- !u!114 &3036970586949227863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022667251429833815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca930007529ebe3499ee642d19003de6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips: []
