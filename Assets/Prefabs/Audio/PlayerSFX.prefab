@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5703665993600184965}
   - component: {fileID: 4276456568063083136}
   - component: {fileID: 7102031513009400028}
-  - component: {fileID: -2457369862638848093}
   m_Layer: 0
   m_Name: PlayerSFX
   m_TagString: Untagged
@@ -68,17 +67,3 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a3448686df82a746a4e8b9202d47a86, type: 3}
   - {fileID: 8300000, guid: ca895915237ddca46ba05db4af385413, type: 3}
   - {fileID: 8300000, guid: ef8dd8b9c99f7dc4cba119c9afb55498, type: 3}
---- !u!114 &-2457369862638848093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022667251429833815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca930007529ebe3499ee642d19003de6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 0541fac47a20bb1499f90646e8fe9ad3, type: 3}
