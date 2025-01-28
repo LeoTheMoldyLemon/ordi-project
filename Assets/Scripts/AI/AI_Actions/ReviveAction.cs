@@ -25,6 +25,7 @@ public class ReviveAction : AIAction
 
         yield return new WaitForSeconds(windupTime);
 
+        Debug.Log("Reviving targets");
         foreach (var target in targets)
             target.Revive();
         isOnCooldown = true;
