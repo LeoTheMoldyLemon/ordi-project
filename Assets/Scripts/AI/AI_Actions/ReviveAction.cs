@@ -46,6 +46,9 @@ public class ReviveAction : AIAction
         isOnWindup = false;
         if (reviveCoroutine != null) StopCoroutine(reviveCoroutine);
         foreach (var target in targets)
+        {
             target.CancelRevive();
+            target.Die();
+        }
     }
 }

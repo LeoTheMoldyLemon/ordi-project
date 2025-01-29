@@ -15,7 +15,8 @@ public class SFXPlayer : MonoBehaviour
     }
     public void PlayRandom(SFXBundle bundle)
     {
-        AudioManager.Instance.PlaySFX(bundle.clips[Random.Range(0, bundle.clips.Length)], volume, transform.position);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(bundle.clips[Random.Range(0, bundle.clips.Length)], volume, transform.position);
     }
 
 }

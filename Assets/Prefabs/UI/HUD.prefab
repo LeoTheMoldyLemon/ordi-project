@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483cc40c9a564f04eb5ef9eacc5c4e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseWritingSpeed: 5
+  baseWritingSpeed: 15
   baseTextDuration: 10
   textWritten:
     m_PersistentCalls:

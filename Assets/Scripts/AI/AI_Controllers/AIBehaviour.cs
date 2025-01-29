@@ -28,7 +28,8 @@ public abstract class AIBehaviour : MonoBehaviour
                 currentAction.Interrupt();
             currentAction = null;
             enabled = false;
-            MusicPlayer.Instance.enemiesInCombat.Remove(this);
+            if (MusicPlayer.Instance != null)
+                MusicPlayer.Instance.enemiesInCombat.Remove(this);
         });
         health.revival.AddListener(() =>
         {
@@ -63,13 +64,15 @@ public abstract class AIBehaviour : MonoBehaviour
         }
         isTargetDetected = true;
         isTargetLost = false;
-        MusicPlayer.Instance.enemiesInCombat.Add(this);
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.enemiesInCombat.Add(this);
     }
     private void TargetLostHandler()
     {
         isTargetDetected = false;
         isTargetLost = true;
         timeAtTargetLost = Time.time;
-        MusicPlayer.Instance.enemiesInCombat.Remove(this);
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.enemiesInCombat.Remove(this);
     }
 }

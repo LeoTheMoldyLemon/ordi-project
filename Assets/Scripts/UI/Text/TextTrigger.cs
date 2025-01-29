@@ -12,6 +12,7 @@ public class TextTrigger : MonoBehaviour
 
     private int currentLine = 0;
     private bool triggered = false;
+    [SerializeField] private bool pause = false;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,6 +20,7 @@ public class TextTrigger : MonoBehaviour
         triggered = true;
         PlayerController.Instance.locked = true;
         TextWriterUI.Instance.textDone.AddListener(NextLine);
+        if (pause) Time.timeScale = 0;
         NextLine();
     }
 
@@ -28,6 +30,7 @@ public class TextTrigger : MonoBehaviour
         if (currentLine >= dialogueLines.Length)
         {
             PlayerController.Instance.locked = false;
+            if (pause) Time.timeScale = 1;
             Destroy(gameObject);
             return;
         }
