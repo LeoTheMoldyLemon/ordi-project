@@ -13,7 +13,6 @@ public class ParticleStarter : MonoBehaviour
             if (particleSystem.name == name)
             {
                 particleSystem.Play();
-                Debug.Log("Played particles " + name);
             }
         }
     }

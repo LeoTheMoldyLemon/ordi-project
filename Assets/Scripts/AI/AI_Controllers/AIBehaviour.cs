@@ -28,13 +28,13 @@ public abstract class AIBehaviour : MonoBehaviour
                 currentAction.Interrupt();
             currentAction = null;
             enabled = false;
+            MusicPlayer.Instance.enemiesInCombat.Remove(this);
         });
         health.revival.AddListener(() =>
         {
             Debug.Log("Starting again because revived");
             enabled = true;
         });
-        Debug.Log("Registered actions");
     }
 
     void Start()
@@ -63,11 +63,13 @@ public abstract class AIBehaviour : MonoBehaviour
         }
         isTargetDetected = true;
         isTargetLost = false;
+        MusicPlayer.Instance.enemiesInCombat.Add(this);
     }
     private void TargetLostHandler()
     {
         isTargetDetected = false;
         isTargetLost = true;
         timeAtTargetLost = Time.time;
+        MusicPlayer.Instance.enemiesInCombat.Remove(this);
     }
 }

@@ -29,7 +29,6 @@ public class KeybindSetter : MonoBehaviour
             action.action.Enable();// after this you can use the new key
             textMesh.text = action.action.GetBindingDisplayString(bindingIndex);
             SaveUserRebinds();
-            Debug.Log("finished rebind");
             rebindOperation = null;
         }
     }

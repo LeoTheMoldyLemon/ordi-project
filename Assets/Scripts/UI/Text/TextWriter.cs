@@ -25,14 +25,17 @@ public class TextWriter : MonoBehaviour
     }
     void Update()
     {
-
-        transform.localScale = new Vector3(scale.x / transform.parent.transform.localScale.x, scale.y / transform.parent.transform.localScale.y, scale.z / transform.parent.transform.localScale.z);
+        var parentScale = transform.parent.transform.localScale;
+        if (parentScale.x == 0 | parentScale.y == 0 | parentScale.z == 0)
+            transform.localScale = Vector3.zero;
+        else
+            transform.localScale = new Vector3(scale.x / parentScale.x, scale.y / parentScale.y, scale.y / parentScale.z);
     }
 
     public void Write(string text, float speed)
     {
-        textMesh.text = "";
-        if (currentWrittingCoroutine != null) StopCoroutine(currentWrittingCoroutine);
+        Debug.Log("Text writting: " + text);
+        Clear();
         currentWrittingCoroutine = StartCoroutine(Typewriter(text, speed));
     }
 
@@ -51,6 +54,7 @@ public class TextWriter : MonoBehaviour
     {
         foreach (string word in text.Split(" "))
         {
+            Debug.Log("Word writting: " + word);
             textMesh.text += word + " ";
             yield return new WaitForSeconds(1 / (baseWritingSpeed * speed));
         }

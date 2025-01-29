@@ -24,9 +24,14 @@ public class Health : MonoBehaviour
     public UnityEvent death = new(), revival = new();
     public UnityEvent<Damage> takeDamage = new();
 
+    private Coroutine reviveCoroutine;
+
     void Awake()
     {
+        Debug.Log(maxHealth);
+        Debug.Log(currentHealth);
         currentHealth = maxHealth;
+        Debug.Log(currentHealth);
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
         collider = GetComponent<Collider2D>();
@@ -94,7 +99,16 @@ public class Health : MonoBehaviour
 
         Debug.Log("Reviving " + name);
         if (animator) animator.SetTrigger("Revive");
-        StartCoroutine(ReviveCoroutine());
+        reviveCoroutine = StartCoroutine(ReviveCoroutine());
+    }
+
+    public void CancelRevive()
+    {
+        if (reviveCoroutine != null)
+        {
+            StopCoroutine(reviveCoroutine);
+            if (animator) animator.SetTrigger("Dead");
+        }
     }
 
     private IEnumerator ReviveCoroutine()

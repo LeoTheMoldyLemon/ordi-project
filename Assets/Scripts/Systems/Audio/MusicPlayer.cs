@@ -5,47 +5,45 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MusicPlayer : MonoBehaviour, IComparable<MusicPlayer>
+public class MusicPlayer : MonoBehaviour
 {
-    public AudioClip startClip, loopClip, endClip;
-    public float fadeTime = 1;
-    public int priority = 0;
-    public static SortedSet<MusicPlayer> queue = new();
-    private bool active = false;
-    public static UnityEvent changedPlayer = new();
 
+    public HashSet<AIBehaviour> enemiesInCombat = new();
+    public bool bossFight;
+    public float clipSwitchTime;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public AudioClip combatMusic, bossMusic, idleMusic1, idleMusic2;
+
+    private AudioClip nextIdleClip;
+
+    public static MusicPlayer Instance { get; private set; }
+
+    void Awake()
     {
-        Activate();
+        if (!Instance)
+            Instance = this;
+        nextIdleClip = idleMusic1;
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    void Update()
     {
-        Deactivate();
-    }
-
-    public void Activate()
-    {
-        if (!active)
+        if (Time.time > clipSwitchTime)
         {
-            active = true;
-            queue.Add(this);
-            changedPlayer.Invoke();
-        }
-    }
-    public void Deactivate()
-    {
-        if (active)
-        {
-            active = false;
-            queue.Remove(this);
-            changedPlayer.Invoke();
-        }
-    }
+            AudioClip nextClip;
+            if (bossFight)
+                nextClip = bossMusic;
+            else if (enemiesInCombat.Count > 0) nextClip = combatMusic;
+            else
+            {
+                nextClip = nextIdleClip;
+                if (nextIdleClip == idleMusic1)
+                    nextIdleClip = idleMusic2;
+                else
+                    nextIdleClip = idleMusic1;
+            }
 
-    public int CompareTo(MusicPlayer other)
-    {
-        return priority - other.priority;
+            Debug.Log("Playing next: " + nextClip.name);
+            clipSwitchTime = AudioManager.Instance.PlayNext(nextClip, true) - 1 + nextClip.length + Time.time;
+        }
     }
 }

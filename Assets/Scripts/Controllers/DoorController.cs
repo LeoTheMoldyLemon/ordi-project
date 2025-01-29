@@ -19,7 +19,7 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
-        Debug.Log("openning door");
+        Debug.Log("Opening door");
         if (isOpen) return;
         isOpen = true;
         animator.SetTrigger("OpenDoor");
