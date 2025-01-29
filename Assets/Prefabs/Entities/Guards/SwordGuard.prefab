@@ -119,7 +119,7 @@ MonoBehaviour:
   cancelShieldDistance: 8
   maxRaisedTime: 4
   minRaisedTime: 2
-  turnaroundTime: 0.5
+  turnaroundTime: 1
   isShieldTwoSided: 0
   health: {fileID: 761936496099359418}
   animator: {fileID: -3252759996219332315}
@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &92794711723368075
 Transform:
   m_ObjectHideFlags: 0

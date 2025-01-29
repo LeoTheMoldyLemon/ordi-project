@@ -20,7 +20,6 @@ public class DashAttackAction : AIAction
         {
             if (collisions.Count > 0)
             {
-                Debug.Log("Performing dash attack");
                 attack.Perform();
                 dashing = false;
                 animator.SetBool("Dashing", false);
@@ -31,7 +30,6 @@ public class DashAttackAction : AIAction
         {
             if (!attack.isAttacking && !attack.isOnCooldown && !attack.isOnWindup && !windingUp)
             {
-                Debug.Log("Starting dash attack");
                 if (target.position.x - transform.position.x > 0)
                     StartCoroutine(StartDash(1));
                 else
@@ -43,7 +41,6 @@ public class DashAttackAction : AIAction
 
     private IEnumerator StartDash(float dashDirection)
     {
-        Debug.Log("Turning and winding up");
         windingUp = true;
         animator.SetBool("Dashing", true);
         animator.SetTrigger("DashWindup");
@@ -56,7 +53,6 @@ public class DashAttackAction : AIAction
 
         dashing = true;
         windingUp = false;
-        Debug.Log("Dashing");
         animator.SetTrigger("DashStart");
         movement.Move(dashDirection * dashSpeedModifier);
     }

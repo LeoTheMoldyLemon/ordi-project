@@ -258,7 +258,6 @@ public class Movement : MonoBehaviour
             {
                 if (!isJumping && !isWarmupJumping)
                 {
-                    Debug.Log("CoyoteTimeActive");
                     isInGroundCoyoteTime = true;
                     groundCoyoteTimestamp = Time.time;
                 }
@@ -278,9 +277,7 @@ public class Movement : MonoBehaviour
         {
             if (isGrounded || isInGroundCoyoteTime)
             {
-                Debug.Log("Jump");
-                Debug.Log(isGrounded);
-                Debug.Log(isInGroundCoyoteTime);
+                ;
                 isWarmupJumping = true;
                 isInGroundCoyoteTime = false;
                 jumpStartTime = Time.time;
@@ -288,9 +285,6 @@ public class Movement : MonoBehaviour
             }
             if (isHoldingWall || isInWallCoyoteTime)
             {
-                Debug.Log("Walljump");
-                Debug.Log(isHoldingWall);
-                Debug.Log(isInWallCoyoteTime);
                 isWarmupWallJumping = true;
                 isInWallCoyoteTime = false;
                 jumpStartTime = Time.time;

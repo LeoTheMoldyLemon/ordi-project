@@ -109,8 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   target: {fileID: 0}
-  defaultTarget: {fileID: 0}
-  targetSize: 10
   defaultSize: 10
   smoothTime: 0.2
   smoothTimeSize: 0.2
@@ -174,5 +172,5 @@ MonoBehaviour:
   color: {r: 0.29803923, g: 0.80392164, b: 0.73333335, a: 1}
   fadeOutTime: 0.5
   fadeInTime: 0.1
-  fadeingOut: 0
+  fadeingOut: 1
   alpha: 0

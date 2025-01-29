@@ -6,16 +6,20 @@ public class HalberdFighterAI : AIBehaviour
 {
 
     [SerializeField] private AIAction idleAction, attackAction, dashAttackAction, lostTargetAction;
-    [SerializeField] private float dashMinTargetDistance;
+    [SerializeField] private float dashMinTargetDistance, dashMaxTargetDistance;
+    [SerializeField] private float dashTargetDistance;
 
     protected override AIAction SelectAction()
     {
         if (isTargetDetected)
         {
-            if (Vector2.Distance(transform.position, detector.target.position) < dashMinTargetDistance)
+            if (Vector2.Distance(transform.position, detector.target.position) < dashTargetDistance)
                 return attackAction;
             else
+            {
+                dashTargetDistance = Random.Range(dashMinTargetDistance, dashMaxTargetDistance);
                 return dashAttackAction;
+            }
         }
         else if (isTargetLost)
         {

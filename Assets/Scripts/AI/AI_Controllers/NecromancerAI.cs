@@ -8,10 +8,17 @@ public class NecromancerAI : AIBehaviour
 
     [SerializeField] private AIAction idleAction, reviveAction, shieldAction;
     [SerializeField] private Health[] targets;
+    [SerializeField] private string deathText;
 
     void Start()
     {
         writer.Write("Die.");
+        MusicPlayer.Instance.bossFight = true;
+        health.death.AddListener(() =>
+        {
+            writer.baseWritingSpeed = 0.7f;
+            writer.Write(deathText);
+        });
     }
     protected override AIAction SelectAction()
     {

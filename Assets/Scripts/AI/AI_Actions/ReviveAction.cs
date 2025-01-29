@@ -26,10 +26,10 @@ public class ReviveAction : AIAction
         yield return new WaitForSeconds(windupTime);
 
         Debug.Log("Reviving targets");
-        foreach (var target in targets)
-            target.Revive();
         isOnCooldown = true;
         isOnWindup = false;
+        foreach (var target in targets)
+            target.Revive();
 
         yield return new WaitForSeconds(cooldownTime);
 
@@ -45,5 +45,7 @@ public class ReviveAction : AIAction
     {
         isOnWindup = false;
         if (reviveCoroutine != null) StopCoroutine(reviveCoroutine);
+        foreach (var target in targets)
+            target.CancelRevive();
     }
 }

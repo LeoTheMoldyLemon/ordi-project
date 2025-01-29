@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private new Rigidbody2D rigidbody;
     [SerializeField] private InputActionReference movementInput, attackInput, rollInput;
     public PlayerInput playerInput;
+    public bool locked = false;
 
     public static PlayerController Instance;
     [SerializeField] private Attack primaryAttack;
@@ -37,6 +38,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (locked)
+        {
+            movement.Move(0);
+            return;
+        }
         Vector2 movementInputVector = movementInput.action.ReadValue<Vector2>();
         float movementModifier = 1;
         if (primaryAttack.isOnWindup) movementModifier = 0.1f;

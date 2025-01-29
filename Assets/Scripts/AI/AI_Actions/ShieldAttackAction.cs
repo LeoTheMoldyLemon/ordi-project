@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class ShieldAttackAction : AIAction
 {
-    [SerializeField] private float windupTime, cooldownTime;
+    [SerializeField] private float windupTime;
     [SerializeField] private bool isShieldTwoSided = false;
     [SerializeField] private AIAction action;
     public Health health;
@@ -42,6 +42,7 @@ public class ShieldAttackAction : AIAction
             startTimestamp = Time.time;
             isOnWindup = true;
             animator.SetBool("ShieldRaised", true);
+            Debug.Log("RaiseShield");
             animator.SetTrigger("RaiseShield");
         }
     }
