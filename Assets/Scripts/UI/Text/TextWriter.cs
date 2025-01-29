@@ -56,10 +56,10 @@ public class TextWriter : MonoBehaviour
         {
             Debug.Log("Word writting: " + word);
             textMesh.text += word + " ";
-            yield return new WaitForSeconds(1 / (baseWritingSpeed * speed));
+            yield return new WaitForSecondsRealtime(1 / (baseWritingSpeed * speed));
         }
         textWritten.Invoke();
-        yield return new WaitForSeconds(baseTextDuration / speed);
+        yield return new WaitForSecondsRealtime(baseTextDuration / speed);
         textMesh.text = "";
         textRemoved.Invoke();
     }

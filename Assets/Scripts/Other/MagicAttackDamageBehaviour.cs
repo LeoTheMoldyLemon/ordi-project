@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class MagicAttackDamageBehaviour : MonoBehaviour
 {
-    public float speed, rotationSpeed, aimingTime;
+    public float speed, rotationSpeed, aimingTime, duration;
     private float startTimestamp;
     public Transform target;
     private new Rigidbody2D rigidbody;
@@ -39,5 +39,6 @@ public class MagicAttackDamageBehaviour : MonoBehaviour
             else
                 rigidbody.rotation += angle * rotationSpeed * Time.deltaTime;
         }
+        else if (Time.time > startTimestamp + duration) Destroy(gameObject);
     }
 }

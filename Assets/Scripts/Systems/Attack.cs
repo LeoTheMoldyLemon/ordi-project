@@ -60,7 +60,7 @@ public class Attack : MonoBehaviour
                 animator.SetTrigger(attackName + "MakeAttack");
             }
             isOnWindup = true;
-            Quaternion direction = Quaternion.LookRotation(target - transform.position) * Quaternion.Euler(transform.up * 90);
+            Quaternion direction = Quaternion.LookRotation((target - transform.position) * transform.localScale.x) * Quaternion.Euler(transform.up * 90);
 
             attackProcess = StartCoroutine(Process(direction, onHitActions));
             return true;
@@ -85,7 +85,7 @@ public class Attack : MonoBehaviour
 
         var damageRigidbody = damageObject.GetComponent<Rigidbody2D>();
         if (damageRigidbody)
-            damageRigidbody.velocity = -damageRigidbody.transform.right * speed;
+            damageRigidbody.velocity = damageRigidbody.transform.localScale.x * speed * -damageRigidbody.transform.right;
         var damage = damageObject.GetComponent<Damage>();
         if (damage)
         {

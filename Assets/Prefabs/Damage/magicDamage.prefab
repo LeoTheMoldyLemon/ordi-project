@@ -151,7 +151,7 @@ MonoBehaviour:
   type: 0
   isSingleFrame: 0
   onHitTarget: 2
-  onHitStructure: 0
+  onHitStructure: 2
   hitEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -197,6 +197,7 @@ MonoBehaviour:
   speed: 20
   rotationSpeed: 3
   aimingTime: 2
+  duration: 20
   target: {fileID: 0}
 --- !u!95 &1318478415630663280
 Animator:

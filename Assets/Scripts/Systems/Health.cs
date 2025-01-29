@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
         collider = GetComponent<Collider2D>();
+        if (animator == null) Debug.Log("NO ANIMATOR!!!!");
     }
 
     public void AddCheckInvincibilityFunctions(Func<Damage, bool> function)
@@ -75,7 +76,11 @@ public class Health : MonoBehaviour
     {
         currentHealth = 0;
         death.Invoke();
-        if (animator) animator.SetTrigger("Dying");
+        if (animator)
+        {
+            animator.SetBool("Dead", true);
+            animator.SetTrigger("Dying");
+        }
         if (movement) movement.Move(0);
 
         if (reloadCheckpointOnDeath)
@@ -87,8 +92,11 @@ public class Health : MonoBehaviour
 
     public void LoadDead()
     {
-        currentHealth = 0;
-        animator.SetTrigger("Dead");
+        currentHealth = 0; if (animator)
+        {
+            animator.SetBool("Dead", true);
+            animator.SetTrigger("AlreadyDead");
+        }
         death.Invoke();
     }
 
@@ -97,8 +105,11 @@ public class Health : MonoBehaviour
         Debug.Log("Attempting revive of " + name);
         if (currentHealth != 0) return;
 
-        Debug.Log("Reviving " + name);
-        if (animator) animator.SetTrigger("Revive");
+        Debug.Log("Reviving " + name); currentHealth = 0; if (animator)
+        {
+            animator.SetBool("Dead", false);
+            animator.SetTrigger("Revive");
+        }
         reviveCoroutine = StartCoroutine(ReviveCoroutine());
     }
 
@@ -107,7 +118,11 @@ public class Health : MonoBehaviour
         if (reviveCoroutine != null)
         {
             StopCoroutine(reviveCoroutine);
-            if (animator) animator.SetTrigger("Dead");
+            Debug.Log("Reviving " + name); currentHealth = 0; if (animator)
+            {
+                animator.SetBool("Dead", true);
+                animator.SetTrigger("Dying");
+            }
         }
     }
 
