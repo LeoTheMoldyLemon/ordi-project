@@ -251,13 +251,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 4669672510295982459}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: KeybindSetter, Assembly-CSharp
-        m_MethodName: StartInteractiveRebind
+      - m_Target: {fileID: 4083396826712920145}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: onQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -384,13 +384,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1700084898171377668}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: KeybindSetter, Assembly-CSharp
-        m_MethodName: StartInteractiveRebind
+      - m_Target: {fileID: 4083396826712920145}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: onSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,10 +436,10 @@ RectTransform:
   - {fileID: 6441356894613828169}
   m_Father: {fileID: 4202551622552874293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: -1600, y: -250}
+  m_SizeDelta: {x: 500, y: 830}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2135885179387496658
 CanvasRenderer:
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.12863038, g: 0, b: 0.1981132, a: 0.8156863}
+  m_Color: {r: 0.12863038, g: 0, b: 0.1981132, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.2
 --- !u!1 &5558613807834129945
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 2920397659825751317}
   - component: {fileID: 8467666619339117229}
   - component: {fileID: 2882555677092441701}
-  - component: {fileID: 3401168783547157603}
+  - component: {fileID: 4083396826712920145}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3401168783547157603
+--- !u!114 &4083396826712920145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,9 +591,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5558613807834129945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd866af3feca4074d9d465d322e85fc0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e017bcefa0420143815d6fc36c3fa2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuSceneName: Main Menu
+  settingsPrefab: {fileID: 5558613807834129945, guid: 65f5a541b14452646aad0c4c250c7ae9, type: 3}
 --- !u!1 &5728130733285264280
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,13 +849,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 65943346575862736}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: KeybindSetter, Assembly-CSharp
-        m_MethodName: StartInteractiveRebind
+      - m_Target: {fileID: 4083396826712920145}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: onResume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,7 +15,8 @@ public class BossFightDialogueLine : DialogueLine
     {
         base.Deactivate();
         door.CloseDoor();
-        arya.enabled = true;
         fightDock.Activate();
+        CheckpointManager.Instance.Save();
+        arya.enabled = true;
     }
 }

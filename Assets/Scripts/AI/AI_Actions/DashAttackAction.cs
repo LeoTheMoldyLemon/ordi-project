@@ -18,7 +18,7 @@ public class DashAttackAction : AIAction
     {
         if (dashing)
         {
-            if (collisions.Count > 0 || Math.Abs(target.transform.position.x - transform.position.x) > maxDashDistance)
+            if (collisions.Count > 0 || (target.transform.position.x - transform.position.x) * movement.facing.x < maxDashDistance)
             {
                 attack.Perform();
                 dashing = false;

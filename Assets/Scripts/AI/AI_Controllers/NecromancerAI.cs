@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NecromancerAI : AIBehaviour
 {
@@ -9,6 +10,7 @@ public class NecromancerAI : AIBehaviour
     [SerializeField] private AIAction idleAction, reviveAction, shieldAction;
     [SerializeField] private Health[] targets;
     [SerializeField] private string deathText;
+    [SerializeField] private string endGameSceneName;
 
     void Start()
     {
@@ -19,6 +21,7 @@ public class NecromancerAI : AIBehaviour
         {
             writer.baseWritingSpeed = 0.7f;
             writer.Write(deathText);
+            Invoke(nameof(EndGame), 10);
         });
     }
     protected override AIAction SelectAction()
@@ -38,6 +41,11 @@ public class NecromancerAI : AIBehaviour
             return idleAction;
         }
 
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(endGameSceneName);
     }
 
 }

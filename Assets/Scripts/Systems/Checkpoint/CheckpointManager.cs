@@ -26,8 +26,8 @@ public class CheckpointManager : MonoBehaviour
     {
         foreach (SaveableBehaviour saveableObject in (SaveableBehaviour[])FindObjectsOfType(typeof(SaveableBehaviour)))
         {
-            Debug.Log("Registered saveable object " + saveableObject.name + "(" + saveableObject.GUID + ")");
-            saveableObjects.Add(saveableObject.GUID, saveableObject);
+            Debug.Log("Registered saveable object " + saveableObject.name + "(" + saveableObject.guid + ")");
+            saveableObjects.Add(saveableObject.guid, saveableObject);
         }
         if (!debugMode)
             Load();

@@ -99,6 +99,7 @@ MonoBehaviour:
   movement: {fileID: 877598935362872000}
   dashSpeedModifier: 2.5
   dashWindup: 1
+  maxDashDistance: 5
   target: {fileID: 0}
   attack: {fileID: 5666748092694961011}
   animator: {fileID: -3252759996219332315}
@@ -477,7 +478,6 @@ MonoBehaviour:
   reloadCheckpointOnDeath: 0
   resetHealthOnDeath: 0
   reviveTime: 1
-  checkpointManager: {fileID: 0}
   death:
     m_PersistentCalls:
       m_Calls: []

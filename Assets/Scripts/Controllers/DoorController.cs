@@ -17,7 +17,11 @@ public class DoorController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         if (health)
-            health.death.AddListener(OpenDoor);
+            health.death.AddListener(() =>
+            {
+                if (cameraDock) StartCoroutine(PanCamera());
+                OpenDoor();
+            });
         if (openOnStart) OpenDoor();
 
     }
@@ -25,7 +29,6 @@ public class DoorController : MonoBehaviour
     public void OpenDoor()
     {
         if (isOpen) return;
-        if (cameraDock) StartCoroutine(PanCamera());
         Debug.Log("Opening door");
         isOpen = true;
         animator.SetTrigger("OpenDoor");

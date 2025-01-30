@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,9 +9,11 @@ public class PlayerController : MonoBehaviour
 {
     private Movement movement;
     private new Rigidbody2D rigidbody;
-    [SerializeField] private InputActionReference movementInput, attackInput, rollInput;
+    public bool paused = false;
+    [SerializeField] private InputActionReference movementInput, attackInput, rollInput, pauseInput;
     public PlayerInput playerInput;
     public bool locked = false;
+    public GameObject pauseMenu;
 
     public static PlayerController Instance;
     [SerializeField] private Attack primaryAttack;
@@ -67,6 +68,12 @@ public class PlayerController : MonoBehaviour
 
         if (rollInput.action.ReadValue<float>() > 0)
             movement.Roll();
+
+        if (pauseInput.action.ReadValue<float>() > 0 && !paused)
+        {
+            Instantiate(pauseMenu);
+            paused = true;
+        }
 
     }
 

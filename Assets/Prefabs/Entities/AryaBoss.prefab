@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95026b758d1580949bf99818d769ade9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 15
-  maxHealth: 15
+  currentHealth: 10
+  maxHealth: 10
   reloadCheckpointOnDeath: 0
   resetHealthOnDeath: 0
   reviveTime: 1
@@ -402,6 +402,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   deathText: You will regret this
+  endGameSceneName: EndScene
 --- !u!114 &3772332825830805991
 MonoBehaviour:
   m_ObjectHideFlags: 0
