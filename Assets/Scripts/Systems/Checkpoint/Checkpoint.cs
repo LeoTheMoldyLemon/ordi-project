@@ -1,6 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Checkpoint : MonoBehaviour
 {
@@ -21,10 +22,11 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
-    public void Activate()
+    public void Activate(bool writeText = false)
     {
         Active = true;
         animator.SetBool("Active", true);
+
     }
     public void Deactivate()
     {

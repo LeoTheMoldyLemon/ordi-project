@@ -11,7 +11,7 @@ public class TextTrigger : MonoBehaviour
     private DialogueLine lastDialogue;
 
     private int currentLine = 0;
-    private bool triggered = false;
+    public bool triggered = false;
     [SerializeField] private bool pause = false;
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +31,6 @@ public class TextTrigger : MonoBehaviour
         {
             PlayerController.Instance.locked = false;
             if (pause) Time.timeScale = 1;
-            Destroy(gameObject);
             return;
         }
         DialogueLine dialogue = dialogueLines[currentLine];

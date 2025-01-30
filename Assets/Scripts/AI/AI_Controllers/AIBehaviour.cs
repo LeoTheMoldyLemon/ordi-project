@@ -40,8 +40,8 @@ public abstract class AIBehaviour : MonoBehaviour
 
     void Start()
     {
-
-
+        if (MusicPlayer.Instance != null && isTargetDetected)
+            MusicPlayer.Instance.enemiesInCombat.Add(this);
     }
 
     void Update()
@@ -64,7 +64,7 @@ public abstract class AIBehaviour : MonoBehaviour
         }
         isTargetDetected = true;
         isTargetLost = false;
-        if (MusicPlayer.Instance != null)
+        if (MusicPlayer.Instance != null && enabled)
             MusicPlayer.Instance.enemiesInCombat.Add(this);
     }
     private void TargetLostHandler()

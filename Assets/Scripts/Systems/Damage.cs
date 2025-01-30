@@ -30,6 +30,12 @@ public class Damage : MonoBehaviour
     [SerializeField] private OnHitAction onHitStructure;
 
     public UnityEvent<Damage, Collider2D> hitEvent = new();
+    public Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -63,11 +69,13 @@ public class Damage : MonoBehaviour
         Debug.Log("hit " + collision.name, this);
         if (collision.gameObject.CompareTag("Structure"))
         {
+            if (animator != null) animator.SetTrigger("HitStructure");
             hitEvent.Invoke(this, collision);
             TakeAction(onHitStructure, collision);
         }
         else if (collision.gameObject.TryGetComponent(out Health targetHealth))
         {
+            if (animator != null) animator.SetTrigger("HitTarget");
             targetHealth.TakeDamage(this);
         }
     }

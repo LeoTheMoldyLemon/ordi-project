@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1023402895384425228}
   - component: {fileID: 8392506353669125711}
   - component: {fileID: 7730493585463761780}
+  - component: {fileID: 6518667533601104445}
+  - component: {fileID: 7253385923900277963}
   m_Layer: 11
   m_Name: ArrowDamage
   m_TagString: Untagged
@@ -153,6 +155,7 @@ MonoBehaviour:
   hitEvent:
     m_PersistentCalls:
       m_Calls: []
+  animator: {fileID: 0}
 --- !u!50 &7730493585463761780
 Rigidbody2D:
   serializedVersion: 4
@@ -180,3 +183,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6518667533601104445
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780696385748235934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b07f84ab526bf194fa45a87614faadb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7253385923900277963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780696385748235934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0283f0433aa12cf4792bf0f400bc0fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1

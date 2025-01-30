@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DashAttackAction : AIAction
 {
-    [SerializeField] private float dashSpeedModifier, dashWindup;
+    [SerializeField] private float dashSpeedModifier, dashWindup, maxDashDistance;
     [SerializeField] private Transform target;
     private List<Collider2D> collisions = new();
     public Attack attack;
@@ -18,7 +18,7 @@ public class DashAttackAction : AIAction
     {
         if (dashing)
         {
-            if (collisions.Count > 0)
+            if (collisions.Count > 0 || Math.Abs(target.transform.position.x - transform.position.x) > maxDashDistance)
             {
                 attack.Perform();
                 dashing = false;

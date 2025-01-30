@@ -29,15 +29,14 @@ public class TextWriterUI : MonoBehaviour
     }
     public void Write(string text, Color color)
     {
-        Debug.Log("Writting: " + text);
         transform.localScale = new Vector3(1, 1, 1);
+        Debug.Log(color);
         textMesh.color = color;
         writer.Write(text);
     }
 
     private void Clear()
     {
-        Debug.Log("Clearing.");
         textSkippable = false;
         transform.localScale = new Vector3(0, 0, 0);
         writer.Clear();

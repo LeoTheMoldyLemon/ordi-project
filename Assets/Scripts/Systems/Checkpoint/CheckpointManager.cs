@@ -10,7 +10,7 @@ using System.Collections;
 public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager Instance { get; private set; }
-    private Dictionary<string, SaveableBehaviour> saveableObjects = new();
+    private readonly Dictionary<string, SaveableBehaviour> saveableObjects = new();
     [SerializeField] private string saveFileName;
 
     [SerializeField] private Checkpoint currentCheckpoint;
@@ -35,13 +35,19 @@ public class CheckpointManager : MonoBehaviour
             cameraFader.FadeIn();
     }
 
-    public void Save(Checkpoint checkpoint)
+    public void Save(Checkpoint checkpoint = null)
     {
-        Debug.Log("Saving checkpoint...");
         if (currentCheckpoint)
             currentCheckpoint.Deactivate();
+
         currentCheckpoint = checkpoint;
-        currentCheckpoint.Activate();
+        if (currentCheckpoint != null)
+        {
+            TextLoader.Instance.active = true;
+            currentCheckpoint.Activate();
+        }
+        else
+            TextLoader.Instance.active = false;
 
         Dictionary<string, string> saveData = new();
         foreach (KeyValuePair<string, SaveableBehaviour> keyValuePair in saveableObjects)

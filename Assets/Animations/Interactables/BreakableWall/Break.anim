@@ -207,7 +207,7 @@ AnimationClip:
   - time: 0
     functionName: PlayRandom
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 7102031513009400028, guid: bdda24edafce82e49873a82a5f8259c2, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

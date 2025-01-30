@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class MusicPlayer : MonoBehaviour
 {
 
-    public HashSet<AIBehaviour> enemiesInCombat = new();
+    public List<AIBehaviour> enemiesInCombat = new();
     public bool bossFight;
     public float clipSwitchTime;
 
@@ -42,7 +42,6 @@ public class MusicPlayer : MonoBehaviour
                     nextIdleClip = idleMusic1;
             }
 
-            Debug.Log("Playing next: " + nextClip.name);
             clipSwitchTime = AudioManager.Instance.PlayNext(nextClip, true) - 1 + nextClip.length + Time.time;
         }
     }

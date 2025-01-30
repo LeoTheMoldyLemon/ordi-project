@@ -6,25 +6,38 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] private Health health;
-    [SerializeField] public bool autoClose = false, isOpen = false;
+    [SerializeField] public bool autoClose = false, isOpen = false, openOnStart = false;
     [SerializeField] private float autoCloseTime = 0;
+    [SerializeField] private CameraDock cameraDock;
+    [SerializeField] private float panTime;
 
 
     private Animator animator;
     public void Start()
     {
         animator = GetComponent<Animator>();
-        health.death.AddListener(OpenDoor);
+        if (health)
+            health.death.AddListener(OpenDoor);
+        if (openOnStart) OpenDoor();
+
     }
 
     public void OpenDoor()
     {
-        Debug.Log("Opening door");
         if (isOpen) return;
+        if (cameraDock) StartCoroutine(PanCamera());
+        Debug.Log("Opening door");
         isOpen = true;
         animator.SetTrigger("OpenDoor");
         if (autoClose)
             Invoke(nameof(CloseDoor), autoCloseTime);
+    }
+
+    private IEnumerator PanCamera()
+    {
+        cameraDock.Activate();
+        yield return new WaitForSeconds(panTime);
+        cameraDock.Deactivate();
     }
     public void CloseDoor()
     {

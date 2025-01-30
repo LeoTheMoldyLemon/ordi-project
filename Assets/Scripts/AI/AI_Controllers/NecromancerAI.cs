@@ -13,7 +13,8 @@ public class NecromancerAI : AIBehaviour
     void Start()
     {
         writer.Write("Die.");
-        MusicPlayer.Instance.bossFight = true;
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.bossFight = true;
         health.death.AddListener(() =>
         {
             writer.baseWritingSpeed = 0.7f;

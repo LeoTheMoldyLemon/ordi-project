@@ -11,13 +11,13 @@ public class DialogueLine : MonoBehaviour
     public string text;
     public CameraDock dock;
 
-    public void Activate()
+    public virtual void Activate()
     {
         TextWriterUI.Instance.Write(text, color);
         if (dock != null) dock.Activate();
     }
 
-    public void Deactivate()
+    public virtual void Deactivate()
     {
         if (dock != null) dock.Deactivate();
     }

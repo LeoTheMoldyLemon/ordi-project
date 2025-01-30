@@ -332,6 +332,7 @@ Transform:
   - {fileID: 8462321722956841904}
   - {fileID: 5018651007860669831}
   - {fileID: 2640613722784314146}
+  - {fileID: 2162630539925565996}
   m_Father: {fileID: 7141651854003640303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2232727333744695570
@@ -379,6 +380,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &4786696217414716987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2162630539925565996}
+  - component: {fileID: 5106719650837231188}
+  m_Layer: 0
+  m_Name: CameraDock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2162630539925565996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786696217414716987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2827029370129256924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5106719650837231188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4786696217414716987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12199c0555182a4890c587bb1cae20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minWidth: 40
+  minHeight: 30
+  distance: 0
+  lerp: 0
+  marginSize: 1
+  priority: 0
+  targets: []
 --- !u!1 &7048108171911494572
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +535,6 @@ MonoBehaviour:
   reloadCheckpointOnDeath: 0
   resetHealthOnDeath: 1
   reviveTime: 0
-  checkpointManager: {fileID: 0}
   death:
     m_PersistentCalls:
       m_Calls: []
@@ -531,7 +582,7 @@ MonoBehaviour:
   - {x: -0.247804, y: -0.15345563, z: 0}
   m_ShapePathHash: 59081871
   m_Mesh: {fileID: 0}
-  m_InstanceId: 38566
+  m_InstanceId: 550124
   m_LocalBounds:
     m_Center: {x: 0.016740799, y: 0.019810677, z: 0}
     m_Extent: {x: 2.018259, y: 2.1722765, z: 0}
@@ -727,6 +778,8 @@ MonoBehaviour:
   autoClose: 0
   isOpen: 0
   autoCloseTime: 0
+  cameraDock: {fileID: 5106719650837231188}
+  panTime: 3
 --- !u!114 &3431124453467532615
 MonoBehaviour:
   m_ObjectHideFlags: 0

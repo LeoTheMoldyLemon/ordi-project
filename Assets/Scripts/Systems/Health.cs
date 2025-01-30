@@ -19,8 +19,6 @@ public class Health : MonoBehaviour
     [SerializeField] private float reviveTime = 0;
 
     [SerializeField] private List<Func<Damage, bool>> checkInvincibilityFunctions = new();
-
-    [SerializeField] private CheckpointManager checkpointManager;
     public UnityEvent death = new(), revival = new();
     public UnityEvent<Damage> takeDamage = new();
 
@@ -28,14 +26,14 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log(maxHealth);
-        Debug.Log(currentHealth);
-        currentHealth = maxHealth;
-        Debug.Log(currentHealth);
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
         collider = GetComponent<Collider2D>();
-        if (animator == null) Debug.Log("NO ANIMATOR!!!!");
+    }
+
+    void Start()
+    {
+        if (currentHealth == 0) LoadDead();
     }
 
     public void AddCheckInvincibilityFunctions(Func<Damage, bool> function)
@@ -84,7 +82,7 @@ public class Health : MonoBehaviour
         if (movement) movement.Move(0);
 
         if (reloadCheckpointOnDeath)
-            checkpointManager.Reload();
+            CheckpointManager.Instance.Reload();
 
         if (resetHealthOnDeath)
             currentHealth = maxHealth;

@@ -34,7 +34,6 @@ public class TextWriter : MonoBehaviour
 
     public void Write(string text, float speed)
     {
-        Debug.Log("Text writting: " + text);
         Clear();
         currentWrittingCoroutine = StartCoroutine(Typewriter(text, speed));
     }
@@ -54,7 +53,6 @@ public class TextWriter : MonoBehaviour
     {
         foreach (string word in text.Split(" "))
         {
-            Debug.Log("Word writting: " + word);
             textMesh.text += word + " ";
             yield return new WaitForSecondsRealtime(1 / (baseWritingSpeed * speed));
         }

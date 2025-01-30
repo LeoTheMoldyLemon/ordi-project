@@ -7,11 +7,18 @@ public class SFXPlayer : MonoBehaviour
     [SerializeField] private float volume = 0;
     public void Play(AudioClip clip)
     {
-        AudioManager.Instance.PlaySFX(clip, volume, transform.position);
+        if (clip == null)
+        {
+            Debug.LogWarning("Clip missing on " + name);
+            return;
+        }
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(clip, volume, transform.position);
     }
     public void PlayRandomClip(AudioClip[] clips)
     {
-        AudioManager.Instance.PlaySFX(clips[Random.Range(0, clips.Length)], volume, transform.position);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(clips[Random.Range(0, clips.Length)], volume, transform.position);
     }
     public void PlayRandom(SFXBundle bundle)
     {

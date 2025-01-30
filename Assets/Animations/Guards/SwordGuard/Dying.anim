@@ -89,9 +89,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: 
+    functionName: PlayRandom
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 4276456568063083136, guid: 0777d131bfafcc0479ffccc94028b99c, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

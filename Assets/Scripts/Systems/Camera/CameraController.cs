@@ -42,17 +42,25 @@ public class CameraController : MonoBehaviour
         else
         {
             targetPosition = new Vector3(0, 0, 0);
-            foreach (var dockTarget in dock.targets)
-            {
-                targetPosition += new Vector3(dockTarget.transform.position.x, dockTarget.transform.position.y, -dock.distance);
-            }
             if (dock.lerp)
             {
                 targetPosition += new Vector3(target.transform.position.x, target.transform.position.y, -dock.distance);
-                targetPosition /= dock.targets.Length + 1;
-            }
-            else targetPosition /= dock.targets.Length;
 
+                Vector3 farthestDockTarget = target.transform.position;
+                foreach (var dockTarget in dock.targets)
+                    if ((farthestDockTarget - target.transform.position).sqrMagnitude < (dockTarget.transform.position - target.transform.position).sqrMagnitude)
+                        farthestDockTarget = dockTarget.transform.position;
+                targetPosition += new Vector3(farthestDockTarget.x, farthestDockTarget.y, -dock.distance);
+
+                targetPosition /= 2;
+            }
+            else
+            {
+                foreach (var dockTarget in dock.targets)
+                    targetPosition += new Vector3(dockTarget.transform.position.x, dockTarget.transform.position.y, -dock.distance);
+
+                targetPosition /= dock.targets.Length;
+            }
         }
 
 
