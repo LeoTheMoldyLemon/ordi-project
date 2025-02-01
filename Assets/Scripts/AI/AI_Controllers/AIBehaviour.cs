@@ -59,7 +59,7 @@ public abstract class AIBehaviour : MonoBehaviour
         if (!firstDetectionPassed)
         {
             firstDetectionPassed = true;
-            if (onDetectText.Length != 0)
+            if (onDetectText.Length != 0 && enabled)
                 writer.Write(onDetectText[Random.Range(0, onDetectText.Length)]);
         }
         isTargetDetected = true;

@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnNewGame()
     {
-        if (!File.Exists(Path.Combine(Application.persistentDataPath, saveFileName)))
+        if (File.Exists(Path.Combine(Application.persistentDataPath, saveFileName)))
             File.Delete(Path.Combine(Application.persistentDataPath, saveFileName));
         SceneManager.LoadScene(gameSceneName);
     }

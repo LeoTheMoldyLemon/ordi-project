@@ -17,7 +17,6 @@ public class TextTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (triggered) return;
-        triggered = true;
         PlayerController.Instance.locked = true;
         TextWriterUI.Instance.textDone.AddListener(NextLine);
         if (pause) Time.timeScale = 0;
@@ -31,6 +30,7 @@ public class TextTrigger : MonoBehaviour
         {
             PlayerController.Instance.locked = false;
             if (pause) Time.timeScale = 1;
+            triggered = true;
             return;
         }
         DialogueLine dialogue = dialogueLines[currentLine];

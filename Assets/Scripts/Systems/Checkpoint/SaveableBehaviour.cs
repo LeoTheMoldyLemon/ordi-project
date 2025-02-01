@@ -25,6 +25,6 @@ public abstract class SaveableBehaviour : MonoBehaviour
         }
 #endif
     }
-    [HideInInspector] public string guid = "";
+    public string guid = "";
 
 }
